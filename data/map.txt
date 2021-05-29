@@ -715,6 +715,7 @@ system "16 Autumn Rising"
 	fleet "Small Saryd" 1100
 	fleet "Large Saryd" 4000
 	fleet Heliarch 500
+	hazard "Asteroid Belt Far" 1
 	object
 		sprite star/f5
 		period 10
@@ -1322,6 +1323,7 @@ system "5 Spring Below"
 	fleet "Small Saryd" 1000
 	fleet "Large Saryd" 2500
 	fleet Heliarch 500
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g0-old
 		distance 19.7171
@@ -1728,6 +1730,7 @@ system Ablodab
 	fleet "Small Saryd" 1000
 	fleet "Large Saryd" 2400
 	fleet Heliarch 700
+	hazard "Asteroid Belt Far" 1
 	object
 		sprite star/k5
 		period 10
@@ -1857,6 +1860,7 @@ system Acamar
 	fleet "Small Core Merchants" 2000
 	fleet "Small Republic" 3600
 	fleet "Small Syndicate" 3200
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g0
 		period 10
@@ -4378,6 +4382,7 @@ system Antevorta
 	trade Plastic 469
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
 	object
 		sprite star/wr
 		period 10
@@ -5401,6 +5406,8 @@ system "Beta Lupi"
 	fleet "Small Militia" 2000
 	fleet "Large Militia" 5000
 	fleet "Human Miners" 3000
+	hazard "Asteroid Belt Far" 1
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g5
 		period 10
@@ -6076,6 +6083,7 @@ system Caeculus
 	fleet "Large Remnant" 30000
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 6400
 	object
 		sprite star/wr
 		period 10
@@ -6601,6 +6609,7 @@ system Celeborim
 	trade Plastic 298
 	fleet "Small Kor Sestor" 1200
 	fleet "Large Kor Sestor" 6400
+	hazard "Asteroid Belt Near" 5
 	object
 		sprite star/m0
 		period 10
@@ -6632,6 +6641,31 @@ system Celeborim
 			sprite planet/callisto
 			distance 373
 			period 23.9558
+
+system Charybdis
+	pos 169 458
+	government Uninhabited
+	attributes "ember waste"
+	habitable 10000
+	belt 1550
+	asteroids "small rock" 4 3.8019
+	asteroids "medium rock" 3 4.4689
+	asteroids "small metal" 3 6.7367
+	asteroids "medium metal" 47 4.1354
+	minables yottrite 1 4.3241
+	minables aluminum 4 1.59162
+	minables silicon 4 4.29042
+	haze _menu/haze-red
+	hazard "Ember Waste Base Heat" 50
+	hazard "Ember Waste Base Storm" 9000
+	hazard "Black Hole Gravity" 1
+	hazard "Black Hole Event Horizon" 1
+	object
+		sprite star/nova
+		period 1
+	object
+		sprite "star/black-hole-small"
+		period 1
 
 system Chikatip
 	pos -77.5695 -307.812
@@ -6936,6 +6970,19 @@ system Chy'chra
 			distance 614
 			period 80.0847
 
+system Cinis
+	pos 10 490
+	government Uninhabited
+	attributes "ember waste"
+	habitable 553.28
+	haze _menu/haze-red
+	hazard "Ember Waste Base Heat" 50
+	hazard "Ember Waste Base Storm" 9000
+	hazard "Dust Cloud" 1
+	object
+		sprite star/g0
+		period 18.0592
+
 system Cinxia
 	pos 265.87 415.242
 	government Remnant
@@ -7138,6 +7185,8 @@ system Convector
 	trade Plastic 485
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		distance 13.0749
@@ -7442,6 +7491,7 @@ system Danoa
 	fleet "Large Northern Pirates" 16000
 	fleet "Large Republic" 30000
 	fleet "Human Miners" 1600
+	hazard "Asteroid Belt Far" 1
 	object
 		sprite star/m4
 		period 10
@@ -8576,6 +8626,7 @@ system Eber
 	fleet "Small Militia" 4000
 	fleet "Large Militia" 5000
 	fleet "Small Southern Pirates" 2000
+	hazard "Asteroid Belt Far" 1
 	object
 		sprite star/k5-old
 		period 10
@@ -8703,6 +8754,8 @@ system Edusa
 	fleet "Korath Ember Waste Raid" 40000
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		period 10
@@ -9842,6 +9895,7 @@ system Fala
 	fleet "Small Northern Pirates" 2000
 	fleet "Large Northern Pirates" 4000
 	fleet "Human Miners" 2000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g5-old
 		period 10
@@ -10336,6 +10390,7 @@ system "Fell Omen"
 	fleet "Small Saryd" 800
 	fleet "Large Saryd" 1800
 	fleet Heliarch 400
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/k5
 		period 10
@@ -10472,6 +10527,7 @@ system Fereti
 	fleet "Builders Drone" 2050
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/a0
 		period 10
@@ -10975,6 +11031,7 @@ system Furmeliki
 	trade Metal 346
 	trade Plastic 313
 	fleet "Large Quarg" 1000
+	hazard "Asteroid Belt Far" 1
 	object
 		sprite star/k0
 		period 10
@@ -11045,6 +11102,7 @@ system Gacrux
 	fleet "Small Southern Pirates" 1000
 	fleet "Large Southern Pirates" 3000
 	fleet "Small Republic" 15000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/k5
 		distance 32.6953
@@ -11239,6 +11297,8 @@ system Gerenus
 	fleet "Ka'het Aggressive" 11000
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		period 8.42267
@@ -11709,6 +11769,7 @@ system Gorvi
 	fleet "Large Northern Pirates" 1000
 	fleet "Large Republic" 4000
 	fleet "Small Northern Merchants" 8000
+	hazard "Coronal Mass Ejection" 8000
 	object
 		sprite star/wr
 		period 100
@@ -12847,6 +12908,7 @@ system Ildaria
 	fleet "Large Militia" 6000
 	fleet "Small Southern Pirates" 1000
 	fleet "Large Southern Pirates" 2000
+	hazard "Coronal Mass Ejection" 8000
 	object
 		sprite star/wr
 		period 10
@@ -14225,6 +14287,7 @@ system "Kor Ak'Mari"
 	trade Metal 217
 	trade Plastic 524
 	fleet "Korath Raid" 2800
+	hazard "Coronal Mass Ejection" 8000
 	object
 		sprite star/wr
 		period 100
@@ -15106,6 +15169,8 @@ system Levana
 	fleet "Korath Ember Waste Raid" 10000
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		distance 17.197
@@ -15173,6 +15238,8 @@ system Limen
 	fleet "Small Southern Pirates" 1000
 	fleet "Large Southern Pirates" 2000
 	fleet "Human Miners" 1000
+	hazard "Asteroid Belt Far" 1
+	hazard "Asteroid Belt Near" 5
 	object
 		sprite star/f5
 		period 10
@@ -15294,6 +15361,7 @@ system Lolami
 	fleet "Small Northern Pirates" 2000
 	fleet "Large Northern Pirates" 4000
 	fleet "Human Miners" 3000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g0
 		distance 11
@@ -16603,6 +16671,7 @@ system Mesuket
 	trade Plastic 366
 	fleet "Large Kor Mereti" 600
 	fleet "Large Kor Sestor" 600
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/k5-old
 		period 10
@@ -17563,6 +17632,7 @@ system Naper
 	fleet "Small Militia" 5000
 	fleet "Small Southern Pirates" 1000
 	fleet "Human Miners" 3000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/f5
 		period 10
@@ -17778,6 +17848,7 @@ system Nocte
 	fleet "Large Republic" 7000
 	fleet "Small Northern Pirates" 2500
 	fleet "Human Miners" 1600
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/m4
 		period 10
@@ -17969,6 +18040,9 @@ system Oblate
 	fleet "Small Core Pirates" 600
 	fleet "Large Core Pirates" 1000
 	fleet "Large Syndicate" 3000
+	hazard "Asteroid Belt Far" 1
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		period 10
@@ -18027,6 +18101,8 @@ system Orbona
 	fleet "Small Southern Pirates" 1200
 	fleet "Large Southern Pirates" 3200
 	fleet "Human Miners" 1500
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		distance 20.2539
@@ -18164,6 +18240,7 @@ system Ossipago
 	trade Plastic 505
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Ember Heliopause" 1
 	object
 		sprite star/f5-old
 		distance 11.9736
@@ -18784,6 +18861,8 @@ system Persian
 	fleet "Small Core Pirates" 600
 	fleet "Large Core Pirates" 2000
 	fleet "Human Miners" 3000
+	hazard "Asteroid Belt Far" 1
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/f5-old
 		distance 27.8124
@@ -19522,6 +19601,8 @@ system Prakacha'a
 	fleet "Wanderer Drones" 400
 	fleet "Wanderer Defense" 400
 	fleet "Unfettered Raid" 5000
+	hazard "Asteroid Belt Far" 1
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/g0
 		distance 32.5255
@@ -19641,6 +19722,8 @@ system Prosa
 	minables copper 5 2
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Coronal Mass Ejection" 8000
+	hazard "Helium Flash" 16000
 	object
 		sprite star/giant
 		offset 180
@@ -20451,6 +20534,7 @@ system Relifer
 	fleet "Ka'het Aggressive" 8900
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Ember Heliopause" 1
 	object
 		sprite star/g0-old
 		period 10
@@ -21310,6 +21394,26 @@ system Saquergen
 		sprite planet/lava2
 		distance 938.342
 		period 531.634
+
+system Sarcina
+	pos -254 634
+	government Uninhabited
+	attributes "nova"
+	habitable 10000
+	haze _menu/haze-133
+	hazard "Black Hole Gravity" 6
+	hazard "Neutron Star" 1
+	object
+		sprite "star/neutron-star"
+		period 1
+	object
+		sprite planet/lava2
+		distance 938.342
+		period 531.634
+	object
+		sprite planet/lava1-b
+		distance 760.451
+		period 203.144
 
 system Sargas
 	pos -542 445
@@ -23088,6 +23192,7 @@ system Sospi
 	fleet "Small Republic" 5000
 	fleet "Large Republic" 9000
 	fleet "Human Miners" 5000
+	hazard "Coronal Mass Ejection" 8000
 	object
 		sprite star/wr
 		period 100
@@ -23393,6 +23498,7 @@ system Stercutus
 	fleet "Remnant Transport" 40000
 	hazard "Ember Waste Base Heat" 100
 	hazard "Ember Waste Base Storm" 9000
+	hazard "Ember Heliopause" 1
 	object
 		sprite star/g5-old
 		distance 31.1534
@@ -23516,6 +23622,7 @@ system Sumar
 	fleet "Small Northern Pirates" 2000
 	fleet "Large Northern Pirates" 6000
 	fleet "Large Republic" 30000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/f0
 		period 10
@@ -24017,6 +24124,31 @@ system Tejat
 			sprite planet/rhea
 			distance 438
 			period 22.9367
+
+system Tenebra
+	pos 287 492
+	government Uninhabited
+	attributes "ember waste"
+	habitable 10000
+	belt 1550
+	asteroids "small rock" 4 3.8019
+	asteroids "medium rock" 3 4.4689
+	asteroids "small metal" 3 6.7367
+	asteroids "medium metal" 47 4.1354
+	minables yottrite 1 4.3241
+	minables aluminum 4 1.59162
+	minables silicon 4 4.29042
+	haze _menu/haze-red
+	hazard "Ember Waste Base Heat" 50
+	hazard "Ember Waste Base Storm" 9000
+	hazard "Black Hole Gravity" 1
+	hazard "Black Hole Event Horizon" 1
+	object
+		sprite star/nova
+		period 1
+	object
+		sprite "star/black-hole-small"
+		period 1
 
 system Terminus
 	pos -727.99 -23.2491
@@ -24549,6 +24681,8 @@ system Unagi
 	trade Plastic 364
 	fleet "Small Northern Pirates" 1500
 	fleet "Large Northern Pirates" 3000
+	hazard "Asteroid Belt Mid" 1
+	hazard "Asteroid Belt Near" 5
 	object
 		sprite star/k5
 		period 10
@@ -25158,6 +25292,7 @@ system Waypoint
 	fleet "Large Human Merchants (Hai)" 18000
 	fleet "Hai Surveillance" 2000
 	fleet "Small Hai" 5000
+	hazard "Asteroid Belt Mid" 1
 	object
 		sprite star/m8
 		period 10
@@ -25935,6 +26070,7 @@ system Zubenelgenubi
 	fleet "Large Militia" 3000
 	fleet "Small Southern Pirates" 3000
 	fleet "Large Southern Pirates" 5000
+	hazard "Asteroid Belt Near" 10
 	object
 		sprite star/g5
 		distance 32.8466

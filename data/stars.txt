@@ -68,15 +68,22 @@ star "star/k5-old"
 	wind 1.5
 
 # Special stars.
+star "star/black-hole-small"
+	power 0
+	wind 2
 star "star/giant"
 	power 1.4
 	wind 2
+star "star/neutron-star"
+	power 2
+	wind 0.15
 star "star/nova"
 	power 0.2
 	wind 8
 star "star/wr"
 	power 0.4
 	wind 4
+
 
 # Brown Dwarves
 # Because these look like planets, they reverse the trend of increasing solar wind
