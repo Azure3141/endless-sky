@@ -205,30 +205,6 @@ effect "heliopause shock"
 
 
 
-hazard "Neutron Star"
-	"strength" 1
-	"range" 5000
-	"duration" 1
-	"environmental effect" "radiation sparks" 50
-	"environmental effect" "ion rain impact" 30
-	weapon
-		"disruption damage" 1
-		"relative shield damage" 1
-		"heat damage" 200
-		"ion damage" 0.1
-		"hit effect" "spark"
-
-effect "radiation sparks"
-	sprite "effect/finisher sparks"
-		"frame rate" 5
-		"random start frame"
-	"lifetime" 180
-	"random lifetime" 270
-	"random spin" 1
-	"random velocity" 1.5
-
-
-
 hazard "Dust Cloud"
 	"range" 10000
 	"constant strength"
