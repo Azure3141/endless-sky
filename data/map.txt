@@ -21395,26 +21395,6 @@ system Saquergen
 		distance 938.342
 		period 531.634
 
-system Sarcina
-	pos -254 634
-	government Uninhabited
-	attributes "nova"
-	habitable 10000
-	haze _menu/haze-133
-	hazard "Black Hole Gravity" 6
-	hazard "Neutron Star" 1
-	object
-		sprite "star/neutron-star"
-		period 1
-	object
-		sprite planet/lava2
-		distance 938.342
-		period 531.634
-	object
-		sprite planet/lava1-b
-		distance 760.451
-		period 203.144
-
 system Sargas
 	pos -542 445
 	government Republic

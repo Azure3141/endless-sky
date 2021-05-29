@@ -70,13 +70,10 @@ star "star/k5-old"
 # Special stars.
 star "star/black-hole-small"
 	power 0
-	wind 2
+	wind 1
 star "star/giant"
 	power 1.4
 	wind 2
-star "star/neutron-star"
-	power 2
-	wind 0.15
 star "star/nova"
 	power 0.2
 	wind 8
