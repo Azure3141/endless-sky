@@ -475,6 +475,23 @@ interface "hud"
 		dimensions 110 110
 		color "disabled hull"
 		size 1.5
+		
+	sprite "ui/shipstats"
+		from -60 240
+		align top right
+	string "ship crew"
+		from -85 243
+		align top right
+	string "ship fuel"
+		from -85 263
+		align top right
+	string "ship energy"
+		from -85 283
+		align top right
+	string "ship heat"
+		from -85 303
+		align top right
+		
 	bar "fuel"
 		from -53.5 425
 		dimensions 0 -192

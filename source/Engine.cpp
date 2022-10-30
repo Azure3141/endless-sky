@@ -686,6 +686,15 @@ void Engine::Step(bool isActive)
 		info.SetBar("shields", flagship->Shields());
 		info.SetBar("hull", flagship->Hull(), 20.);
 		info.SetBar("disabled hull", min(flagship->Hull(), flagship->DisabledHull()), 20.);
+
+		info.SetString("ship crew", to_string(flagship->Crew()));
+		int fuel = round(flagship->Fuel() * flagship->Attributes().Get("fuel capacity"));
+		info.SetString("ship fuel", to_string(fuel));
+		int energy = round(flagship->Energy() * flagship->Attributes().Get("energy capacity"));
+		info.SetString("ship energy", to_string(energy));
+		int shipHeat = round(flagship->ShipTemperature());
+		info.SetString("ship heat", to_string(shipHeat) + " K");
+
 	}
 	info.SetString("credits",
 		Format::Credits(player.Accounts().Credits()) + " credits");
@@ -808,8 +817,8 @@ void Engine::Step(bool isActive)
 				info.SetString("target fuel", to_string(fuel));
 				int energy = round(target->Energy() * target->Attributes().Get("energy capacity"));
 				info.SetString("target energy", to_string(energy));
-				int heat = round(100. * target->Heat());
-				info.SetString("target heat", to_string(heat) + "%");
+				int heat = round(target->ShipTemperature());
+				info.SetString("target heat", to_string(heat) + " K");
 			}
 		}
 	}
