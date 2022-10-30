@@ -59,8 +59,6 @@ namespace {
 	const vector<string> ENGINE_SIDE = {"under", "over"};
 	const vector<string> STEERING_FACING = {"none", "left", "right"};
 
-	const double MAXIMUM_TEMPERATURE = 100.;
-
 	const double SCAN_TIME = 60.;
 
 	// Helper function to transfer energy to a given stat if it is less than the
@@ -749,6 +747,11 @@ void Ship::FinishLoading(bool isNewInstance)
 	{
 		warning += "Defaulting " + string(attributes.Get("drag") ? "invalid" : "missing") + " \"drag\" attribute to 100.0\n";
 		attributes.Set("drag", 100.);
+	}
+	if(attributes.Get("maximum temperature") <= 0.)
+	{
+		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 100.0\n";
+		attributes.Set("maximum temperature", 1000.);
 	}
 	if(!warning.empty())
 	{
@@ -3302,10 +3305,14 @@ double Ship::HeatDissipation() const
 // Get the maximum heat level, in heat units (not temperature).
 double Ship::MaximumHeat() const
 {
-	return MAXIMUM_TEMPERATURE * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
+	return attributes.Get("maximum temperature") / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
 }
 
-
+// Get the ship temperature.
+double Ship::ShipTemperature() const
+{
+	return attributes.Get("maximum temperature") / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
+}
 
 // Calculate the multiplier for cooling efficiency.
 double Ship::CoolingEfficiency() const
@@ -3684,7 +3691,7 @@ void Ship::Jettison(const string &commodity, int tons, bool wasAppeasing)
 
 	// Jettisoned cargo must carry some of the ship's heat with it. Otherwise
 	// jettisoning cargo would increase the ship's temperature.
-	heat -= tons * MAXIMUM_TEMPERATURE * Heat();
+	heat -= tons * attributes.Get("maximum temperature") / 10 * Heat();
 
 	const Government *notForGov = wasAppeasing ? GetGovernment() : nullptr;
 
@@ -3705,7 +3712,7 @@ void Ship::Jettison(const Outfit *outfit, int count, bool wasAppeasing)
 	// Jettisoned cargo must carry some of the ship's heat with it. Otherwise
 	// jettisoning cargo would increase the ship's temperature.
 	double mass = outfit->Mass();
-	heat -= count * mass * MAXIMUM_TEMPERATURE * Heat();
+	heat -= count * mass * attributes.Get("maximum temperature") / 10 * Heat();
 
 	const Government *notForGov = wasAppeasing ? GetGovernment() : nullptr;
 
@@ -3855,7 +3862,7 @@ void Ship::ExpendAmmo(const Weapon &weapon)
 	{
 		// Some amount of the ammunition mass to be removed from the ship carries thermal energy.
 		// A realistic fraction applicable to all cases cannot be computed, so assume 50%.
-		heat -= weapon.AmmoUsage() * .5 * ammo->Mass() * MAXIMUM_TEMPERATURE * Heat();
+		heat -= weapon.AmmoUsage() * .5 * ammo->Mass() * attributes.Get("maximum temperature") / 10 * Heat();
 		AddOutfit(ammo, -weapon.AmmoUsage());
 	}
 
