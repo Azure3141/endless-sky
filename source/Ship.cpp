@@ -816,6 +816,7 @@ void Ship::FinishLoading(bool isNewInstance)
 			targetSystem = nullptr;
 		}
 	}
+	attributes.Set("maximum temperature", attributes.Get("maximum temperature") - attributes.Get("minimum temperature"));
 }
 
 
@@ -3183,6 +3184,8 @@ double Ship::Energy() const
 
 double Ship::CoreTemperature() const
 {
+	if(!attributes.Get("core size"))
+		return 0.;
 	double coreHeat = attributes.Get("core power") + attributes.Get("fuel core power");
 	double coreSize = attributes.Get("core size");
 	return coreHeat / coreSize;
@@ -3435,7 +3438,7 @@ double Ship::HeatDissipation() const
 // Get the maximum heat level, in heat units (not temperature).
 double Ship::MaximumHeat() const
 {
-	return (attributes.Get("maximum temperature") - attributes.Get("minimum temperature")) / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
+	return (attributes.Get("maximum temperature")) / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
 }
 
 // Get the ship temperature.
