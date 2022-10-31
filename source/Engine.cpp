@@ -697,7 +697,7 @@ void Engine::Step(bool isActive)
 		if(flagship->Attributes().Get("core power"))
 		{
 			info.SetCondition("core display");
-			int coreCarnot = round(max((1 - flagship->ShipTemperature() / flagship->CoreTemperature()), 0.) * 100.);
+			int coreCarnot = round(flagship->CarnotEfficiency() * 100.);
 			info.SetString("carnot", to_string(coreCarnot) + "%");
 		}
 

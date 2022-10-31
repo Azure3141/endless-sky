@@ -306,8 +306,8 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	const double idleEnergyPerFrame = attributes.Get("energy generation")
 		+ attributes.Get("solar collection")
 		+ attributes.Get("fuel energy")
-		+ attributes.Get("core power") * max((1 - ship.IdleHeat() / ship.CoreTemperature()), 0.);
-		+ attributes.Get("fuel core power") * max((1 - ship.IdleHeat() / ship.CoreTemperature()), 0.);
+		+ attributes.Get("core power") * ship.CarnotEfficiency();
+		+ attributes.Get("fuel core power") * ship.CarnotEfficiency();
 		- attributes.Get("energy consumption")
 		- attributes.Get("cooling energy");
 	const double idleHeatPerFrame = attributes.Get("heat generation")

@@ -342,6 +342,8 @@ public:
 	double MaximumHeat() const;
 	// Get the ship temperature.
 	double ShipTemperature() const;
+	// Get the Carnot efficiency.
+	double CarnotEfficiency() const;
 	// Calculate the multiplier for cooling efficiency.
 	double CoolingEfficiency() const;
 
