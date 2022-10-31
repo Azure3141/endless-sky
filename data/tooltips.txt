@@ -334,6 +334,9 @@ tip "mass with no cargo:"
 
 tip "mass:"
 	`Mass, in tons. A ship's mass determines how fast it turns and accelerates and its maximum heat before overheating.`
+	
+tip "maximum temperature:"
+	`The maximum temperature a ship can reach before it starts to overheat and shuts down.`
 
 tip "operating costs:"
 	`How many credits per day you need to spend to maintain this outfit while it is in active use.`

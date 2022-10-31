@@ -759,8 +759,14 @@ void Ship::FinishLoading(bool isNewInstance)
 
 	if(attributes.Get("maximum temperature") <= 0.)
 	{
-		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 100.0\n";
+		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 1000.0\n";
 		attributes.Set("maximum temperature", 1000.);
+	}
+
+	if(attributes.Get("minimum temperature") <= 0.)
+	{
+		warning += "Defaulting " + string(attributes.Get("minimum temperature") ? "invalid" : "missing") + " \"minimum temperature\" attribute to 300.0\n";
+		attributes.Set("minimum temperature", 300.);
 	}
 
 
@@ -3413,7 +3419,7 @@ double Ship::IdleHeat() const
 	// heat = heat * diss + heatGen - cool - activeCool * heat / (100 * mass)
 	// heat = heat * (diss - activeCool / (100 * mass)) + (heatGen - cool)
 	// heat * (1 - diss + activeCool / (100 * mass)) = (heatGen - cool)
-	double production = max(0., attributes.Get("heat generation") - cooling);
+	double production = max(0., attributes.Get("heat generation") + attributes.Get("core power") / 2 - cooling);
 	double dissipation = HeatDissipation() + activeCooling / MaximumHeat() + radiativeCooling / 4;
 	if(!dissipation) return production ? numeric_limits<double>::max() : 0;
 	return production / dissipation;
@@ -3427,8 +3433,6 @@ double Ship::HeatDissipation() const
 	return .001 * attributes.Get("heat dissipation");
 }
 
-
-
 // Get the maximum heat level, in heat units (not temperature).
 double Ship::MaximumHeat() const
 {
@@ -3438,7 +3442,7 @@ double Ship::MaximumHeat() const
 // Get the ship temperature.
 double Ship::ShipTemperature() const
 {
-	return attributes.Get("maximum temperature") * Heat();
+	return attributes.Get("maximum temperature") * Heat() + attributes.Get("minimum temperature");
 }
 
 // Get the Carnot efficiency.

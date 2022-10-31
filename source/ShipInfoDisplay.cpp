@@ -302,7 +302,7 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	heatTable.clear();
 	// Skip a spacer and the table header.
 	attributesHeight += 30;
-	double carnotEfficiency = max((1 - ship.IdleHeat() * attributes.Get("maximum temperature") / ship.CoreTemperature()), 0.);
+	double carnotEfficiency = max((1 - ship.IdleHeat() / ship.CoreTemperature()), 0.);
 	const double idleEnergyPerFrame = attributes.Get("energy generation")
 		+ attributes.Get("solar collection")
 		+ attributes.Get("fuel energy")
