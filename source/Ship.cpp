@@ -3444,7 +3444,7 @@ double Ship::ShipTemperature() const
 // Get the Carnot efficiency.
 double Ship::CarnotEfficiency() const
 {
-	return max((1 - ShipTemperature() / CoreTemperature()), 0.);
+	return (1 - ShipTemperature() / CoreTemperature());
 }
 
 // Calculate the multiplier for cooling efficiency.
