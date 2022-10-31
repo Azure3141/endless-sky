@@ -500,6 +500,7 @@ interface "hud"
 	string "carnot"
 		from -85 335
 		align top right
+	visible
 		
 	bar "fuel"
 		from -53.5 425
