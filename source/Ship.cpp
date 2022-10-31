@@ -757,18 +757,17 @@ void Ship::FinishLoading(bool isNewInstance)
 		attributes.Set("drag", 100.);
 	}
 
-	if(attributes.Get("maximum temperature") <= 0.)
-	{
-		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 1000.0\n";
-		attributes.Set("maximum temperature", 1000.);
-	}
-
 	if(attributes.Get("minimum temperature") <= 0.)
 	{
 		warning += "Defaulting " + string(attributes.Get("minimum temperature") ? "invalid" : "missing") + " \"minimum temperature\" attribute to 300.0\n";
 		attributes.Set("minimum temperature", 300.);
 	}
 
+	if(attributes.Get("maximum temperature") <= 0.)
+	{
+		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 1000.0\n";
+		attributes.Set("maximum temperature", 1000.);
+	}
 
 	// Only the player's ships make use of attraction and deterrence.
 	if(isYours)
@@ -3436,7 +3435,7 @@ double Ship::HeatDissipation() const
 // Get the maximum heat level, in heat units (not temperature).
 double Ship::MaximumHeat() const
 {
-	return attributes.Get("maximum temperature") / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
+	return (attributes.Get("maximum temperature") - attributes.Get("minimum temperature")) / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
 }
 
 // Get the ship temperature.
@@ -3448,7 +3447,7 @@ double Ship::ShipTemperature() const
 // Get the Carnot efficiency.
 double Ship::CarnotEfficiency() const
 {
-	return (1 - ShipTemperature() / CoreTemperature());
+	return max(1 - ShipTemperature() / CoreTemperature(), 0.);
 }
 
 // Calculate the multiplier for cooling efficiency.
