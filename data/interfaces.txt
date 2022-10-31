@@ -492,7 +492,7 @@ interface "hud"
 		from -85 311
 		align top right
 	visible if "core display"
-	sprite "ui/coreeff"
+	sprite "ui/carnot"
 		from -65 335
 		align top right
 	string "carnot"
