@@ -2321,6 +2321,24 @@ void Ship::DoGeneration()
 			heat += attributes.Get("fuel heat");
 		}
 
+		// Handle core power
+		if(!isOverheated && attributes.Get("core power"))
+		{
+			// Handle core power / heat.
+			double carnotEfficiency = max((1 - ShipTemperature() / CoreTemperature()), 0.);
+			double powerProduced = attributes.Get("core power") * carnotEfficiency;
+			energy += powerProduced;
+			heat += attributes.Get("core power") - powerProduced;
+		}
+		if(!isOverheated && attributes.Get("core power") && attributes.Get("fuel consumption") <= fuel)
+		{
+			// Handle fueled core power / heat.
+			double carnotEfficiency = max((1 - ShipTemperature() / CoreTemperature()), 0.);
+			double powerProduced = attributes.Get("fuel core power") * carnotEfficiency;
+			energy += powerProduced;
+			heat += attributes.Get("fuel core power") - powerProduced;
+		}
+
 		// Apply active cooling. The fraction of full cooling to apply equals
 		// your ship's current fraction of its maximum temperature.
 		double activeCooling = coolingEfficiency * attributes.Get("active cooling");
@@ -3088,6 +3106,15 @@ double Ship::Energy() const
 {
 	double maximum = attributes.Get("energy capacity");
 	return maximum ? min(1., energy / maximum) : (hull > 0.) ? 1. : 0.;
+}
+
+
+
+double Ship::CoreTemperature() const
+{
+	double coreHeat = attributes.Get("core power") + attributes.Get("fuel core power");
+	double coreSize = attributes.Get("core size");
+	return coreHeat / coreSize;
 }
 
 

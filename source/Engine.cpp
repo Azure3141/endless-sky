@@ -694,6 +694,12 @@ void Engine::Step(bool isActive)
 		info.SetString("ship energy", to_string(energy));
 		int shipHeat = round(flagship->ShipTemperature());
 		info.SetString("ship heat", to_string(shipHeat) + " K");
+		if(flagship->Attributes().Get("core power"))
+		{
+			info.SetCondition("core display");
+			int coreCarnot = round(max((1 - flagship->ShipTemperature() / flagship->CoreTemperature()), 0.) * 100.);
+			info.SetString("carnot", to_string(coreCarnot) + "%");
+		}
 
 	}
 	info.SetString("credits",

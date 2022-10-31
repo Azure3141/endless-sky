@@ -20,6 +20,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Color.h"
 #include "Depreciation.h"
 #include "FillShader.h"
+#include "math.h"
 #include "text/Format.h"
 #include "GameData.h"
 #include "text/layout.hpp"
@@ -208,6 +209,14 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	attributeValues.push_back(Format::Number(ship.RequiredCrew())
 		+ " / " + Format::Number(attributes.Get("bunks")));
 	attributesHeight += 20;
+
+	if(attributes.Get("core power"))
+	{
+	attributeLabels.push_back("core temperature:");
+	attributeValues.push_back(Format::Number(round(ship.CoreTemperature())) + " K");
+	}
+	attributesHeight += 20;
+
 	attributeLabels.push_back(isGeneric ? "fuel capacity:" : "fuel:");
 	double fuelCapacity = attributes.Get("fuel capacity");
 	if(isGeneric)
@@ -297,6 +306,8 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	const double idleEnergyPerFrame = attributes.Get("energy generation")
 		+ attributes.Get("solar collection")
 		+ attributes.Get("fuel energy")
+		+ attributes.Get("core power") * max((1 - ship.IdleHeat() / ship.CoreTemperature()), 0.);
+		+ attributes.Get("fuel core power") * max((1 - ship.IdleHeat() / ship.CoreTemperature()), 0.);
 		- attributes.Get("energy consumption")
 		- attributes.Get("cooling energy");
 	const double idleHeatPerFrame = attributes.Get("heat generation")

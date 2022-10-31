@@ -54,6 +54,7 @@ namespace {
 		{"cloaking heat", 0},
 		{"cooling", 0},
 		{"cooling energy", 0},
+		{"core power", 0},
 		{"corrosion resistance energy", 0},
 		{"corrosion resistance fuel", 0},
 		{"corrosion resistance heat", 0},
@@ -66,6 +67,7 @@ namespace {
 		{"energy consumption", 0},
 		{"energy generation", 0},
 		{"fuel consumption", 0},
+		{"fuel core power", 0},
 		{"fuel energy", 0},
 		{"fuel generation", 0},
 		{"fuel heat", 0},
@@ -332,6 +334,13 @@ void OutfitInfoDisplay::UpdateAttributes(const Outfit &outfit)
 			attributeValues.emplace_back(" ");
 			attributesHeight += 20;
 		}
+		else if(static_cast<string>(it.first) == "core size")
+		{
+			attributeLabels.emplace_back("core temperature:");
+			attributeValues.emplace_back(Format::Number(outfit.Get("core power") / outfit.Get("core size")) + " K");
+			attributesHeight += 20;
+		}
+
 		else
 		{
 			attributeLabels.emplace_back(static_cast<string>(it.first) + ":");
