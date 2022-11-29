@@ -774,12 +774,6 @@ void Ship::FinishLoading(bool isNewInstance)
 		attributes.Set("drag", 100.);
 	}
 
-	if(attributes.Get("minimum temperature") <= 0.)
-	{
-		warning += "Defaulting " + string(attributes.Get("minimum temperature") ? "invalid" : "missing") + " \"minimum temperature\" attribute to 300.0\n";
-		attributes.Set("minimum temperature", 300.);
-	}
-
 	if(attributes.Get("maximum temperature") <= 0.)
 	{
 		warning += "Defaulting " + string(attributes.Get("maximum temperature") ? "invalid" : "missing") + " \"maximum temperature\" attribute to 1000.0\n";
@@ -833,7 +827,6 @@ void Ship::FinishLoading(bool isNewInstance)
 			targetSystem = nullptr;
 		}
 	}
-	attributes.Set("maximum temperature", attributes.Get("maximum temperature") - attributes.Get("minimum temperature"));
 }
 
 
@@ -2419,8 +2412,8 @@ void Ship::DoGeneration()
 				heat -= activeCooling;
 		}
 		// Apply radiative cooling. The amount of radiative cooling is scaled by the fourth power of
-		// your ship's current temperature.
-		heat -= coolingEfficiency * attributes.Get("radiative cooling") * pow(ShipTemperature() / 500, 4);
+		// your ship's current temperature, but is not affected by base cooling efficiency.
+		heat -= attributes.Get("radiative cooling") * pow(ShipTemperature() / 500, 4);
 	}
 
 	// Don't allow any levels to drop below zero.
@@ -3452,21 +3445,65 @@ double Ship::JumpFuelMissing() const
 // Get the heat level at idle.
 double Ship::IdleHeat() const
 {
-	// This ship's cooling ability:
-	double coolingEfficiency = CoolingEfficiency();
-	double cooling = coolingEfficiency * attributes.Get("cooling");
-	double activeCooling = coolingEfficiency * attributes.Get("active cooling");
-	double radiativeCooling = coolingEfficiency * attributes.Get("radiative cooling");
+	// The Secant Method, closely related to Newton's Method,
+	// is a robust approximation, approaching the zero of any curve
+	// quickly and cheaply. It does not provide infinite accuracy,
+	// but in exchange it is trivial to add more functionality to
+	// the curve it is approximating a root of.
+	// To do so- implement your heat change in ship::DoGeneration()
+	// and then add the same change to Ship::NetIdleHeatAt() below.
 
-	// Idle heat is the heat level where:
-	// heat = heat * diss + heatGen - cool - activeCool * heat / (100 * mass)
-	// heat = heat * (diss - activeCool / (100 * mass)) + (heatGen - cool)
-	// heat * (1 - diss + activeCool / (100 * mass)) = (heatGen - cool)
-	double production = max(0., attributes.Get("heat generation") + attributes.Get("core power") / 2 - cooling);
-	double dissipation = HeatDissipation() + activeCooling / MaximumHeat() + radiativeCooling / 4;
-	if(!dissipation) return production ? numeric_limits<double>::max() : 0;
-	return production / dissipation;
+	int attempts = 10;
+	double firstGuess = 0.;
+	double firstOutput = NetIdleHeatAt(firstGuess);
+
+	double secondGuess = MaximumHeat();
+	double secondOutput = NetIdleHeatAt(secondGuess);
+
+	double middlingGuess;
+	double middlingOutput;
+
+	if(firstGuess == secondGuess || firstOutput <= secondOutput)
+		return secondOutput > 0. ? numeric_limits<double>::max() : 0;
+
+	// 0.001 here is a magic number which could be anything "sufficiently small".
+	// Normally it's called an Epsilon, a number that approaches but is not zero.
+	while((attempts > 0) && (fabs(firstGuess - secondGuess) > .001))
+	{
+		// Do not allow a negative-heat guess.
+		middlingGuess = max(0., firstGuess - firstOutput * (secondGuess - firstGuess) / (secondOutput - firstOutput));
+		middlingOutput = NetIdleHeatAt(middlingGuess);
+		firstGuess = secondGuess;
+		firstOutput = secondOutput;
+		secondGuess = middlingGuess;
+		secondOutput = middlingOutput;
+		--attempts;
+	}
+	// Return the most up-to-date guess.
+	return secondGuess;
 }
+
+
+
+// Get the net heat production at a certain number of heat units (not temperature).
+double Ship::NetIdleHeatAt(double heatLevel) const
+{
+	double coolingEfficiency = CoolingEfficiency();
+
+	// Combine heat generation and cooling.
+	double generation = attributes.Get("heat generation")
+			+ attributes.Get("solar heat")
+			+ attributes.Get("fuel heat")
+			- attributes.Get("cooling") * coolingEfficiency;
+
+	// These cooling types scale with stored heat.
+	double dissipation = HeatDissipation() + coolingEfficiency * attributes.Get("active cooling") / MaximumHeat();
+
+	// Add other cooling types here, dependent on how they respond to heat level.
+
+	return generation - heatLevel * dissipation;
+}
+
 
 
 
@@ -3485,7 +3522,7 @@ double Ship::MaximumHeat() const
 // Get the ship temperature.
 double Ship::ShipTemperature() const
 {
-	return attributes.Get("maximum temperature") * Heat() + attributes.Get("minimum temperature");
+	return attributes.Get("maximum temperature") * Heat();
 }
 
 // Get the Carnot efficiency.
@@ -3500,8 +3537,12 @@ double Ship::CoolingEfficiency() const
 	// This is an S-curve where the efficiency is 100% if you have no outfits
 	// that create "cooling inefficiency", and as that value increases the
 	// efficiency stays high for a while, then drops off, then approaches 0.
+	// A secondary factor also decreases the effectiveness of cooling as temperature approaches 0.
 	double x = attributes.Get("cooling inefficiency");
-	return 2. + 2. / (1. + exp(x / -2.)) - 4. / (1. + exp(x / -4.));
+	double heatDissipation = attributes.Get("heat dissipation");
+	double decline = (Heat() < 1 / (heatDissipation + 1)) ? pow(Heat() /
+																				Heat()*(heatDissipation + 1), 0.5) : 1.;
+	return decline * (2. + 2. / (1. + exp(x / -2.)) - 4. / (1. + exp(x / -4.)));
 }
 
 
