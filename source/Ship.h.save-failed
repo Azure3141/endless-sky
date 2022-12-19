@@ -347,8 +347,7 @@ public:
 	// Get the Carnot efficiency.
 	double CarnotEfficiency() const;
 	// Calculate the multiplier for cooling efficiency.
-	double CoolingEfficiency() const;
-	double CoolingEfficiency(double hotness) const;
+	double CoolingEfficiency(double hotness = Ship->Heat()) const;
 	// Calculate the ship's drag after accounting for drag reduction.
 	double Drag() const;
 

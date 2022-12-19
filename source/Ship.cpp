@@ -3488,7 +3488,7 @@ double Ship::IdleHeat() const
 // Get the net heat production at a certain number of heat units (not temperature).
 double Ship::NetIdleHeatAt(double heatLevel) const
 {
-	double coolingEfficiency = CoolingEfficiency();
+	double coolingEfficiency = CoolingEfficiency(heatLevel);
 
 	// Combine heat generation and cooling.
 	double generation = attributes.Get("heat generation")
@@ -3499,9 +3499,11 @@ double Ship::NetIdleHeatAt(double heatLevel) const
 	// These cooling types scale with stored heat.
 	double dissipation = HeatDissipation() + coolingEfficiency * attributes.Get("active cooling") / MaximumHeat();
 
+	double radiation = attributes.Get("radiative cooling") * pow(heatLevel * attributes.Get("maximum temperature") / 500, 4);
+
 	// Add other cooling types here, dependent on how they respond to heat level.
 
-	return generation - heatLevel * dissipation;
+	return generation - heatLevel * dissipation - radiation;
 }
 
 
@@ -3513,11 +3515,15 @@ double Ship::HeatDissipation() const
 	return .001 * attributes.Get("heat dissipation");
 }
 
+
+
 // Get the maximum heat level, in heat units (not temperature).
 double Ship::MaximumHeat() const
 {
 	return (attributes.Get("maximum temperature")) / 10 * (cargo.Used() + attributes.Mass() + attributes.Get("heat capacity"));
 }
+
+
 
 // Get the ship temperature.
 double Ship::ShipTemperature() const
@@ -3525,11 +3531,15 @@ double Ship::ShipTemperature() const
 	return attributes.Get("maximum temperature") * Heat();
 }
 
+
+
 // Get the Carnot efficiency.
 double Ship::CarnotEfficiency() const
 {
 	return max(1 - ShipTemperature() / CoreTemperature(), 0.);
 }
+
+
 
 // Calculate the multiplier for cooling efficiency.
 double Ship::CoolingEfficiency() const
@@ -3540,8 +3550,20 @@ double Ship::CoolingEfficiency() const
 	// A secondary factor also decreases the effectiveness of cooling as temperature approaches 0.
 	double x = attributes.Get("cooling inefficiency");
 	double heatDissipation = attributes.Get("heat dissipation");
-	double decline = (Heat() < 1 / (heatDissipation + 1)) ? pow(Heat() /
-																				Heat()*(heatDissipation + 1), 0.5) : 1.;
+	double heatFraction = Heat() * 1000. / attributes.Get("maximum temperature");
+	double decline = (heatFraction <= 1 / (heatDissipation + 1)) ? heatFraction * (heatDissipation + 1) : 1.;
+	return decline * (2. + 2. / (1. + exp(x / -2.)) - 4. / (1. + exp(x / -4.)));
+}
+
+
+
+// Overloading for cooling efficiency.
+double Ship::CoolingEfficiency(double temp) const
+{
+	double x = attributes.Get("cooling inefficiency");
+	double heatDissipation = attributes.Get("heat dissipation");
+	double heatFraction = temp * 1000. / attributes.Get("maximum temperature");
+	double decline = (heatFraction <= 1 / (heatDissipation + 1)) ? heatFraction * (heatDissipation + 1) : 1.;
 	return decline * (2. + 2. / (1. + exp(x / -2.)) - 4. / (1. + exp(x / -4.)));
 }
 

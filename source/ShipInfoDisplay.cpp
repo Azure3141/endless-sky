@@ -316,15 +316,10 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 		+ attributes.Get("fuel core power") * carnotEfficiency
 		- attributes.Get("energy consumption")
 		- attributes.Get("cooling energy");
-	const double idleHeatPerFrame = attributes.Get("heat generation")
-		+ attributes.Get("solar heat")
-		+ attributes.Get("fuel heat")
-		+ attributes.Get("core power") * (1 - carnotEfficiency)
-		+ attributes.Get("fuel core power") * (1 - carnotEfficiency)
-		- ship.CoolingEfficiency() * (attributes.Get("cooling") + attributes.Get("active cooling"));
+	const double idleHeatPerFrame = ship.IdleHeat();
 	tableLabels.push_back("idle:");
-	energyTable.push_back(Format::Number(60. * idleEnergyPerFrame));
-	heatTable.push_back(Format::Number(60. * idleHeatPerFrame));
+	energyTable.push_back(Format::Number(60. * idleEnergyPerFrame / 100.));
+	heatTable.push_back(Format::Number(idleHeatPerFrame / ship.MaximumHeat()));
 
 	attributesHeight += 20;
 	const double movingEnergyPerFrame = max(attributes.Get("thrusting energy"), attributes.Get("reverse thrusting energy"))
@@ -366,7 +361,7 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 
 	attributesHeight += 20;
 	const double maxEnergy = attributes.Get("energy capacity");
-	const double maxHeat = 60. * ship.HeatDissipation() * ship.MaximumHeat();
+	const double maxHeat = 60. * (ship.HeatDissipation() * ship.MaximumHeat() + pow(attributes.Get("maximum temperature"), 4) * attributes.Get("radiative cooling"));
 	tableLabels.push_back("max:");
 	energyTable.push_back(Format::Number(maxEnergy));
 	heatTable.push_back(Format::Number(maxHeat));
