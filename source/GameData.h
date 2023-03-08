@@ -28,6 +28,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include <vector>
 
 class Color;
+class ConditionsStore;
 class Conversation;
 class DataNode;
 class DataWriter;
@@ -37,6 +38,7 @@ class Fleet;
 class FormationPattern;
 class Galaxy;
 class GameEvent;
+class Gamerules;
 class Government;
 class Hazard;
 class ImageSet;
@@ -59,6 +61,7 @@ class System;
 class Test;
 class TestData;
 class TextReplacements;
+class UniverseObjects;
 class Wormhole;
 
 
@@ -88,6 +91,9 @@ public:
 
 	// Get the list of resource sources (i.e. plugin folders).
 	static const std::vector<std::string> &Sources();
+
+	// Get a reference to the UniverseObjects object.
+	static UniverseObjects &Objects();
 
 	// Revert any changes that have been made to the universe.
 	static void Revert();
@@ -135,6 +141,8 @@ public:
 	static const Set<TestData> &TestDataSets();
 	static const Set<Wormhole> &Wormholes();
 
+	static ConditionsStore &GlobalConditions();
+
 	static const Government *PlayerGovernment();
 	static Politics &GetPolitics();
 	static const std::vector<StartConditions> &StartOptions();
@@ -166,6 +174,8 @@ public:
 	static MaskManager &GetMaskManager();
 
 	static const TextReplacements &GetTextReplacements();
+
+	static const Gamerules &GetGamerules();
 
 	// Thread-safe way to draw the menu background.
 	static void DrawMenuBackground(Panel *panel);
