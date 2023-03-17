@@ -128,7 +128,8 @@ void DamageProfile::PopulateDamage(DamageDealt &damage, const Ship &ship) const
 		shieldFraction = (1. - piercing) / (1. + ship.DisruptionLevel() * .01);
 
 		damage.shieldDamage = (weapon.ShieldDamage()
-			+ weapon.RelativeShieldDamage() * attributes.Get("shields"))
+			+ weapon.RelativeShieldDamage() * attributes.Get("shields")
+			- attributes.Get("shield hardness"))
 			* ScaleType(0., attributes.Get("shield protection"));
 		if(damage.shieldDamage > shields)
 			shieldFraction = min(shieldFraction, shields / damage.shieldDamage);
@@ -140,7 +141,8 @@ void DamageProfile::PopulateDamage(DamageDealt &damage, const Ship &ship) const
 	// Shield damage is blocked 0%.
 	damage.shieldDamage *= shieldFraction;
 	damage.hullDamage = (weapon.HullDamage()
-		+ weapon.RelativeHullDamage() * attributes.Get("hull"))
+		+ weapon.RelativeHullDamage() * attributes.Get("hull")
+		- attributes.Get("hull hardness"))
 		* ScaleType(1., attributes.Get("hull protection"));
 	double hull = ship.HullUntilDisabled();
 	if(damage.hullDamage > hull)
@@ -148,7 +150,8 @@ void DamageProfile::PopulateDamage(DamageDealt &damage, const Ship &ship) const
 		double hullFraction = hull / damage.hullDamage;
 		damage.hullDamage *= hullFraction;
 		damage.hullDamage += (weapon.DisabledDamage()
-			+ weapon.RelativeDisabledDamage() * attributes.Get("hull"))
+			+ weapon.RelativeDisabledDamage() * attributes.Get("hull")
+			- attributes.Get("hull hardness"))
 			* ScaleType(1., attributes.Get("hull protection"))
 			* (1. - hullFraction);
 	}
