@@ -1454,6 +1454,7 @@ mission "Lunarium: Propaganda 4"
 
 
 mission "Lunarium: Combat Training 1"
+=======
 	name "Bootcamp"
 	description "Bring <bunks> Lunarium members, along with their <cargo> to <destination>, where they will purchase some ships and use them to fight pirates to train their combat tactics."
 	minor
