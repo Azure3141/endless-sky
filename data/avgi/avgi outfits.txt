@@ -339,13 +339,13 @@ outfit "Magnetoplasma Drive"
 	"mass" 12
 	"outfit space" -18
 	"engine capacity" -18
-	"thrust" 9
+	"thrust" 13.5
 	"thrusting energy" 1.2
 	"thrusting heat" 0.3
-	"reverse thrust" 9
+	"reverse thrust" 13.5
 	"reverse thrusting energy" 1.2
 	"reverse thrusting heat" 0.3
-	"turn" 210
+	"turn" 315
 	"turning energy" 0.6
 	"turning heat" 0.3
 	"drag reduction" 1
@@ -371,7 +371,7 @@ outfit `Z-330 "Spark" Fusion Torch`
 	"mass" 33
 	"outfit space" -33
 	"engine capacity" -33
-	"thrust" 69
+	"thrust" 103.5
 	"thrusting energy" 9
 	"thrusting heat" 45
 	"thrusting fuel" 0.06
@@ -394,7 +394,7 @@ outfit `Z-660 "Zap" Fusion Torch`
 	"mass" 66
 	"outfit space" -66
 	"engine capacity" -66
-	"thrust" 144
+	"thrust" 216
 	"thrusting energy" 18
 	"thrusting heat" 90
 	"thrusting fuel" 0.12
@@ -416,7 +416,7 @@ outfit `Z-990 "Arc" Fusion Torch`
 	"mass" 99
 	"outfit space" -99
 	"engine capacity" -99
-	"thrust" 222
+	"thrust" 333
 	"thrusting energy" 27
 	"thrusting heat" 135
 	"thrusting fuel" 0.18
@@ -457,7 +457,7 @@ outfit "Remass Injector"
 	"mass" 3
 	"outfit space" -3
 	"engine capacity" -3
-	"afterburner thrust" 60
+	"afterburner thrust" 90
 	"afterburner energy" 3
 	"afterburner heat" -12
 	"afterburner fuel" 0.18
@@ -477,7 +477,7 @@ outfit "Inductive Extractor"
 	"engine capacity" -3
 	"energy generation" 1.5
 	"heat generation" 1.5
-	"thrust" -6
+	"thrust" -9
 	"thrusting energy" -18
 	"thrusting heat" 6
 	"magnozzle rings" -1
@@ -522,10 +522,10 @@ outfit "XY-360 Radial Thrusters"
 	"mass" 36
 	"outfit space" -36
 	"engine capacity" -36
-	"turn" 1140
+	"turn" 1710
 	"turning energy" 3
 	"turning heat" -6
-	"reverse thrust" 12
+	"reverse thrust" 18
 	"reverse thrusting energy" 3
 	"reverse thrusting heat" -6
 	"steering flare sprite" "effect/avgi flare/rcs"
@@ -549,10 +549,10 @@ outfit "XY-720 Radial Thrusters"
 	"mass" 72
 	"outfit space" -72
 	"engine capacity" -72
-	"turn" 2400
+	"turn" 3600
 	"turning energy" 6
 	"turning heat" -9
-	"reverse thrust" 24
+	"reverse thrust" 36
 	"reverse thrusting energy" 6
 	"reverse thrusting heat" -9
 	"steering flare sprite" "effect/avgi flare/rcs"
@@ -573,7 +573,7 @@ outfit `Z-1200 "Beam" Antimatter Torch`
 	"mass" 120
 	"outfit space" -120
 	"engine capacity" -120
-	"thrust" 360
+	"thrust" 540
 	"thrusting energy" 12
 	"thrusting heat" 90
 	"thrusting fuel" 0.24
@@ -581,7 +581,7 @@ outfit `Z-1200 "Beam" Antimatter Torch`
 	"flare sprite" "effect/avgi flare/antimatter"
 		"frame rate" 30
 	"flare sound" "remnant afterburner"
-	"turn" 2790
+	"turn" 4185
 	"turning energy" 3.6
 	"turning heat" 2.4
 	"steering flare sprite" "effect/avgi flare/antimatter"
