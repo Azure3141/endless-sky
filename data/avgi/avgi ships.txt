@@ -27,9 +27,9 @@ ship "Koryfi"
 		"hull" 1800
 		"required crew" 2
 		"bunks" 24
-		"mass" 120
-		"drag" 0.9
-		"heat dissipation" 0.9
+		"mass" 186
+		"drag" 1.125
+		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 60
 		"outfit space" 144
@@ -138,9 +138,9 @@ ship "Melodikos"
 		"hull" 2400
 		"required crew" 6
 		"bunks" 144
-		"mass" 180
-		"drag" 1.2
-		"heat dissipation" 1.2
+		"mass" 360
+		"drag" 1.8
+		"heat dissipation" 0.8
 		"fuel capacity" 1200
 		"cargo space" 120
 		"outfit space" 180
@@ -285,9 +285,9 @@ ship "Avlaki"
 		"hull" 1800
 		"required crew" 2
 		"bunks" 6
-		"mass" 120
-		"drag" 0.9
-		"heat dissipation" 0.9
+		"mass" 186
+		"drag" 1.125
+		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 240
 		"outfit space" 144
@@ -395,9 +395,9 @@ ship "Harmonikos"
 		"hull" 2400
 		"required crew" 6
 		"bunks" 12
-		"mass" 180
-		"drag" 1.2
-		"heat dissipation" 1.2
+		"mass" 360
+		"drag" 1.8
+		"heat dissipation" 0.8
 		"fuel capacity" 1200
 		"cargo space" 600
 		"outfit space" 180
@@ -538,9 +538,9 @@ ship "Phononos"
 		"shields" 240
 		"hull" 1500
 		"automaton" 1
-		"mass" 36
-		"drag" .24
-		"heat dissipation" 0.9
+		"mass" 57
+		"drag" .29
+		"heat dissipation" 0.75
 		"fuel capacity" 300
 		"cargo space" 240
 		"outfit space" 72
@@ -604,9 +604,9 @@ ship "Frequentia"
 		"hull"	1800
 		"required crew" 2
 		"bunks" 6
-		"mass" 90
-		"drag" 1.8
-		"heat dissipation" 1.5
+		"mass" 172
+		"drag" 2.34
+		"heat dissipation" 1.16
 		"fuel capacity" 2400
 		"cargo space" 240
 		"outfit space" 186
@@ -675,9 +675,9 @@ ship "Polari"
 		"hull"	2100
 		"required crew" 6
 		"bunks" 12
-		"mass" 120
-		"drag" 1.5
-		"heat dissipation" 1.2
+		"mass" 202
+		"drag" 1.8
+		"heat dissipation" 1
 		"fuel capacity" 1800
 		"cargo space" 42
 		"outfit space" 294
@@ -758,9 +758,9 @@ ship "Entasi"
 		"hull" 3600
 		"required crew" 6
 		"bunks" 12
-		"mass" 210
-		"drag" 0.6
-		"heat dissipation" 0.9
+		"mass" 493
+		"drag" 0.87
+		"heat dissipation" 0.63
 		"fuel capacity" 1200
 		"cargo space" 240
 		"outfit space" 420
@@ -887,9 +887,9 @@ ship "Undsyni"
 		"required crew" 12
 		"bunks" 60
 		"cargo space" 600
-		"mass" 600
-		"drag" 4.2
-		"heat dissipation" 1.8
+		"mass" 1522
+		"drag" 7.3
+		"heat dissipation" 1.03
 		"fuel capacity" 2400
 		"outfit space" 630
 		"weapon capacity" 153
@@ -983,9 +983,9 @@ ship "Modified Tachytia"
 		"hull" 36000
 		"required crew" 300
 		"bunks" 6000
-		"mass" 1800
-		"drag" 6
-		"heat dissipation" 1.5
+		"mass" 5400
+		"drag" 13.2
+		"heat dissipation" 0.7
 		"fuel capacity" 60000
 		"cargo space" 1200
 		"outfit space" 1200
@@ -1107,9 +1107,9 @@ ship "Tremoros"
 		"hull" 3600
 		"automaton" 1
 		"crew equivalent" 1
-		"mass" 45
-		"drag" 0.9
-		"heat dissipation" 0.9
+		"mass" 83
+		"drag" 1.03
+		"heat dissipation" 0.79
 		"fuel capacity" 900
 		"cargo space" 12
 		"outfit space" 210
@@ -1184,9 +1184,9 @@ ship "Prismaios"
 		"hull" 7200
 		"required crew" 2
 		"bunks" 6
-		"mass" 120
-		"drag" 1.2
-		"heat dissipation" 1.8
+		"mass" 255
+		"drag" 1.56
+		"heat dissipation" 1.4
 		"fuel capacity" 1200
 		"cargo space" 36
 		"outfit space" 333
@@ -1268,9 +1268,9 @@ ship "Interferos"
 		"hull" 3600
 		"automaton" 1
 		"crew equivalent" 3
-		"mass" 90
-		"drag" 2.4
-		"heat dissipation" 1.5
+		"mass" 165
+		"drag" 2.88
+		"heat dissipation" 1.25
 		"fuel capacity" 600
 		"cargo space" 12
 		"outfit space" 288
@@ -1351,9 +1351,9 @@ ship "Diaspersi"
 		"hull" 12000
 		"required crew" 15
 		"bunks" 36
-		"mass" 240
-		"drag" 3
-		"heat dissipation" 1.8
+		"mass" 537
+		"drag" 4.35
+		"heat dissipation" 1.25
 		"fuel capacity" 2400
 		"cargo space" 120
 		"outfit space" 420
@@ -1453,9 +1453,9 @@ ship "Difraktos"
 		"hull" 18600
 		"required crew" 15
 		"bunks" 42
-		"mass" 270
-		"drag" 4.5
-		"heat dissipation" 2.1
+		"mass" 756
+		"drag" 7.2
+		"heat dissipation" 1.32
 		"fuel capacity" 1800
 		"cargo space" 60
 		"outfit space" 540
@@ -1549,9 +1549,9 @@ ship "Refraktos"
 		"hull" 8400
 		"required crew" 12
 		"bunks" 24
-		"mass" 180
-		"drag" 2.4
-		"heat dissipation" 2.4
+		"mass" 525
+		"drag" 3.6
+		"heat dissipation" 1.6
 		"fuel capacity" 1800
 		"cargo space" 60
 		"outfit space" 510
@@ -1644,9 +1644,9 @@ ship "Atenuatia"
 		"hull" 27600
 		"required crew" 60
 		"bunks" 90
-		"mass" 600
-		"drag" 4.5
-		"heat dissipation" 1.8
+		"mass" 1632
+		"drag" 8.1
+		"heat dissipation" 1
 		"fuel capacity" 2400
 		"cargo space" 120
 		"outfit space" 690
@@ -1989,9 +1989,9 @@ ship "Undulon"
 		"automaton" 1
 		"crew equivalent" 1
 		"bunks" 1
-		"mass" 15
-		"drag" 3.6
-		"heat dissipation" .6
+		"mass" 25
+		"drag" 3.96
+		"heat dissipation" .55
 		"fuel capacity" 60
 		"outfit space" 84
 		"weapon capacity" 42
