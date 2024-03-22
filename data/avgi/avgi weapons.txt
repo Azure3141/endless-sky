@@ -63,7 +63,7 @@ outfit "Speckle Railgun"
 		"burst count" 15
 		"firing energy" 30
 		"firing heat" 12
-		"firing force" 12
+		"firing force" 18
 		"submunition" "Speck"
 	description "This compact railgun rapidly fires a stream of hypervelocity projectiles, trading accuracy for sheer rate of fire. Friction between the projectiles and the rails is reduced via advanced techniques, but still produces enough heat that the gun must cool down after a burst of fire to prevent rail ablation."
 	description "A small internal capacitor allows the Speckle Railgun to be trickle charged, even if a ship's power supply would otherwise be insufficient to fire a single shot."
@@ -95,7 +95,7 @@ outfit "Speckle Turret"
 		"turret turn" 6
 		"firing energy" 48
 		"firing heat" 24
-		"firing force" 24
+		"firing force" 36
 		"submunition" "Speck"
 			"offset" -3 0
 		"submunition" "Speck"
@@ -114,7 +114,7 @@ outfit "Speck"
 		"random lifetime" 9
 		"shield damage" 12
 		"hull damage" 18
-		"hit force" 12
+		"hit force" 18
 
 
 effect "speck fire"
@@ -173,7 +173,7 @@ outfit "Fleck Coilgun"
 		"reload" 60
 		"firing energy" 210
 		"firing heat" 18
-		"firing force" 60
+		"firing force" 90
 		"submunition" "Fleck"
 	description "A powerful row of superconducting coils can accelerate a conductive metal projectile to impressive velocities while avoiding the friction associated with railguns. This fixed gun enables even modestly sized ships to provide precision artillery support at range, or bring to bear a powerful kinetic weapon for close quarter combat."
 
@@ -204,7 +204,7 @@ outfit "Fleck Turret"
 		"turret turn" 3.6
 		"firing energy" 180
 		"firing heat" 12
-		"firing force" 60
+		"firing force" 90
 		"submunition" "Fleck"
 	description "A pair of Fleck Coilguns on a sturdy turret mount produces a powerful kinetic artillery piece capable of lobbing projectiles across an entire battlefield. An inductive energy recovery system allows the firing of one coilgun to prime the other instead of simply dissipating the charge as heat, making the turret more efficient compared to its single gun variant."
 
@@ -221,7 +221,7 @@ outfit "Fleck"
 		"inaccuracy" 0.3
 		"shield damage" 72
 		"hull damage" 150
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 3
 
 
@@ -518,7 +518,7 @@ outfit "Dart Active"
 		"turn" 9
 		"homing" 4
 		"infrared tracking" 0.9
-		"hit force" 210
+		"hit force" 315
 		"missile strength" 12
 		"submunition" "Dart Flack" 30
 
@@ -537,7 +537,7 @@ outfit "Dart Flack"
 		"random velocity" -6
 		"shield damage" 6
 		"hull damage" 9
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 3
 
 effect "dart exhaust"
@@ -674,7 +674,7 @@ outfit "Rush Active"
 		"blast radius" 180
 		"shield damage" 9000
 		"hull damage" 6000
-		"hit force" 3600
+		"hit force" 5400
 		"missile strength" 42
 
 
@@ -758,7 +758,7 @@ outfit "Active Snap"
 		"blast radius" 120
 		"shield damage" 4800
 		"hull damage" 3600
-		"hit force" 2100
+		"hit force" 3150
 		"missile strength" 50
 		"submunition" "Snapfront" 600
 		"submunition" "Snapback" 300
@@ -780,7 +780,7 @@ outfit "Snapfront"
 		"random velocity" 30
 		"shield damage" 6
 		"hull damage" 9
-		"hit force" 60
+		"hit force" 90
 
 
 outfit "Snapback"
@@ -797,7 +797,7 @@ outfit "Snapback"
 		"random velocity" -30
 		"shield damage" 6
 		"hull damage" 9
-		"hit force" 60
+		"hit force" 90
 
 
 outfit "Equinox Torpedo"
@@ -859,7 +859,7 @@ outfit "Equinox Active"
 		"shield damage" 14400
 		"hull damage" 9000
 		"heat damage" 7200
-		"hit force" 3600
+		"hit force" 5400
 		"blast radius" 240
 		"trigger radius" 120
 		"missile strength" 24
