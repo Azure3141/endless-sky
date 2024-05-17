@@ -20,15 +20,13 @@ ship "Koryfi"
 	thumbnail "thumbnail/avgi koryfi"
 	attributes
 		category "Transport"
-		licenses
-			"Avgi Civilian"
 		"cost" 1860000
 		"shields" 600
 		"hull" 1800
 		"required crew" 2
 		"bunks" 24
 		"mass" 186
-		"drag" 1.125
+		"drag" 3
 		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 60
@@ -49,7 +47,7 @@ ship "Koryfi"
 		"Luxury Accommodations"
 		"Electromotive Rifle" 2
 
-		"Magnetoplasma Drive" 2
+		"Magnetoplasma Drive" 3
 		"Hyperdrive"
 
 	gun 0 -27
@@ -131,16 +129,14 @@ ship "Melodikos"
 	thumbnail "thumbnail/avgi melodikos"
 	attributes
 		category "Space Liner"
-		licenses
-			"Avgi Civilian"
 		"cost" 5220000
 		"shields" 1200
 		"hull" 2400
 		"required crew" 6
 		"bunks" 144
 		"mass" 360
-		"drag" 1.8
-		"heat dissipation" 0.8
+		"drag" 4.5
+		"heat dissipation" 0.6
 		"fuel capacity" 1200
 		"cargo space" 120
 		"outfit space" 180
@@ -155,7 +151,7 @@ ship "Melodikos"
 			"hull damage" 360
 			"hit force" 270
 	outfits
-		"Phased Array Laser (Green)" 2
+		"Green Optical Laser" 2
 
 		"Ultracapacitor Bank" 2
 		"Diffuse Deflector"
@@ -163,7 +159,7 @@ ship "Melodikos"
 		"Luxury Accommodations"
 		"Electromotive Rifle" 6
 
-		"Magnetoplasma Drive"
+		"Magnetoplasma Drive" 2
 		"Hyperdrive"
 
 	gun -96 -3
@@ -278,15 +274,13 @@ ship "Avlaki"
 	thumbnail "thumbnail/avgi avlaki"
 	attributes
 		category "Light Freighter"
-		licenses
-			"Avgi Civilian"
 		"cost" 1860000
 		"shields" 600
 		"hull" 1800
 		"required crew" 2
 		"bunks" 6
 		"mass" 186
-		"drag" 1.125
+		"drag" 3
 		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 240
@@ -306,7 +300,7 @@ ship "Avlaki"
 		"Diffuse Deflector"
 		"Electromotive Rifle" 2
 
-		"Magnetoplasma Drive" 2
+		"Magnetoplasma Drive" 3
 		"Hyperdrive"
 
 	gun 0 -27
@@ -388,16 +382,14 @@ ship "Harmonikos"
 	thumbnail "thumbnail/avgi harmonikos"
 	attributes
 		category "Heavy Freighter"
-		licenses
-			"Avgi Civilian"
 		"cost" 5220000
 		"shields" 1200
 		"hull" 2400
 		"required crew" 6
 		"bunks" 12
 		"mass" 360
-		"drag" 1.8
-		"heat dissipation" 0.8
+		"drag" 4.5
+		"heat dissipation" 0.6
 		"fuel capacity" 1200
 		"cargo space" 600
 		"outfit space" 180
@@ -412,14 +404,14 @@ ship "Harmonikos"
 			"hull damage" 360
 			"hit force" 270
 	outfits
-		"Phased Array Laser (Green)" 2
+		"Green Optical Laser" 2
 
 		"Ultracapacitor Bank" 2
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
 		"Electromotive Rifle" 6
 
-		"Magnetoplasma Drive"
+		"Magnetoplasma Drive" 2
 		"Hyperdrive"
 
 	gun -96 -3
@@ -532,14 +524,12 @@ ship "Phononos"
 	thumbnail "thumbnail/avgi phononos"
 	attributes
 		category "Light Freighter"
-		licenses
-			"Avgi Civilian"
 		"cost" 144000
 		"shields" 240
 		"hull" 1500
 		"automaton" 1
 		"mass" 57
-		"drag" .29
+		"drag" .72
 		"heat dissipation" 0.75
 		"fuel capacity" 300
 		"cargo space" 240
@@ -555,7 +545,7 @@ ship "Phononos"
 		"Concentrating Solar Array"
 		"Ultracapacitor Cell"
 		
-		"Magnetoplasma Drive"
+		"Magnetoplasma Drive" 2
 		"Hyperdrive"
 
 	engine -9 -19
@@ -588,8 +578,8 @@ ship "Phononos"
 	leak "leak" 30 60
 	explode "tiny explosion" 12
 
-	description "This retrofit of the Photikon is little more than a set of cargo pods joined to the front of the torpedo bomber, with struts taking the place of the hardpoints and pylons usually used to mount weapons. An expanded internal tank to fuel a hyperdrive has been barely crammed into the ship, at the cost of reduced space for other internal systems and a slightly weaker hull. Because of this, the Phononon is quite vulnerable to Dissonance piracy or even Abberant incursions, and is thus always part of a larger fleet convoy. Even still, as an automated freighter it experiences much higher rates of accidents and ship loss, a fact that has kept crewed vessels like the Avlaki competitive."
-	description "Using the same standard cargo containers as the Avlaki and Harmonikos allows it to carry an impressive amount of cargo, which can be quickly swapped out at the destination for an empty set of shipping containers."
+	description "This retrofit of a decommissioned Photikon is little more than a set of cargo pods joined to the front of the former torpedo bomber, with container mounts taking the place of the hardpoints and pylons usually used to mount weapons. An expanded internal tank to fuel a hyperdrive has been barely crammed into the ship, at the expense of other internal systems and armor. Because of this, the Phononon is quite vulnerable to Dissonance piracy or even Abberant incursions, and is thus always found as part of a larger fleet convoy. Even still, as an automated freighter it experiences much higher accident and loss rates in deep space, a fact that has kept crewed vessels like the Avlaki competitive."
+	description "The Phononos can carry an impressive amount of cargo with the same standardized containers used by the Avlaki and Harmonikos, which can be quickly swapped out at the destination for a set of empty ones without needing to unload them."
 
 
 ship "Frequentia"
@@ -597,15 +587,13 @@ ship "Frequentia"
 	thumbnail "thumbnail/avgi frequentia"
 	attributes
 		category "Utility"
-		licenses
-			"Avgi Civilian"
 		"cost" 1920000
 		"shields" 600
 		"hull"	1800
 		"required crew" 2
 		"bunks" 6
 		"mass" 172
-		"drag" 2.34
+		"drag" 4.7
 		"heat dissipation" 1.16
 		"fuel capacity" 2400
 		"cargo space" 240
@@ -632,6 +620,7 @@ ship "Frequentia"
 		"Hyperdrive"
 
 	engine 0 75
+		gimbal 6
 	"reverse engine" -3 75
 		angle -30
 	"reverse engine" 3 75
@@ -658,7 +647,7 @@ ship "Frequentia"
 	explode "large explosion" 12
 	"final explode" "final explosion medium"
 
-	description "The Frequentia-class Freighter is most commonly found serving as a fuel tender for ships in larger fleets, taking advantage of its large (and ungainly) cargo receptacle to store enough cryogenic deuterium fuel to satisfy a small fleet's needs."
+	description "The Frequentia-class Freighter is most commonly found serving as a fuel tender for ships in larger fleets, taking advantage of its large and ungainly cargo receptacle to store enough cryogenic deuterium to satisfy a small fleet's needs during long journeys. While its spherical fuel tank can be drained and used to transport dry goods and cargo, the cargo bay's notoriously small access door makes loading anything that can't be moved with a pump an exquisitely painful process."
 
 
 # Utility
@@ -668,15 +657,13 @@ ship "Polari"
 	thumbnail "thumbnail/avgi polari"
 	attributes
 		category "Utility"
-		licenses
-			"Avgi Civilian"
 		"cost" 2160000
 		"shields" 600
 		"hull"	2100
 		"required crew" 6
 		"bunks" 12
 		"mass" 202
-		"drag" 1.8
+		"drag" 3.6
 		"heat dissipation" 1
 		"fuel capacity" 1800
 		"cargo space" 42
@@ -691,8 +678,8 @@ ship "Polari"
 			"hull damage" 360
 			"hit force" 480
 	outfits
-		"Phased Array Laser (Blue)"
-		"Phased Array Laser (Green)"
+		"Blue Optical Laser"
+		"Green Optical Laser"
 
 		"Photoelectric Scales"
 		"Ultracapacitor Cell" 3
@@ -711,14 +698,15 @@ ship "Polari"
 		"XY-180 Radial Thrusters"
 		"Hyperdrive"
 
-	turret -14 27 "Phased Array Laser (Green)"
-	turret 14 27 "Phased Array Laser (Blue)"
+	turret -14 27 "Green Optical Laser"
+	turret 14 27 "Blue Optical Laser"
 
 	bay "Drone" -9 -25
 	bay "Drone" 9 -25
 	bay "Fighter" 0 48
 
 	engine 0 69
+		gimbal 6
 	"reverse engine" -6 66
 		angle -30
 	"reverse engine" 6 66
@@ -743,7 +731,11 @@ ship "Polari"
 	"final explode" "final explosion medium"
 
 	description "The Polari-class Scout is a legacy design that has managed to remain relevant in the current era by virtue of fulfilling a role historically not requiring much in the way of combat power. A specialized science ship, it is fitted with a spacious laboratory for analyzing samples and processing data, as well as an extensive suite of sensor arrays for recording observations. A pair of bays can deploy Optikon sensor drones, while an external mount is designed to hold an Akoustiki excursion vehicle for piloted sample gathering operations."
-	description "Desptie this versatility, the contested battlespace of the post-Incursion Avgi cluster is one in which the Polari is simply not as capable in. As science crews are increasingly asked to lead risky scouting expeditions back to the Avgi homeworld, demands for a newer, more survivable science ship routinely make their way to the Twilight Guard."
+	description "Despite this versatility, the contested battlespace of the post-Incursion Avgi cluster is one in which the Polari is simply not as capable in. As science crews are increasingly asked to lead risky scouting expeditions back to the Avgi homeworld, demands for a newer, more survivable science ship routinely make their way to the Twilight Guard."
+
+
+ship "Polari" "Polari (Derelict)"
+	outfits
 
 
 ship "Entasi"
@@ -751,15 +743,13 @@ ship "Entasi"
 	thumbnail "thumbnail/avgi entasi"
 	attributes
 		category "Utility"
-		licenses
-			"Avgi Civilian"
 		"cost" 3360000
 		"shields" 1500
 		"hull" 3600
 		"required crew" 6
 		"bunks" 12
 		"mass" 493
-		"drag" 0.87
+		"drag" 5.2
 		"heat dissipation" 0.63
 		"fuel capacity" 1200
 		"cargo space" 240
@@ -768,16 +758,16 @@ ship "Entasi"
 		"engine capacity" 42
 		"solar collection" 12
 		"solar heat" 3.6
-		"anchor point" 2
+		"anchor point" 1
 		weapon
 			"blast radius" 360
 			"shield damage" 1800
 			"hull damage" 1200
 			"hit force" 1200
 	outfits
-		"Phased Array Laser (Blue)" 2
-		"Dart Launcher" 2
-		`"Dart" Kinetic Missile` 120
+		"Blue Optical Laser" 2
+		"Nettle Launcher" 2
+		`"Nettle" Kinetic Missile` 120
 
 		"Ultracapacitor Bank" 3
 		"Diffuse Deflector"
@@ -786,15 +776,15 @@ ship "Entasi"
 		"Spectrometer Array" 6
 		"Electromotive Rifle" 9
 
-		"Magnetoplasma Drive" 2
+		"Magnetoplasma Drive" 3
 		"Hyperdrive"
 
-	gun -36 9 "Dart Launcher"
-	gun 36 9 "Dart Launcher"
+	gun -36 9 "Nettle Launcher"
+	gun 36 9 "Nettle Launcher"
 	gun -36 9
 	gun 36 9
-	turret -10 72 "Phased Array Laser (Blue)"
-	turret 10 72 "Phased Array Laser (Blue)"
+	turret -10 72 "Blue Optical Laser"
+	turret 10 72 "Blue Optical Laser"
 	turret 0 -4
 	bay "Fighter" 0 -30
 		over
@@ -871,7 +861,7 @@ ship "Entasi"
 	explode "medium explosion" 9
 	"final explode" "final explosion large"
 
-	description "The Entasi is a mid-sized mining vessel powered by a pair of solar thermal generators. With the power and weapons capacity available to support laser mining weapons, the Entasi is able to quickly and efficiently break asteroids, whose mineral contents are then collected by the significant fleet of Sonikis cargo drones it can carry into an asteroid field."
+	description "The Entasi is a mid-sized mining vessel powered by a pair of solar thermal generators. With the power and weapons capacity available to support laser mining weapons, the Entasi is able to quickly and efficiently cut through asteroids, whose mineral contents can then be collected by the swarm of Sonikis cargo drones it can carry into an asteroid field."
 
 
 ship "Undsyni"
@@ -879,8 +869,6 @@ ship "Undsyni"
 	thumbnail "thumbnail/avgi undsyni"
 	attributes
 		category "Utility"
-		licenses
-			"Avgi Civilian"
 		"cost" 10400000
 		"shields" 2400
 		"hull" 15000
@@ -888,24 +876,24 @@ ship "Undsyni"
 		"bunks" 60
 		"cargo space" 600
 		"mass" 1522
-		"drag" 7.3
+		"drag" 15.7
 		"heat dissipation" 1.03
 		"fuel capacity" 2400
 		"outfit space" 630
 		"weapon capacity" 153
 		"engine capacity" 168
 		"spinal mount" 1
-		"anchor point" 3
+		"anchor point" 2
 			"blast radius" 540
 			"shield damage" 3600
 			"hull damage" 2400
 			"hit force" 4800
 	outfits
-		"Phased Array Laser (Green)" 3
+		"Green Optical Laser" 3
 		"Speckle Turret" 2
-		"Speck Round" 14400
-		"Dart Launcher" 2
-		`"Dart" Kinetic Missile` 120
+		"Speck Round" 4800
+		"Nettle Launcher" 2
+		`"Nettle" Kinetic Missile` 120
 		"Electromotive Rifle" 24
 
 		"Lantern Fission Core"
@@ -924,15 +912,15 @@ ship "Undsyni"
 
 	gun 0 -213
 		over
-	gun -42 -139 "Dart Launcher"
+	gun -42 -139 "Nettle Launcher"
 		angle -90
-	gun 42 -139 "Dart Launcher"
+	gun 42 -139 "Nettle Launcher"
 		angle 90
 	turret -33 -138 "Speckle Turret"
 	turret 33 -138 "Speckle Turret"
-	turret 0 -30 "Phased Array Laser (Green)"
-	turret 0 42 "Phased Array Laser (Green)"
-	turret 0 186 "Phased Array Laser (Green)"
+	turret 0 -30 "Green Optical Laser"
+	turret 0 42 "Green Optical Laser"
+	turret 0 186 "Green Optical Laser"
 
 	bay "Drone" -65.5 3
 	bay "Drone" 65.5 3
@@ -940,6 +928,7 @@ ship "Undsyni"
 	bay "Drone" -65.5 29
 
 	engine 0 239
+		gimbal 6
 	"reverse engine" -6 240
 		angle -30
 	"reverse engine" 6 240
@@ -972,6 +961,32 @@ ship "Undsyni"
 	description "A reinforced spine running the length of the ship allows it to fit a huge Plasmadyne Ramscoop, capable of bearing the extreme stresses the ramscoop's magnetic field puts on its superconducting magnets. In this configuration, a tanker Undsyni can supply the fuel needs of an entire fleetgroup across dozens of systems."
 
 
+ship "Undsyni" "Undsyni (Tanker)"
+	outfits
+		"Green Optical Laser" 3
+		"Speckle Turret" 2
+		"Speck Round" 4800
+		"Nettle Launcher" 2
+		`"Nettle" Kinetic Missile` 120
+		"Electromotive Rifle" 24
+
+		"Lantern Fission Core"
+		"Ultracapacitor Bank" 3
+		"Diffuse Deflector"
+		"Optical Lasing Generator"
+		"Electrostatic Ramscoop"
+		"Cryogenic Deuterium Tank" 18
+		"Deuterium Slush Tank" 9
+		"Multispectral Scanner"
+		"Spectrometer Array"
+
+		`Z-330 "Spark" Fusion Torch`
+		"Inductive Extractor"
+		"Remass Injector" 2
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
 ship "Modified Tachytia"
 	sprite "ship/avgi tachytia/tachytia"
 		"frame rate" 30
@@ -992,15 +1007,15 @@ ship "Modified Tachytia"
 		"weapon capacity" 180
 		"engine capacity" 420
 		"spinal mount" 1
-		"anchor point" 6
+		"anchor point" 3
 		weapon
 			"blast radius" 900
 			"shield damage" 14400
 			"hull damage" 14400
 			"hit force" 9000
 	outfits
-		"Phased Array Laser (Blue)" 6
-		"Phased Array Laser (Green)" 3
+		"Blue Optical Laser" 6
+		"Green Optical Laser" 3
 		"Plasmadyne Ramscoop"
 
 		"Lantern Fission Core" 3
@@ -1010,8 +1025,7 @@ ship "Modified Tachytia"
 		"Optical Lasing Generator" 4
 		"Multispectral Scanner" 9
 		"Electrostatic Ramscoop" 3
-		"Concealment Scales" 3
-		"Nanoceramic Scales"
+		"Concealment Scales"
 		"Radiative Scales"
 		"Electromotive Rifle" 600
 		
@@ -1019,15 +1033,15 @@ ship "Modified Tachytia"
 		"Inductive Extractor" 6
 		"Hyperdrive"
 
-	turret 36 183 "Phased Array Laser (Blue)"
-	turret -36 183 "Phased Array Laser (Blue)"
-	turret -44 354 "Phased Array Laser (Blue)"
-	turret 44 354 "Phased Array Laser (Blue)"
-	turret -28.5 -333 "Phased Array Laser (Blue)"
-	turret 28.5 -333 "Phased Array Laser (Blue)"
-	turret 0 6 "Phased Array Laser (Green)"
-	turret 0 -367 "Phased Array Laser (Green)"
-	turret 0 480 "Phased Array Laser (Green)"
+	turret 36 183 "Blue Optical Laser"
+	turret -36 183 "Blue Optical Laser"
+	turret -44 354 "Blue Optical Laser"
+	turret 44 354 "Blue Optical Laser"
+	turret -28.5 -333 "Blue Optical Laser"
+	turret 28.5 -333 "Blue Optical Laser"
+	turret 0 6 "Green Optical Laser"
+	turret 0 -367 "Green Optical Laser"
+	turret 0 480 "Green Optical Laser"
 	gun 0 -384 "Plasmadyne Ramscoop"
 
 	bay "Drone" -18 420
@@ -1100,15 +1114,13 @@ ship "Tremoros"
 	thumbnail "thumbnail/avgi tremoros"
 	attributes
 		category "Interceptor"
-		licenses
-			"Avgi Civilian"
 		"cost" 780000
 		"shields" 600
-		"hull" 3600
+		"hull" 2400
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 83
-		"drag" 1.03
+		"drag" 2.1
 		"heat dissipation" 0.79
 		"fuel capacity" 900
 		"cargo space" 12
@@ -1122,8 +1134,8 @@ ship "Tremoros"
 			"hull damage" 360
 			"hit force" 720
 	outfits
-		"Speckle Railgun" 4
-		"Speck Round" 14400
+		"Speckle Coilgun" 4
+		"Speck Round" 3600
 		
 		"Ultracapacitor Cell" 4
 		"Diffuse Deflector"
@@ -1132,17 +1144,18 @@ ship "Tremoros"
 		
 		`Z-330 "Spark" Fusion Torch`
 		"Inductive Extractor"
-		"Remass Injector"
+		"Remass Injector" 2
 		"XY-180 Radial Thrusters"
 		"Hyperdrive"
 
-	gun -6.5 -18 "Speckle Railgun"
-	gun 6.5 -18 "Speckle Railgun"
-	gun -6.5 -18 "Speckle Railgun"
-	gun 6.5 -18 "Speckle Railgun"
+	gun -6.5 -18 "Speckle Coilgun"
+	gun 6.5 -18 "Speckle Coilgun"
+	gun -6.5 -18 "Speckle Coilgun"
+	gun 6.5 -18 "Speckle Coilgun"
 	turret 0 39
 
 	engine 0 51
+		gimbal 6
 	"reverse engine" -3 -33
 		angle 30
 	"reverse engine" 3 -33
@@ -1178,32 +1191,32 @@ ship "Prismaios"
 	attributes
 		category "Light Warship"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 2640000
 		"shields" 1440
 		"hull" 7200
 		"required crew" 2
 		"bunks" 6
 		"mass" 255
-		"drag" 1.56
+		"drag" 3.1
 		"heat dissipation" 1.4
 		"fuel capacity" 1200
 		"cargo space" 36
-		"outfit space" 333
+		"outfit space" 360
 		"weapon capacity" 96
 		"engine capacity" 96
-		"anchor point" 2
+		"anchor point" 1
 		weapon
 			"blast radius" 240
 			"shield damage" 1500
 			"hull damage" 900
 			"hit force" 1200
 	outfits
-		"Phased Array Laser (Green)"
+		"Green Optical Laser"
 		"Speckle Turret" 2
-		"Speck Round" 14400
-		"Dart Launcher" 2
-		`"Dart" Kinetic Missile` 120
+		"Speck Round" 4800
+		"Nettle Launcher" 2
+		`"Nettle" Kinetic Missile` 120
 		"Electromotive Rifle" 6
 
 		"Ultracapacitor Bank"
@@ -1219,6 +1232,7 @@ ship "Prismaios"
 		"Hyperdrive"
 
 	engine 0 108
+		gimbal 6
 	"reverse engine" -6 99
 		angle -45
 	"reverse engine" 6 99
@@ -1237,13 +1251,13 @@ ship "Prismaios"
 		right
 	gun -9 -48
 	gun 9 -48
-	gun -9 33 "Dart Launcher"
+	gun -9 33 "Nettle Launcher"
 		angle -90
-	gun 9 33 "Dart Launcher"
+	gun 9 33 "Nettle Launcher"
 		angle 90
 	turret -9 18 "Speckle Turret"
 	turret 9 18 "Speckle Turret"
-	turret 0 90 "Phased Array Laser (Green)"
+	turret 0 90 "Green Optical Laser"
 
 	leak "leak" 30 60
 	leak "flame" 30 90
@@ -1255,21 +1269,41 @@ ship "Prismaios"
 	description "The Prismaios-class Frigate is a recent, streamlined design, praised by many Twilight Guard captains as a highly successful addition to Avgi strike fleets. New construction techniques allow for unprecedented gains in structural integrity for such a lightweight frame, allowing the frigate to serve on the front lines against the Aberrant as a fast, versatile, multipurpose warship."
 
 
+ship "Prismaios" "Prismaios (Atomic)"
+	outfits
+		"Green Optical Laser"
+		"Speckle Turret" 2
+		"Speck Round" 4800
+		"Orchid Launcher" 2
+		"Orchid Magazine" 2
+		`"Orchid" Nuclear Missile` 60
+
+		"Ultracapacitor Bank"
+		"Diffuse Deflector"
+		"Optical Lasing Generator"
+		"Multispectral Scanner"
+		"Electrostatic Ramscoop"
+		
+		`Z-330 "Spark" Fusion Torch`
+		"Inductive Extractor"
+		"Remass Injector" 2
+		"XY-180 Radial Thrusters"
+		"Hyperdrive"
+
+
 ship "Interferos"
 	plural "Interferos"
 	sprite "ship/avgi interferos"
 	thumbnail "thumbnail/avgi interferos"
 	attributes
 		category "Light Warship"
-		licenses
-			"Avgi Civilian"
 		"cost" 1380000
 		"shields" 900
 		"hull" 3600
 		"automaton" 1
 		"crew equivalent" 3
 		"mass" 165
-		"drag" 2.88
+		"drag" 5.76
 		"heat dissipation" 1.25
 		"fuel capacity" 600
 		"cargo space" 12
@@ -1283,9 +1317,9 @@ ship "Interferos"
 			"hull damage" 450
 			"hit force" 900
 	outfits
-		"Phased Array Laser (Green)" 2
-		"Dart Launcher" 4
-		`"Dart" Kinetic Missile` 240
+		"Green Optical Laser" 2
+		"Nettle Launcher" 4
+		`"Nettle" Kinetic Missile` 240
 
 		"Ultracapacitor Cell" 3
 		"Diffuse Deflector"
@@ -1298,19 +1332,20 @@ ship "Interferos"
 		"XY-180 Radial Thrusters"
 		"Hyperdrive"
 
-	gun -33 -57 "Dart Launcher"
+	gun -33 -57 "Nettle Launcher"
 		angle -60
-	gun 33 -57 "Dart Launcher"
+	gun 33 -57 "Nettle Launcher"
 		angle 60
-	gun -33 -42 "Dart Launcher"
+	gun -33 -42 "Nettle Launcher"
 		angle -60
-	gun 33 -42 "Dart Launcher"
+	gun 33 -42 "Nettle Launcher"
 		angle 60
-	turret -21.5 -81 "Phased Array Laser (Green)"
-	turret 21.5 -81 "Phased Array Laser (Green)"
+	turret -21.5 -81 "Green Optical Laser"
+	turret 21.5 -81 "Green Optical Laser"
 	turret 0 -48
 
 	engine 0 99
+		gimbal 6
 	"reverse engine" -6 99
 		angle -30
 	"reverse engine" 6 99
@@ -1345,33 +1380,33 @@ ship "Diaspersi"
 	attributes
 		category "Medium Warship"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 3600000
 		"shields" 2400
 		"hull" 12000
 		"required crew" 15
 		"bunks" 36
 		"mass" 537
-		"drag" 4.35
+		"drag" 8.7
 		"heat dissipation" 1.25
 		"fuel capacity" 2400
 		"cargo space" 120
 		"outfit space" 420
 		"weapon capacity" 96
 		"engine capacity" 114
-		"anchor point" 2
+		"anchor point" 1
 		weapon
 			"blast radius" 360
 			"shield damage" 2400
 			"hull damage" 1800
 			"hit force" 2400
 	outfits
-		"Phased Array Laser (Green)" 2
-		"Fleck Turret"
-		"Fleck Round" 2400
-		"Dart Launcher" 2
-		"Dart Magazine" 6
-		`"Dart" Kinetic Missile` 480
+		"Green Optical Laser" 2
+		"Speckle Turret"
+		"Speck Round" 2400
+		"Nettle Launcher" 2
+		"Nettle Magazine" 6
+		`"Nettle" Kinetic Missile` 480
 		
 		"Ultracapacitor Bank"
 		"Diffuse Deflector"
@@ -1389,13 +1424,13 @@ ship "Diaspersi"
 		"Hyperdrive"
 
 	gun 0 -156
-	gun -18 -9 "Dart Launcher"
+	gun -18 -9 "Nettle Launcher"
 		angle -90
-	gun 18 -9 "Dart Launcher"
+	gun 18 -9 "Nettle Launcher"
 		angle 90
-	turret -9 12 "Phased Array Laser (Green)"
-	turret 9 12 "Phased Array Laser (Green)"
-	turret 0 51 "Fleck Turret"
+	turret -9 12 "Green Optical Laser"
+	turret 9 12 "Green Optical Laser"
+	turret 0 51 "Speckle Turret"
 
 	bay "Fighter" 0 -63
 		over
@@ -1411,6 +1446,7 @@ ship "Diaspersi"
 	bay "Drone" 24 -30
 
 	engine 0 144
+		gimbal 6
 	"reverse engine" -6 141
 		angle -35
 	"reverse engine" 6 141
@@ -1440,6 +1476,31 @@ ship "Diaspersi"
 	description "The Diaspersi-class Escort Carrier is a light carrier capable of providing carrier operations support to smaller fleets, while also being capable of independent strike missions with minimal support. Seen escorting large merchant convoys and small Guard fleets alike, the Diaspersi can support two wings of combat drones as well as a single wing of larger fighters."
 
 
+ship "Diaspersi" "Diaspersi (Atomic)"
+	outfits
+		"Green Optical Laser" 2
+		"Speckle Turret"
+		"Speck Round" 2400
+		"Orchid Launcher" 2
+		`"Orchid" Nuclear Missile` 36
+		"Equinox Torpedo Stockpile" 3
+		"Equinox Torpedo" 36
+		
+		"Ultracapacitor Bank"
+		"Diffuse Deflector"
+		"Optical Lasing Generator"
+		"Multispectral Scanner" 2
+		"Concealment Scales"
+		"Deuterium Slush Tank"
+		"Electrostatic Ramscoop"
+		
+		`Z-330 "Spark" Fusion Torch`
+		"Inductive Extractor"
+		"Remass Injector" 2
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
 ship "Difraktos"
 	plural "Difraktos"
 	sprite "ship/avgi difraktos"
@@ -1447,33 +1508,33 @@ ship "Difraktos"
 	attributes
 		category "Medium Warship"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 5400000
 		"shields" 6000
-		"hull" 18600
+		"hull" 12000
 		"required crew" 15
 		"bunks" 42
 		"mass" 756
-		"drag" 7.2
+		"drag" 14.4
 		"heat dissipation" 1.32
 		"fuel capacity" 1800
 		"cargo space" 60
 		"outfit space" 540
 		"weapon capacity" 252
 		"engine capacity" 132
-		"anchor point" 2
+		"anchor point" 1
 		weapon
 			"blast radius" 420
 			"shield damage" 4800
 			"hull damage" 3600
 			"hit force" 3600
 	outfits
-		"Phased Array Laser (Green)" 2
-		"Fleck Turret" 2
-		"Fleck Round" 4800
-		"Dart Launch Array" 2
-		"Dart Magazine" 2
-		`"Dart" Kinetic Missile` 600
+		"Green Optical Laser" 2
+		"Speckle Turret" 2
+		"Speck Round" 4800
+		"Nettle Launch Array" 2
+		"Nettle Magazine" 2
+		`"Nettle" Kinetic Missile` 600
 
 		"Lantern Fission Core"
 		"Ultracapacitor Bank"
@@ -1494,19 +1555,20 @@ ship "Difraktos"
 		angle -90
 	gun 21 -63
 		angle 90
-	turret -9 -111 "Fleck Turret"
-	turret 9 -111 "Fleck Turret"
-	turret -9 -87 "Dart Launch Array"
-	turret 9 -87 "Dart Launch Array"
+	turret -9 -111 "Speckle Turret"
+	turret 9 -111 "Speckle Turret"
+	turret -9 -87 "Nettle Launch Array"
+	turret 9 -87 "Nettle Launch Array"
 	turret -9 -66
 	turret 9 -66
-	turret 0 36 "Phased Array Laser (Green)"
-	turret 0 90 "Phased Array Laser (Green)"
+	turret 0 36 "Green Optical Laser"
+	turret 0 90 "Green Optical Laser"
 
 	bay "Drone" -21 -21
 	bay "Drone" 21 -21
 
 	engine 0 135
+		gimbal 6
 	"reverse engine" -9 138
 		angle -35
 	"reverse engine" 9 138
@@ -1536,6 +1598,70 @@ ship "Difraktos"
 	description "The Difraktos-class Cruiser is a versatile platform capable of serving in configurations from a high-performance kinetic weapon battlecruiser to a guided missile cruiser, or anything in between. Its powerful torch drive is used to push its heavily armored hull, rather than for speed, giving the Difraktos good survivability even in close range brawls."
 
 
+ship "Difraktos" "Difraktos (Missile)"
+	outfits
+		"Nettle Launch Array" 4
+		"Nettle Magazine" 9
+		`"Nettle" Kinetic Missile` 1500
+
+		"Ultracapacitor Bank"
+		"Diffuse Deflector"
+		"Multispectral Scanner" 2
+		"Concealment Scales"
+		"Electrostatic Ramscoop"
+		
+		`Z-330 "Spark" Fusion Torch`
+		"Inductive Extractor" 2
+		"Remass Injector" 3
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
+ship "Difraktos" "Difraktos (Kinetic)"
+	outfits
+		"Green Optical Laser" 2
+		"Speckle Turret" 6
+		"Speck Magazine"
+		"Speck Round" 14400
+
+		"Ultracapacitor Cell" 3
+		"Diffuse Deflector"
+		"Optical Lasing Generator"
+		"Multispectral Scanner"
+		"Concealment Scales"
+		"Electrostatic Ramscoop"
+		
+		`Z-660 "Zap" Fusion Torch`
+		"Inductive Extractor" 4
+		"Remass Injector" 2
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
+ship "Difraktos" "Difraktos (Atomic)"
+	outfits
+		"Green Optical Laser" 3
+		"Speckle Turret" 2
+		"Speck Round" 4800
+		"Orchid Launch Array" 3
+		`"Orchid" Nuclear Missile` 168
+		"Orchid Magazine" 2
+
+		"Ultracapacitor Cell" 3
+		"Diffuse Deflector"
+		"Optical Lasing Generator"
+		"Multispectral Scanner" 2
+		"Concealment Scales"
+		"Electrostatic Ramscoop"
+		"Electromotive Rifle" 42
+
+		`Z-660 "Zap" Fusion Torch`
+		"Inductive Extractor" 4
+		"Remass Injector" 2
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
 ship "Refraktos"
 	plural "Refraktos"
 	sprite "ship/avgi refraktos"
@@ -1543,18 +1669,18 @@ ship "Refraktos"
 	attributes
 		category "Medium Warship"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 4560000
 		"shields" 3600
 		"hull" 8400
 		"required crew" 12
 		"bunks" 24
 		"mass" 525
-		"drag" 3.6
+		"drag" 7.2
 		"heat dissipation" 1.6
 		"fuel capacity" 1800
 		"cargo space" 60
-		"outfit space" 510
+		"outfit space" 516
 		"weapon capacity" 150
 		"engine capacity" 144
 		"anchor point" 1
@@ -1564,16 +1690,16 @@ ship "Refraktos"
 			"hull damage" 440
 			"hit force" 1320
 	outfits
-		"Phased Array Laser (Blue)" 4
-		"Phased Array Laser (Green)" 3
+		"Blue Optical Laser" 4
+		"Green Optical Laser" 3
 
 		"Photoelectric Scales"
-		"Ultracapacitor Bank" 2
+		"Ultracapacitor Bank" 3
 		"Diffuse Deflector"
-		"Optical Lasing Generator" 3
-		"Multispectral Scanner" 3
+		"Optical Lasing Generator" 5
+		"Multispectral Scanner"
 		"Electrostatic Ramscoop"
-		"Thermal Sink Partition" 3
+		"Thermal Sink Partition"
 		"Electromotive Rifle" 24
 		
 		`Z-660 "Zap" Fusion Torch`
@@ -1590,15 +1716,16 @@ ship "Refraktos"
 		angle -90
 	gun 24 -9
 		angle 90
-	turret -18 -81 "Phased Array Laser (Blue)"
-	turret 18 -81 "Phased Array Laser (Blue)"
-	turret -18 -72 "Phased Array Laser (Blue)"
-	turret 18 -72 "Phased Array Laser (Blue)"
-	turret -21 -60 "Phased Array Laser (Green)"
-	turret 21 -60 "Phased Array Laser (Green)"
-	turret 0 54 "Phased Array Laser (Green)"
+	turret -18 -81 "Blue Optical Laser"
+	turret 18 -81 "Blue Optical Laser"
+	turret -18 -72 "Blue Optical Laser"
+	turret 18 -72 "Blue Optical Laser"
+	turret -21 -60 "Green Optical Laser"
+	turret 21 -60 "Green Optical Laser"
+	turret 0 54 "Green Optical Laser"
 
 	engine 0 150
+		gimbal 6
 	"reverse engine" -9 162
 		angle -30
 	"reverse engine" 9 162
@@ -1638,49 +1765,50 @@ ship "Atenuatia"
 	attributes
 		category "Heavy Warship"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 14400000
 		"shields" 4200
 		"hull" 27600
 		"required crew" 60
 		"bunks" 90
 		"mass" 1632
-		"drag" 8.1
+		"drag" 16.2
 		"heat dissipation" 1
 		"fuel capacity" 2400
 		"cargo space" 120
 		"outfit space" 690
 		"weapon capacity" 180
 		"engine capacity" 174
-		"anchor point" 3
+		"anchor point" 2
 		weapon
 			"blast radius" 540
 			"shield damage" 6400
 			"hull damage" 4800
 			"hit force" 4200
 	outfits
-		"Fleck Turret"
-		"Fleck Round" 2400
-		"Phased Array Laser (Blue)" 2
-		"Phased Array Laser (Green)" 3
-		"Dart Launch Array" 2
-		"Dart Magazine" 6
-		`"Dart" Kinetic Missile` 840
+		"Speckle Turret"
+		"Speck Round" 2400
+		"Blue Optical Laser" 2
+		"Green Optical Laser" 3
+		"Nettle Launch Array" 2
+		"Nettle Magazine" 6
+		`"Nettle" Kinetic Missile` 840
 		
 		"Ultracapacitor Bank" 2
 		"Specular Deflector"
-		"Optical Lasing Generator" 2
-		"Electrostatic Ramscoop" 2
+		"Optical Lasing Generator" 3
+		"Electrostatic Ramscoop"
 		"Multispectral Scanner" 9
 		"Electromotive Rifle" 90
 		
 		`Z-660 "Zap" Fusion Torch`
-		"Inductive Extractor" 4
-		"Remass Injector" 2
+		"Inductive Extractor" 3
+		"Remass Injector" 3
 		"XY-720 Radial Thrusters"
 		"Hyperdrive"
 
 	engine 0 250
+		gimbal 6
 	"reverse engine" -9 264
 		angle -30
 	"reverse engine" 9 264
@@ -1706,13 +1834,13 @@ ship "Atenuatia"
 		angle -90
 	gun 15 -108
 		angle 90
-	turret 0 -252 "Phased Array Laser (Green)"
-	turret 60 -174 "Phased Array Laser (Blue)"
-	turret -60 -174 "Phased Array Laser (Blue)"
+	turret 0 -252 "Green Optical Laser"
+	turret 60 -174 "Blue Optical Laser"
+	turret -60 -174 "Blue Optical Laser"
 	turret 0 -96
-	turret 0 -36 "Dart Launch Array"
-	turret 0 30 "Phased Array Laser (Green)"
-	turret 0 96 "Phased Array Laser (Green)"
+	turret 0 -36 "Nettle Launch Array"
+	turret 0 30 "Green Optical Laser"
+	turret 0 96 "Green Optical Laser"
 	turret 0 160
 
 	bay "Drone" -24 -234
@@ -1759,6 +1887,30 @@ ship "Atenuatia"
 	description "The Atenuatia is an Avgi fleet carrier, a capital ship that makes up the centerpiece of their battlefleets. With six wings of combat drones and two wings of bombers, an Atenuatia can bring forth an astounding amount of firepower. Carrying this arsenal of fighters has its cost, however, and the Atenuatia can carry relayively few heavy weapons for its size."
 
 
+ship "Atenuatia" "Atenuatia (Atomic)"
+	outfits
+		"Speckle Turret"
+		"Speck Round" 2400
+		"Blue Optical Laser" 2
+		"Green Optical Laser" 3
+		"Orchid Launch Array"
+		"Equinox Torpedo Stockpile" 6
+		"Equinox Torpedo" 72
+		`"Orchid" Nuclear Missile` 48
+		
+		"Ultracapacitor Bank" 2
+		"Specular Deflector"
+		"Optical Lasing Generator" 3
+		"Electrostatic Ramscoop"
+		"Multispectral Scanner" 6
+		
+		`Z-660 "Zap" Fusion Torch`
+		"Inductive Extractor" 4
+		"Remass Injector" 2
+		"XY-360 Radial Thrusters"
+		"Hyperdrive"
+
+
 # Fighters
 
 ship "Akoustiki"
@@ -1766,17 +1918,15 @@ ship "Akoustiki"
 	thumbnail "thumbnail/avgi akoustiki"
 	attributes
 		category "Fighter"
-		licenses
-			"Avgi Civilian"
 		"cost" 126000
 		"shields" 180
 		"hull" 1200
 		"required crew" 1
 		"bunks" 2
 		"mass" 36
-		"drag" 0.9
+		"drag" 1.8
 		"heat dissipation" 0.9
-		"fuel capacity" 100
+		"fuel capacity" 120
 		"cargo space" 30
 		"outfit space" 96
 		"weapon capacity" 24
@@ -1787,8 +1937,8 @@ ship "Akoustiki"
 			"hull damage" 180
 			"hit force" 120
 	outfits
-		"Speckle Railgun"
-		"Speck Round" 1800
+		"Speckle Coilgun"
+		"Speck Round" 900
 		
 		"Concentrating Solar Array"
 		"Ultracapacitor Cell" 3
@@ -1796,9 +1946,9 @@ ship "Akoustiki"
 		"Spectrometer Array"
 		"Electromotive Rifle" 2
 		
-		"Magnetoplasma Drive"
+		"Magnetoplasma Drive" 2
 
-	gun -18 -15 "Speckle Railgun"
+	gun -18 -15 "Speckle Coilgun"
 	gun 18 -15
 
 	engine -12 18
@@ -1838,15 +1988,15 @@ ship "Photikon"
 	attributes
 		category "Fighter"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 138000
 		"shields" 240
 		"hull" 1800
 		"automaton" 1
 		"mass" 30
-		"drag" .18
+		"drag" 0.45
 		"heat dissipation" 0.96
-		"fuel capacity" 100
+		"fuel capacity" 90
 		"outfit space" 90
 		"weapon capacity" 27
 		"engine capacity" 24
@@ -1858,7 +2008,7 @@ ship "Photikon"
 			"hit force" 180
 	outfits
 		"Speckle Turret"
-		"Speck Round" 7200
+		"Speck Round" 4800
 		
 		"Concentrating Solar Array"
 		"Ultracapacitor Cell" 3
@@ -1907,6 +2057,18 @@ ship "Photikon"
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
 
 
+ship "Photikon" "Photikon (Atomic)"
+	outfits
+		"Equinox Torpedo Pylon" 3
+		"Equinox Torpedo" 3
+		
+		"Concentrating Solar Array"
+		"Ultracapacitor Cell" 3
+		"Multispectral Scanner"
+		
+		"Magnetoplasma Drive"
+
+
 # Drones
 
 ship "Vibratia"
@@ -1915,17 +2077,17 @@ ship "Vibratia"
 	attributes
 		category "Drone"
 		licenses
-			"Avgi Military"
+			"Twilight Guard"
 		"cost" 96000
 		"hull" 1500
 		"automaton" 1
 		"crew equivalent" 1
 		"threshold percentage" 0.12
-		"mass" 21
-		"drag" 0.15
+		"mass" 18
+		"drag" 0.3
 		"heat dissipation" 0.99
-		"fuel capacity" 100
-		"outfit space" 72
+		"fuel capacity" 30
+		"outfit space" 75
 		"weapon capacity" 24
 		"engine capacity" 24
 		"radar jamming" 3
@@ -1935,16 +2097,14 @@ ship "Vibratia"
 			"hull damage" 150
 			"hit force" 120
 	outfits
-		"Speckle Railgun"
-		"Speck Round" 1800
-		"Dart Launcher"
-		`"Dart" Kinetic Missile` 60
+		"Speckle Coilgun"
+		"Speck Round" 900
 	
 		"Concentrating Solar Array"
 		"Ultracapacitor Cell"
 		"Multispectral Scanner"
 	
-		"Magnetoplasma Drive"
+		"Magnetoplasma Drive" 2
 
 	engine 0 27
 	"reverse engine" -5 -12
@@ -1967,8 +2127,8 @@ ship "Vibratia"
 		angle -90
 		zoom 0.5
 		right
-	gun 0 -27 "Speckle Railgun"
-	gun 0 -27 "Dart Launcher"
+	gun 0 -27 "Speckle Coilgun"
+	gun 0 -27
 
 	explode "tiny explosion" 9
 
@@ -1988,9 +2148,8 @@ ship "Undulon"
 		"hull" 600
 		"automaton" 1
 		"crew equivalent" 1
-		"bunks" 1
-		"mass" 25
-		"drag" 3.96
+		"mass" 42
+		"drag" 13.2
 		"heat dissipation" .55
 		"fuel capacity" 60
 		"outfit space" 84
@@ -2002,8 +2161,8 @@ ship "Undulon"
 			"hull damage" 120
 			"hit force" 90
 	outfits
-		"Rush Launcher"
-		`"Rush" Nuclear Missile` 6
+		"Orchid Launcher"
+		`"Orchid" Nuclear Missile` 6
 
 		"Concentrating Solar Cell" 3
 		"Ultracapacitor Cell"
@@ -2040,7 +2199,7 @@ ship "Undulon"
 		zoom 0.5
 		left
 
-	gun 0 -29 "Rush Launcher"
+	gun 0 -29 "Orchid Launcher"
 
 	explode "tiny explosion" 12
 
@@ -2054,16 +2213,14 @@ ship "Optikon"
 	thumbnail "thumbnail/avgi optikon"
 	attributes
 		category "Drone"
-		licenses
-			"Avgi Civilian"
 		"cost" 54000
 		"hull" 600
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 12
-		"drag" .6
+		"drag" 1.2
 		"heat dissipation" .9
-		"fuel capacity" 100
+		"fuel capacity" 300
 		"outfit space" 60
 		"engine capacity" 24
 		"atmosphere scan" 36
@@ -2106,16 +2263,14 @@ ship "Sonikis"
 	thumbnail "thumbnail/avgi sonikis"
 	attributes
 		category "Drone"
-		licenses
-			"Avgi Civilian"
 		"cost" 66000
 		"hull" 600
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 18
-		"drag" .36
+		"drag" 0.9
 		"heat dissipation" .72
-		"fuel capacity" 100
+		"fuel capacity" 120
 		"cargo space" 60
 		"outfit space" 69
 		"weapon capacity" 18
@@ -2150,6 +2305,27 @@ ship "Sonikis"
 	leak "leak" 30 60
 	explode "tiny explosion" 9
 
-	description "The Sonikis Utility Drone was built as a cheap interorbital cargo drone, designed to carry modular cargo containers between stations and small moons. It is now commonly used by large freighters to assist in moving cargo on and offboard ship, as well as to collect ores while asteroid mining."
+	description "The Sonikis Utility Drone was built as a cheap interorbital cargo drone, originally designed to carry modular cargo containers between stations and small moons. It is now commonly used by large freighters to assist in loading and unloading cargo, as well as to collect ores while asteroid mining."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
 
+
+ship "Sonikis" "Sonikis (Armed)"
+	outfits
+		"Speckle Coilgun"
+		"Speck Round" 900
+
+		"Concentrating Solar Array"
+		"Ultracapacitor Cell" 2
+		"Spectrometer Array"
+		"Multispectral Scanner"
+
+		"Magnetoplasma Drive"
+
+
+ship "Sonikis" "Sonikis (Tanker)"
+	outfits
+		"Concentrating Solar Array"
+		"Ultracapacitor Cell" 2
+		"Cryogenic Deuterium Tank" 2
+
+		"Magnetoplasma Drive"
