@@ -60,7 +60,7 @@ outfit "Speckle Coilgun"
 		"firing force" 12
 		"submunition" "Speck"
 	description "This compact coilgun fires a stream of hypervelocity projectiles, accelerating them on a traveling wave of magnetic energy as capacitors are discharged through a series of coils. Designed primarily for drones and smaller ships, the Speckle is a deadly albeit relatively unsophisticated weapon."
-	description "Due to its limited range, the Speckle shines when a ship can sneak close enough to an enemy to bring it to bear, where it can begin tearing through armor and hull. However, its effectiveness is much more limited against shields, which shrug off its mass driver rounds with relative ease."
+	description "	Due to its limited range, the Speckle shines when a ship can sneak close enough to an enemy to bring it to bear, where it can begin tearing through armor and hull. However, its effectiveness is much more limited against shields, which shrug off its mass driver rounds with relative ease."
 	
 
 outfit "Speckle Turret"
@@ -95,7 +95,7 @@ outfit "Speckle Turret"
 		"submunition" "Speck"
 			"offset" 3 0
 	description "Designed for mid-sized ships, this variation on the Speckle Coilgun mounts a pair of coilguns onto a nimble turret. Its compact size allows even smaller ships to fit one, making it a versatile option for mid-ranged combat."
-	description "Of course, the inherently limited range and velocity of kinetic weapons makes the Speckle Turret a poor match for some of the longer ranged weapons used by the Avgi, but the sheer firepower it can put out makes it deadly in close range."
+	description "	Of course, the inherently limited range and velocity of kinetic weapons makes the Speckle Turret a poor match for some of the longer ranged weapons used by the Avgi, but the sheer firepower it can put out makes it deadly in close range."
 
 
 outfit "Speck"
@@ -145,7 +145,7 @@ outfit "Green Optical Laser"
 		"firing energy" 6
 		"firing heat" 6
 	description "This lightweight turret can be fed a beam of light from a lasing generator, which is then combined and focused to produce an intense beam suitable for targeting and destroying missiles. Unlike a typical pulsed-shot human antimissile system, this turret seems designed to hold a beam on target at an extreme distance for a longer period of time using its precise optics, making it better suited for defending and supporting other ships from afar."
-	description "The turret itself only contains the optics needed to synthesize, focus, and target the beam, allowing the laser light to be produced elsewhere. Because of this, an Optical Lasing Generator is needed to run this turret, providing enough power to support three Green Lasers."
+	description "	The turret itself only contains the optics needed to synthesize, focus, and target the beam, allowing the laser light to be produced elsewhere. Because of this, an Optical Lasing Generator is needed to run this turret, providing enough power to support three Green Lasers."
 
 
 outfit "Blue Optical Laser"
@@ -365,8 +365,8 @@ outfit "Nettle Launcher"
 		"missile strength" 9
 		"submunition" "Nettle Active"
 	description "Nettle missiles are minimalist kinetic kill vehicles designed for use in situations where nuclear weapons are considered unnecessary. Little more than a payload of tungsten rods, a thruster package, and a nose mounted sensor array, they can be manufactured in bulk at minimal cost."
-	description "By splitting into a number of tungsten rods upon approaching a target, only a fraction of the payload actually impacts it, but the damage is also distributed over a large area of effect, making evasion difficult."
-	description "This is a standard modular launcher designed for use on light to medium warships. A coilgun launch system allows the missiles to be deployed with considerable initial velocity, making up for the limited fuel supply on the missile itself."
+	description "	By splitting into a number of tungsten rods upon approaching a target, only a fraction of the payload actually impacts it, but the damage is also distributed over a large area of effect, making evasion difficult."
+	description "	This is a standard modular launcher designed for use on light to medium warships. A coilgun launch system allows the missiles to be deployed with considerable initial velocity, making up for the limited fuel supply on the missile itself."
 
 
 outfit "Nettle Launch Array"
@@ -401,8 +401,8 @@ outfit "Nettle Launch Array"
 		"submunition" "Nettle Active"
 		"stream"
 	description "Nettle missiles are minimalist kinetic kill vehicles designed for use in situations where nuclear weapons are considered unnecessary. Little more than a payload of tungsten rods, a thruster package, and a nose mounted sensor array, they can be manufactured in bulk at minimal cost."
-	description "By splitting into a number of tungsten rods upon approaching a target, only a fraction of the payload actually impacts it, but the damage is also distributed over a large area of effect, making evasion difficult."
-	description "This large Vertical Launch Cell array is made up of forty cells, each with Nettles stacked six missiles deep. Designed for rapid vertical cold-launch, it needs an open space comparable to a turret mount to function properly."
+	description "	By splitting into a number of tungsten rods upon approaching a target, only a fraction of the payload actually impacts it, but the damage is also distributed over a large area of effect, making evasion difficult."
+	description "	This large Vertical Launch Cell array is made up of forty cells, each with Nettles stacked six missiles deep. Designed for rapid vertical cold-launch, it needs an open space comparable to a turret mount to function properly."
 
 
 outfit "Nettle Active"
@@ -458,7 +458,7 @@ outfit `"Orchid" Nuclear Missile`
 	"mass" 0.9
 	"orchid capacity" -1
 	description "Unlike humanity, the Avgi do not have a strong taboo against the use of nuclear weapons in space. To them, nuclear weapons are simply another tool, albeit one with a particularly high energy density, to be used when the occasion calls for it. Nuclear weapons have been the Avgi's trump card against the Aberrant, the one weapon they have capable of reliably breaking their advanced shields and atomizing their armor."
-	description "This particular missile carries a compact thermonuclear warhead, a geometrically complex staged device with a far higher yield density than anything humanity has developed. It seems to be the product of centuries of development of nuclear arms, as opposed to humanity's long abstentation from nuclear weapons research."
+	description "	This particular missile carries a compact thermonuclear warhead, a geometrically complex staged device with a far higher yield density than anything humanity has developed. It seems to be the product of centuries of development of nuclear arms, as opposed to humanity's long abstentation from nuclear weapons research."
 
 
 outfit "Orchid Magazine"
@@ -506,7 +506,7 @@ outfit "Orchid Launcher"
 		"submunition" "Orchid Active"
 		stream
 	description "Unlike humanity, the Avgi do not have a strong taboo against the use of nuclear weapons in space. To them, nuclear weapons are simply another tool, albeit one with a particularly high energy density, to be used when the occasion calls for it. Nuclear weapons have been the Avgi's trump card against the Aberrant, the one weapon they have capable of reliably breaking their advanced shields and atomizing their armor."
-	description "A standard modular launcher such as this one is designed to be easily installed on light to medium warships."
+	description "	A standard modular launcher such as this one is designed to be easily installed on light to medium warships."
 
 
 outfit "Orchid Launch Array"
@@ -576,7 +576,7 @@ outfit "Equinox Torpedo"
 	"mass" 3
 	"equinox capacity" -1
 	description "The Equinox makes no compromises with its design goal of fitting the largest thermonuclear warhead feasible. After minimalizing its propulsion system to little more than a few reaction control thrusters, the Equinox is essentially an unguided torpedo. A carrying ship must instead both accelerate and aim the torpedo properly to ensure a hit."
-	description "A thin coating of ablative polymer designed to resist lasers was the only mass the Avgi were willing to allocate to armor, and as such the Equinox is easily shot down by most modern antimissile systems."
+	description "	A thin coating of ablative polymer designed to resist lasers was the only mass the Avgi were willing to allocate to armor, and as such the Equinox is easily shot down by most modern antimissile systems."
 
 
 outfit "Equinox Torpedo Pylon"
@@ -610,8 +610,8 @@ outfit "Equinox Torpedo Pylon"
 		"missile strength" 24
 		"submunition" "Equinox Active"
 	description "Developed concurrently with the Photikon Torpedo Bomber, the Equinox Torpedo is a large, minimally guided thermonuclear torpedo that allows even small drones to pose a credible threat to a capital warship."
-	description "Unlike the nuclear missiles employed by the Avgi, the Equinox carries only enough propellant to make small adjustments to its trajectory, and lacks the ability to accelerate entirely. It instead relies on the speed of the bomber carrying it, trading an independent propulsive capability for an oversized warhead."
-	description "This pylon externally mounts a single torpedo, employing a small electromagnetic catapult to fling the torpedo towards its target."
+	description "	Unlike the nuclear missiles employed by the Avgi, the Equinox carries only enough propellant to make small adjustments to its trajectory, and lacks the ability to accelerate entirely. It instead relies on the speed of the bomber carrying it, trading an independent propulsive capability for an oversized warhead."
+	description "	This pylon externally mounts a single torpedo, employing a small electromagnetic catapult to fling the torpedo towards its target."
 
 
 outfit "Equinox Active"
@@ -645,7 +645,7 @@ outfit "Equinox Torpedo Stockpile"
 	"equinox capacity" 12
 	ammo "Equinox Torpedo"
 	description "This remotely operated reloading bay, intended for use on carriers, can quickly replenish a docked fighter or drone with Equinox Torpedoes. A generous stockpile of torpedoes allows a carrier to support multiple sorties before needing to resupply."
-	description "The restocking system requires oversight by a small team of specialists to ensure no accidents occur during the loading process."
+	description "	The restocking system requires oversight by a small team of specialists to ensure no accidents occur during the loading process."
 
 
 effect "thermonuclear flash"
