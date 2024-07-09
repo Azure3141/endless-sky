@@ -24,7 +24,7 @@ outfit "Radiative Lamina"
 	"heat dissipation" 0.3
 	"solar heat" 3
 	description "This modular set of graphene microchannel radiators can be mounted conformally to a ship's hull, improving its ability to radiate away waste heat. The radiative power scales with the temperature of the waste heat being rejected, making Radiative Laminae work better for hotter-running ships."
-	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Concealment Lamina"
@@ -41,7 +41,7 @@ outfit "Concealment Lamina"
 	"optical jamming" 12
 	"solar heat" 6
 	description "A specialized coating of quantum dot phased array antennas, grown molecule by molecule, forms a conformal film capable of interfering with and jamming any attempts to scan or detect a ship. Working in aggregate, the phased array can be used to jam the sensors of missiles from further away, or even blind them with a low-power beam. However, the density of quantum dots required to produce these effects considerably increases the amount of sunlight absorbed by a ship using Concealment Laminae, and such an advanced material does not come cheap."
-	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Nanoceramic Lamina"
@@ -57,7 +57,7 @@ outfit "Nanoceramic Lamina"
 	"shield generation multiplier" -0.33
 	"solar heat" 3
 	description "These extra armor plates can significantly reinforce a ship's hull, but are quite heavy. The added bulk in front of a ship's shield emitters also interferes with the rate at which they can be recharged, impairing a ship's shield generation."
-	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Adamant Lamina"
@@ -72,7 +72,7 @@ outfit "Adamant Lamina"
 	"hull multiplier" 0.6
 	"solar heat" 3
 	description "Thanks to recent breakthroughs in materials science, the Avgi have devised this retrofitting kit to allow older ships to take advantage of the increased hull strength offered by exotic materials. These armor plates and structural members reinforce both the skin and core strength of a ship, strengthening it without compromising its internal structure."
-	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Warding Lamina"
@@ -87,7 +87,7 @@ outfit "Warding Lamina"
 	"shield multiplier" 2
 	"solar heat" 3
 	description "Breakthrough physics research has allowed the Avgi to create advanced shield emitters well in advance of their previous ones. While baked into the ships of most species, Avgi starship construction is sophisticated enough to allow their shield matrices to be retrofitted with relative ease."
-	description "Warding Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Warding Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Electrostatic Ramscoop"
@@ -180,7 +180,7 @@ outfit "Spectrometer Array"
 	"asteroid scan power" 72
 	"energy consumption" 0.06
 	description "This sensor array features a set of sensitive spectrometers capable of analyzing the spectral signatures of materials in order to determine their composition. A small ultraviolet laser can speed this process up for asteroids by vaporizing a small surface sample, making the spectral lines much more visible, but is sadly useless against shielded ships and their internal systems."
-	description "Unfortunately, while Avgi sensors excel in reading basic physical and chemical information, such as the composition of an object, the amount of sensor data required to predict an outfit's functionality means this sensor can be quite slow when scanning a ship's complex systems or cargo."
+	description "	Unfortunately, while Avgi sensors excel in reading basic physical and chemical information, such as the composition of an object, the amount of sensor data required to predict an outfit's functionality means this sensor can be quite slow when scanning a ship's complex systems or cargo."
 
 
 outfit "Diffuse Deflector"
@@ -217,7 +217,7 @@ outfit "Optical Lasing Generator"
 	"outfit space" -30
 	"lasing power" 3
 	description "A monolithic slab of semiconductor diode is used to efficiently pump a spool of doped optical fiber. Hundreds of kilometers long, the coiled fibers serve as a lasing medium with the power needed to produce an intense beam of light, and can be gain-switched to pulse at a variety of frequencies. The produced laser light, which can be converted to a number of wavelengths, can be easily tapped and routed via optical fibers or mirrors to a number of turrets on a ship, eliminating the need for the heavy lasing generator to be anywhere near the turret itself."
-	description "The infrared light produced in the coil can either be passed through a frequency doubling crystal to support up to three Green Optical Lasers, or frequency tripled to support a single Blue Optical Laser."
+	description "	The infrared light produced in the coil can either be passed through a frequency doubling crystal to support up to three Green Optical Lasers, or frequency tripled to support a single Blue Optical Laser."
 
 
 
@@ -244,7 +244,7 @@ outfit "Concentrating Solar Array"
 	"solar collection" 2.4
 	"solar heat" 1.02
 	description "This large set of concentrating solar cells efficiently collects sunlight, turning it into usable energy. Thin Fresnel lenses concentrate sunlight onto a small number of highly efficient solar cells, reducing weight and improving efficiency."
-	description "While much more efficient than a single cell alone, the Solar Array also produces a disproportionate amount of heat."
+	description "	While much more efficient than a single cell alone, the Solar Array also produces a disproportionate amount of heat."
 
 
 outfit "Photoelectric Lamina"
@@ -257,7 +257,7 @@ outfit "Photoelectric Lamina"
 	"solar collection" 6
 	"solar heat" 1.8
 	description "These concentrating solar panels can be mounted conformally to a ship's hull, efficiently collecting sunlight and turning it into usable energy."
-	description "Photovoltaic Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "	Photovoltaic Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Lantern Fission Core"
@@ -279,8 +279,8 @@ outfit "Ultracapacitor Cell"
 	"outfit space" -3
 	"energy capacity" 1500
 	"ion protection" -0.01
-	"description" "The internal structure of this deceptively light capacitor cell resembles a fractal of molecule-thin graphene sheets interlocked together. While not the most efficient in their use of outfit space, this capacitor cell is extraordinarily energy dense for its mass, a deliberate design choice from the days of sublight interstellar travel, when every gram counted."
-	"description" "Unfortunately, the internal structure is also quite delicate, and is prone to potential discharge when exposed to ionizing radiation. Thankfully, resilient grounding leads prevents this discharge from becoming catastrophic."
+	description "The internal structure of this deceptively light capacitor cell resembles a fractal of molecule-thin graphene sheets interlocked together. While not the most efficient in their use of outfit space, this capacitor cell is extraordinarily energy dense for its mass, a deliberate design choice from the days of sublight interstellar travel, when every gram counted."
+	description "	Unfortunately, the internal structure is also quite delicate, and is prone to potential discharge when exposed to ionizing radiation. Thankfully, resilient grounding leads prevents this discharge from becoming catastrophic."
 	
 	
 outfit "Ultracapacitor Bank"
@@ -291,8 +291,8 @@ outfit "Ultracapacitor Bank"
 	"outfit space" -18
 	"energy capacity" 10800
 	"ion protection" -0.03
-	"description" "These fractal capacitors are capable of storing a large amount of energy within superconducting graphene sheets. This capacitor bank chains together six individual cells, but saves space by discarding redundant components and unnecessary structural mass."
-	"description" "Like its component cells, the capacitor bank is vulnerable to ionizing weapons, but is relatively better shielded for its size by virtue of its reduced surface area to volume ratio."
+	description "These fractal capacitors are capable of storing a large amount of energy within superconducting graphene sheets. This capacitor bank chains together six individual cells, but saves space by discarding redundant components and unnecessary structural mass."
+	description "	Like its component cells, the capacitor bank is vulnerable to ionizing weapons, but is relatively better shielded for its size by virtue of its reduced surface area to volume ratio."
 
 
 # Engines:
@@ -324,7 +324,7 @@ outfit "Magnetoplasma Drive"
 		"frame rate" 5
 	"reverse flare sound" "plasma tiny"
 	description "This compact set of magnetoplasmadynamic thrusters can propel small ships to impressive speeds over time, but is also quite energy hungry."
-	description "Designed to be clustered, this design is capable of full six-axis control."
+	description "	Designed to be clustered, this design is capable of full six-axis control."
 
 
 outfit `Z-330 "Spark" Fusion Torch`
@@ -428,7 +428,7 @@ outfit "Remass Injector"
 	"afterburner fuel" 0.3
 	"magnozzle rings" -1
 	description "A powerful magnetohydrodynamic turbopump forces a torrent of water into a fusion torch's magnetic nozzle, dramatically increasing thrust at the cost of a significant increase in propellant consumption. The additional mass flow helps reduce the waste heat imparted on a ship by the torch drive."
-	description "The Remass Injector is a component that can be installed into an Avgi fusion torch to give it afterburning capabilities. It requires a magnozzle ring slot to be installed."
+	description "	The Remass Injector is a component that can be installed into an Avgi fusion torch to give it afterburning capabilities. It requires a magnozzle ring slot to be installed."
 
 
 outfit "Inductive Extractor"
@@ -447,7 +447,7 @@ outfit "Inductive Extractor"
 	"thrusting heat" 6
 	"magnozzle rings" -1
 	description "A reinforced superconducting loop and power conditioning unit allows a significant amount of power to be inductively extracted from a fusion torch's exhaust as it expands against the field produced by the magnetic nozzle. This removes some energy from the exhaust plume and reduces its produced thrust, but the liberated energy is great enough that this is the primary means by which high performance Avgi starships generate power."
-	description "The Inductive Extractor is a component that can be installed into an Avgi fusion torch to turn a portion of its thrust into energy. It requires a magnozzle ring slot to be installed."
+	description "	The Inductive Extractor is a component that can be installed into an Avgi fusion torch to turn a portion of its thrust into energy. It requires a magnozzle ring slot to be installed."
 
 
 outfit "XY-180 Radial Thrusters"
@@ -474,7 +474,7 @@ outfit "XY-180 Radial Thrusters"
 		"frame rate" 30
 		"scale" 0.125
 	"reverse flare sound" "plasma small"
-	description `Avgi radial thrusters are hybrid thermal-electric thrusters, designed to allow translation in any direction. By using reactor heat to expel superheated water vapor out of a set of nozzles, they can help a ship cool off, but require the ship to have excess heat in order to function.`
+	description "Avgi radial thrusters are hybrid thermal-electric thrusters, designed to allow translation in any direction. By using reactor heat to expel superheated water vapor out of a set of nozzles, they can help a ship cool off, but require the ship to have excess heat in order to function."
 
 
 outfit "XY-360 Radial Thrusters"
