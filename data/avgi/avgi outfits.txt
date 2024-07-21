@@ -163,18 +163,6 @@ outfit "Specular Deflector"
 	description "The largest shield generator manufactured by the Avgi is impressive, if only because of how far the Avgi have pushed their limited theory of shielding principles. While their engineering ingenuity is admirable, there is a limit to how far you can take an incomplete understanding of the base physics behind shielding, and this generator approaches that limit."
 
 
-outfit "Optical Lasing Generator"
-	category "Systems"
-	cost 120000
-	thumbnail "outfit/unknown"
-	"mass" 30
-	"outfit space" -30
-	"lasing power" 3
-	description "A monolithic slab of semiconductor diode is used to efficiently pump a spool of doped optical fiber. Hundreds of kilometers long, the coiled fibers serve as a lasing medium with the power needed to produce an intense beam of light, and can be gain-switched to pulse at a variety of frequencies. The produced laser light, which can be converted to a number of wavelengths, can be easily tapped and routed via optical fibers or mirrors to a number of turrets on a ship, eliminating the need for the heavy lasing generator to be anywhere near the turret itself."
-	description "	The infrared light produced in the coil can either be passed through a frequency doubling crystal to support up to three Green Optical Lasers, or frequency tripled to support a single Blue Optical Laser."
-
-
-
 # Power:
 
 
@@ -197,7 +185,7 @@ outfit "Concentrating Solar Array"
 	"outfit space" -18
 	"solar collection" 2.4
 	"solar heat" 1.02
-	description "This large set of concentrating solar cells efficiently collects sunlight, turning it into usable energy. Thin Fresnel lenses concentrate sunlight onto a small number of highly efficient solar cells, reducing weight and improving efficiency."
+	description "This large set of concentrating solar cells collects sunlight, turning it into usable energy. Thin Fresnel lenses concentrate sunlight onto a small number of highly efficient solar cells, reducing weight and improving efficiency."
 	description "	While much more efficient than a single cell alone, the Solar Array also produces a disproportionate amount of heat."
 
 
@@ -277,7 +265,7 @@ outfit "Magnetoplasma Drive"
 	"reverse flare sprite" "effect/wanderer flare/tiny"
 		"frame rate" 5
 	"reverse flare sound" "plasma tiny"
-	description "This compact set of magnetoplasmadynamic thrusters can propel small ships to impressive speeds over time, but is also quite energy hungry."
+	description "This compact set of magnetoplasmadynamic thrusters can propel small ships to impressive speeds over time, but is also quite energy-hungry."
 	description "	Designed to be clustered, this design is capable of full six-axis control."
 
 
