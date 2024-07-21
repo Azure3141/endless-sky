@@ -41,7 +41,7 @@ outfit "Concealment Lamina"
 	"optical jamming" 12
 	"solar heat" 6
 	description "A specialized coating of quantum dot phased array antennas, grown molecule by molecule, forms a conformal film capable of interfering with and jamming any attempts to scan or detect a ship. Working in aggregate, the phased array can be used to jam the sensors of missiles from further away, or even blind them with a low-power beam. However, the density of quantum dots required to produce these effects considerably increases the amount of sunlight absorbed by a ship using Concealment Laminae, and such an advanced material does not come cheap."
-	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Electrostatic Ramscoop"
@@ -185,7 +185,7 @@ outfit "Concentrating Solar Array"
 	"outfit space" -18
 	"solar collection" 2.4
 	"solar heat" 1.02
-	description "This large set of concentrating solar cells collects sunlight, turning it into usable energy. Thin Fresnel lenses concentrate sunlight onto a small number of highly efficient solar cells, reducing weight and improving efficiency."
+	description "This large set of concentrating solar cells collects sunlight, turning it into usable energy. Thin Fresnel lenses concentrate sunlight onto a small number of highly efficient solar cells, reducing weight and improving its effectiveness."
 	description "	While much more efficient than a single cell alone, the Solar Array also produces a disproportionate amount of heat."
 
 
@@ -266,7 +266,7 @@ outfit "Magnetoplasma Drive"
 		"frame rate" 5
 	"reverse flare sound" "plasma tiny"
 	description "This compact set of magnetoplasmadynamic thrusters can propel small ships to impressive speeds over time, but is also quite energy-hungry."
-	description "	Designed to be clustered, this design is capable of full six-axis control."
+	description "Designed to be clustered, this design is capable of full six-axis control."
 
 
 outfit `Z-330 "Spark" Fusion Torch`
