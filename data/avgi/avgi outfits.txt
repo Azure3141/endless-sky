@@ -24,7 +24,7 @@ outfit "Radiative Lamina"
 	"heat dissipation" 0.3
 	"solar heat" 3
 	description "This modular set of graphene microchannel radiators can be mounted conformally to a ship's hull, improving its ability to radiate away waste heat. The radiative power scales with the temperature of the waste heat being rejected, making Radiative Laminae work better for hotter-running ships."
-	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+	description "Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Concealment Lamina"
@@ -42,52 +42,6 @@ outfit "Concealment Lamina"
 	"solar heat" 6
 	description "A specialized coating of quantum dot phased array antennas, grown molecule by molecule, forms a conformal film capable of interfering with and jamming any attempts to scan or detect a ship. Working in aggregate, the phased array can be used to jam the sensors of missiles from further away, or even blind them with a low-power beam. However, the density of quantum dots required to produce these effects considerably increases the amount of sunlight absorbed by a ship using Concealment Laminae, and such an advanced material does not come cheap."
 	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
-
-
-outfit "Nanoceramic Lamina"
-	plural "Nanoceramic Laminae"
-	category "Systems"
-	licenses
-		"Twilight Guard"
-	cost 200000
-	thumbnail "outfit/unknown"
-	"mass" 36
-	"anchor point" -1
-	"hull multiplier" 0.33
-	"shield generation multiplier" -0.33
-	"solar heat" 3
-	description "These extra armor plates can significantly reinforce a ship's hull, but are quite heavy. The added bulk in front of a ship's shield emitters also interferes with the rate at which they can be recharged, impairing a ship's shield generation."
-	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
-
-
-outfit "Adamant Lamina"
-	plural "Adamant Laminae"
-	category "Systems"
-	licenses
-		"Twilight Guard"
-	cost 200000
-	thumbnail "outfit/unknown"
-	"mass" 36
-	"anchor point" -1
-	"hull multiplier" 0.6
-	"solar heat" 3
-	description "Thanks to recent breakthroughs in materials science, the Avgi have devised this retrofitting kit to allow older ships to take advantage of the increased hull strength offered by exotic materials. These armor plates and structural members reinforce both the skin and core strength of a ship, strengthening it without compromising its internal structure."
-	description "	Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
-
-
-outfit "Warding Lamina"
-	plural "Warding Laminae"
-	category "Systems"
-	licenses
-		"Twilight Guard"
-	cost 200000
-	thumbnail "outfit/unknown"
-	"mass" 42
-	"anchor point" -1
-	"shield multiplier" 2
-	"solar heat" 3
-	description "Breakthrough physics research has allowed the Avgi to create advanced shield emitters well in advance of their previous ones. While baked into the ships of most species, Avgi starship construction is sophisticated enough to allow their shield matrices to be retrofitted with relative ease."
-	description "	Warding Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
 
 
 outfit "Electrostatic Ramscoop"
