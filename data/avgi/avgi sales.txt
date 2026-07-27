@@ -191,3 +191,4 @@ outfitter "Avgi Dissonance Smuggling"
 	`Z-666 "Zap" Fusion Torch`
 	"Inductive Extractor"
 	"Remass Injector"
+	

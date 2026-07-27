@@ -96,4 +96,3 @@ mission "Avgi: Initial Wandering Fleet"
 		ship "Photikon" "Pilos-403"
 		to despawn
 			has "avgi: wandering fleet despawn"
-

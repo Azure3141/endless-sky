@@ -44,11 +44,7 @@ endif()
 
 if(NOT ES_USE_SYSTEM_LIBRARIES)
 	# Tell vcpkg to use the required system libraries.
-	list(APPEND VCPKG_MANIFEST_FEATURES "system-libs")
-	# Add the testing libraries
-	if(NOT APPLE OR CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 10.12)
-		list(APPEND VCPKG_MANIFEST_FEATURES "test-libs")
-	endif()
+	list(APPEND VCPKG_MANIFEST_FEATURES "system-libs" "test-libs")
 endif()
 
 # Tell vcpkg to use system libraries that are missing in the Steam runtime.
@@ -61,7 +57,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT EndlessSky)
 set(CMAKE_VS_JUST_MY_CODE_DEBUGGING ON)
 
-project("Endless Sky" VERSION 0.10.15
+project("Endless Sky" VERSION 0.11.3
 	DESCRIPTION "Space exploration, trading, and combat game."
 	HOMEPAGE_URL https://endless-sky.github.io/
 	LANGUAGES CXX)
@@ -91,13 +87,30 @@ find_library(LIBMAD_LIB_RELEASE NAMES mad libmad NAMES_PER_DIR PATHS "${_VCPKG_I
 
 # FLAC's config is missing find_dependency(Threads), so include it here.
 find_package(Threads REQUIRED)
-find_package(FLAC CONFIG REQUIRED)
+if((UNIX AND NOT ES_USE_VCPKG) OR (APPLE AND ES_USE_SYSTEM_LIBRARIES))
+	find_package(FLAC CONFIG QUIET)
+	if(NOT FLAC_FOUND)
+		# Many linux distros and Homebrew on MacOS use the autotools build of flac,
+		# which does not package the flac-config.cmake. Use PkgConfig instead.
+		find_package(PkgConfig REQUIRED)
+		pkg_check_modules(flac++ REQUIRED IMPORTED_TARGET flac++)
+		add_library(FLAC::FLAC++ ALIAS PkgConfig::flac++)
+	endif()
+else()
+	find_package(FLAC CONFIG REQUIRED)
+endif()
 
 # Find the zip-reading component of zlib.
 find_package(ZLIB REQUIRED)
 
-# Minizip has a different target name in vcpkg.
-if(ES_USE_VCPKG)
+if(APPLE AND ES_USE_SYSTEM_LIBRARIES)
+	# Use pkg-config for minizip from Homebrew on macOS because it doesn't provide CMake configuration files.
+	find_package(PkgConfig REQUIRED)
+	pkg_check_modules(minizip REQUIRED IMPORTED_TARGET minizip)
+	add_library(Minizip::Minizip ALIAS PkgConfig::minizip)
+	set(MINIZIP_LIBRARIES "Minizip::Minizip")
+elseif(ES_USE_VCPKG)
+	# Minizip has a different target name in vcpkg.
 	find_package(unofficial-minizip CONFIG REQUIRED)
 	set(MINIZIP_LIBRARIES "unofficial::minizip::minizip")
 else()
@@ -138,7 +151,7 @@ add_library(ExternalLibraries INTERFACE)
 target_link_libraries(EndlessSkyLib PUBLIC ExternalLibraries)
 
 # Enable sanitizers on debug builds, depending on platform support.
-if(NOT WIN32)
+if(NOT WIN32 AND NOT CYGWIN)
 	set(SANITIZER_OPTS "-g" "-fsanitize=address,undefined,pointer-compare,pointer-subtract,unreachable,builtin,integer-divide-by-zero,vla-bound,null,return,signed-integer-overflow,bounds,alignment,bool,enum,pointer-overflow")
 	if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 		list(APPEND SANITIZER_OPTS "-fno-omit-frame-pointer" "-fsanitize=leak,vptr")
@@ -158,7 +171,7 @@ target_link_libraries(ExternalLibraries INTERFACE SDL2::SDL2 PNG::PNG JPEG::JPEG
 
 # Link the needed OS-specific dependencies, if any.
 if(WIN32)
-	target_link_libraries(ExternalLibraries INTERFACE rpcrt4 Winmm)
+	target_link_libraries(ExternalLibraries INTERFACE rpcrt4 winmm ntdll psapi)
 elseif(ES_LINK_LIBATOMIC)
 	target_link_libraries(ExternalLibraries INTERFACE pthread atomic)
 else()
@@ -200,7 +213,12 @@ else()
 		target_compile_definitions(EndlessSkyLib PUBLIC GL_SILENCE_DEPRECATION)
 	else()
 		# GLEW is only needed on Linux and Windows.
-		target_link_libraries(ExternalLibraries INTERFACE GLEW::glew)
+		if(TARGET GLEW::GLEW)
+			set(GLEW_TARGET_NAME GLEW::GLEW)
+		else()
+			set(GLEW_TARGET_NAME GLEW::glew)
+		endif()
+		target_link_libraries(ExternalLibraries INTERFACE ${GLEW_TARGET_NAME})
 	endif()
 endif()
 
