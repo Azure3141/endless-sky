@@ -94,7 +94,7 @@ outfit "Deuterium Slush Tank"
 	"mass" 3
 	"outfit space" -12
 	"fuel capacity" 300
-	"energy consumption" 0.6
+	"energy consumption" 0.3
 	"heat generation" 0.6
 	description "This lightweight tank stores an appreciable amount of hyperspace fuel as deuterium slush - a slurry of liquid deuterium and deuterium ice. This allows fuel to be stored at higher densities than would otherwise be possible, but the cryocooler required to maintain the zero-boiloff system requires a small amount of energy to pump heat out of the pressure vessel."
 
@@ -106,7 +106,7 @@ outfit "Cryogenic Deuterium Tank"
 	cost 120000
 	thumbnail "outfit/cryogenic deuterium tank"
 	"mass" 12
-	"outfit space" -6
+	"outfit space" -12
 	"cargo space" -30
 	"fuel capacity" 600
 	description "This insulated pressure vessel is designed to store hyperspace fuel under cryogenic temperatures for bulk transport. While not quite as efficient as a deuterium slush tank, this outfit is designed to fit into a ship's cargo space with minimal intrusion into space reserved for other systems, allowing many to be installed simultaneously without the need for deep cryocoolers."
@@ -191,6 +191,57 @@ outfit "Specular Deflector"
 	"shield delay" 3
 	description "The largest shield generator manufactured by the Avgi is impressive, if only because of how far the Avgi have pushed their fledgling understanding of shielding principles. While their engineering ingenuity is admirable, there is a limit to how far you can take an incomplete picture of the base physics behind shields, and this generator approaches it."
 	description "	The limited success of the Avgi shield replication attempts are mitigated somewhat by the fact that the enormous superconducting coils in their shield generators store a similarly enormous amount of energy, making them effectively superconducting magnetic energy storage devices that slowly regenerate shields as a bonus."
+
+
+outfit "Machine Workshop"
+	category "Systems"
+	series "Repair"
+	index 07030
+	cost 12000000
+	thumbnail "outfit/machine workshop"
+	"mass" 45
+	"outfit space" -45
+	"required crew" 12
+	"disabled recovery time" 1800
+	"disabled recovery energy" 3000
+	"disabled recovery fuel" 300
+	"hull robot slot" 12
+	description "Essential to the Wandering Fleet's independence and survival, this workshop contains various machine tools and equipment capable of fabricating a variety of parts necessary to repair and maintain a spacecraft. With an independent power supply, this machine shop can function even when a spacecraft is otherwise disabled, allowing an experienced crew of machinists to restore the ship to working condition given enough time."
+	description "The machine workshop is designed to directly support a fleet of Hull Robots capable of conducting external repairs, with more hull robots repairing and restoring a disabled ship more rapidly."
+
+
+outfit "Avgi Hull Robot"
+	category "Systems"
+	series "Repair"
+	index 07040
+	cost 900000
+	thumbnail "outfit/avgi hull robot"
+	"mass" 3
+	"outfit space" -3
+	"required crew" 1
+	"delayed hull repair rate" .3
+	"delayed hull energy" 0.6
+	"delayed hull heat" 0.6
+	"repair delay" 15
+	"disabled recovery time" -60
+	"hull robot slot" -1
+	description "This spidery robot moves across a ship's hull like an inchworm, each of its four arms capable of gripping and manipulating a plethora of tools to conduct repairs. Teleoperated by a crewmember, they must be deployed with parts produced by a Machine Workshop to be most effective."
+	description "Hull robots can both reduce the time required for a Machine Workhop to recover it from a disabled state and repair a ship's hull in flight, if not presently under fire. However, with additional hull robots present on a ship's hull, more time after taking damage is necessary for them to coordinate and begin repairing."
+
+
+outfit "Hull Rail Lamina"
+	category "Systems"
+	series "Repair"
+	index 07040
+	cost 900000
+	thumbnail "outfit/photoelectric lamina"
+	"mass" 24
+	"anchor point" -1
+	"solar collection" 6
+	"solar heat" 1.8
+	description "This set of rails "
+	description "	Photovoltaic Laminae take advantage of special external hardpoints built into most Avgi ships, allowing them to be mounted without taking up any outfit space. However, they also tend to increase the amount of heat absorbed from the local star."
+
 
 
 # Power:
@@ -292,16 +343,16 @@ outfit "Magnetoplasma Drive"
 	"mass" 12
 	"outfit space" -12
 	"engine capacity" -12
-	"thrust" 4.5
+	"thrust" 6
 	"thrusting energy" 1.2
 	"thrusting heat" 0.6
-	"reverse thrust" 4.5
+	"reverse thrust" 6
 	"reverse thrusting energy" 1.2
 	"reverse thrusting heat" 0.6
-	"turn" 180
+	"turn" 210
 	"turning energy" 1.2
 	"turning heat" 0.6
-	"drag reduction" 0.3
+	"drag reduction" 0.05
 	"flare sprite" "effect/wanderer flare/tiny"
 		"frame rate" 5
 	"flare sound" "plasma tiny"
@@ -324,13 +375,13 @@ outfit "Vapor Nuclear Rocket"
 	"mass" 24
 	"outfit space" -24
 	"engine capacity" -24
-	"thrust" 24
-	"thrusting energy" 1.5
-	"thrusting heat" -6
+	"thrust" 36
+	"thrusting energy" 6
+	"thrusting heat" -3
 	"energy generation" 1.5
 	"heat generation" 9
 	"overheat damage rate" 3
-	"drag reduction" 0.6
+	"drag reduction" 0.15
 	"flare sprite" "effect/avgi flare/ntr"
 		"frame rate" 15
 	"flare sound" "atomic small"
@@ -355,14 +406,15 @@ outfit `A-3600 "Beam" Amat Drive`
 	"flare sprite" "effect/avgi flare/antimatter"
 		"frame rate" 15
 	"flare sound" "fusion torch"
+	"afterburner effect" "large remass injection"
 	"turn" 6000
 	"turning energy" 9
 	"turning heat" 54
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 15
 		"scale" 0.5
-	"steering flare sound" "remnant afterburner"
-	"magnetic nozzle" 18
+	"steering flare sound" "plasma huge"
+	"magnetic nozzle" 12
 	description "The fastest Avgi starships were propelled not just by their engines, but also by immense banks of lasers and particle beams stationed in the Anax system, pushing ships to velocities in excess of 0.2c before braking with a magsail or plasma magnet. Just before the invention of the hyperdrive, however, the Avgi perfected this beam-core antimatter drive, capable of pushing a starship with sufficient antimatter fuel to 0.4c and perhaps beyond. Requiring immense quantities of antimatter, the amat farms around Anax such as Antivli Station would have been strained to their limits had this design entered mass production, but the surprise invention of the hyperdrive rendered it laughably obsolete overnight."
 
 
@@ -380,7 +432,7 @@ outfit `Z-333 "Spark" Fusion Torch`
 	"thrust" 120
 	"thrusting energy" 9
 	"thrusting heat" 60
-	"thrusting fuel" 0.09
+	"thrusting fuel" 0.15
 	"drag reduction" 1
 	"flare sprite" "effect/avgi flare/fusion"
 		"frame rate" 15
@@ -406,7 +458,7 @@ outfit `Z-666 "Zap" Fusion Torch`
 	"thrust" 270
 	"thrusting energy" 18
 	"thrusting heat" 120
-	"thrusting fuel" 0.18
+	"thrusting fuel" 0.3
 	"drag reduction" 2
 	"flare sprite" "effect/avgi flare/fusion"
 		"frame rate" 15
@@ -431,11 +483,11 @@ outfit `Z-999 "Arc" Fusion Torch`
 	"thrust" 450
 	"thrusting energy" 27
 	"thrusting heat" 180
-	"thrusting fuel" 0.27
+	"thrusting fuel" 0.45
 	"drag reduction" 3
 	"flare sprite" "effect/avgi flare/fusion"
 		"frame rate" 15
-		"scale" 2
+		"scale" 1.5
 	"flare sound" "fusion torch"
 	"afterburner effect" "large remass injection"
 	"magnetic nozzle" 9
@@ -481,7 +533,7 @@ outfit "Remass Injector"
 	"afterburner thrust" 90
 	"afterburner energy" 3
 	"afterburner heat" -18
-	"afterburner fuel" 0.24
+	"afterburner fuel" 0.6
 	"magnetic nozzle" -1
 	description "A powerful turbopump forces a torrent of liquid hydrogen into the throat of a fusion torch's magnetic nozzle, dramatically increasing thrust at the cost of a significant increase in propellant consumption. The additional mass flow likewise reduces the waste heat absorbed by a torch drive, expelling much of it as reaction mass is injected around the fusion plasma."
 	description "	The Remass Injector is a component that can be installed into an Avgi fusion torch to give it afterburning capabilities. It requires a magnetic nozzle slot to be installed."
@@ -498,8 +550,6 @@ outfit "Inductive Extractor"
 	"mass" 12
 	"outfit space" -12
 	"engine capacity" -6
-	"energy generation" 1.5
-	"heat generation" 1.5
 	"thrust" -30
 	"thrusting energy" -24
 	"thrusting heat" 6
@@ -554,11 +604,11 @@ outfit "R-360 RCS Thrusters"
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.125
-	"steering flare sound" "plasma small"
+	"steering flare sound" "plasma medium"
 	"reverse flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.25
-	"reverse flare sound" "plasma small"
+	"reverse flare sound" "plasma medium"
 	description "The Avgi have designed their reaction control thrusters to synergize with their fusion torches, tapping off high temperature waste heat and using it to superheat water for use in their reaction control systems. An additional magnetohydrodynamic accelerator around each thruster's nozzle improves specific impulse at the cost of significant energy use. These thrusters allow Avgi starships to easily dock with stations or other ships without igniting their highly radioactive fusion torches."
 
 
@@ -581,11 +631,11 @@ outfit "R-720 RCS Thrusters"
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.25
-	"steering flare sound" "plasma small"
+	"steering flare sound" "plasma large"
 	"reverse flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.5
-	"reverse flare sound" "plasma small"
+	"reverse flare sound" "plasma large"
 	description "This large set of 'teakettle' style reaction control thrusters can allow even the largest of Avgi starships to maneuver with ease, or even reverse course without needing to fully turn around. They also can be used to reject considerable amounts of waste heat by expelling superheated water vapor, boosted by an electromagnetic accelerator."
 
 

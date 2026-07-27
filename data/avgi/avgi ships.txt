@@ -608,15 +608,13 @@ ship "Frequentia"
 	outfits
 		"Lantern Fission Core"
 		"Ultracapacitor Cell" 3
-		"Heatsink Partition"
 		"Multispectral Scanner"
-		"Cryogenic Deuterium Tank" 6
+		"Cryogenic Deuterium Tank" 4
 		"Magnetic Scoop"
 		"Optical Laser Rifle" 2
 
 		`Z-333 "Spark" Fusion Torch`
 		"Inductive Extractor"
-		"Remass Injector"
 		"R-180 RCS Thrusters"
 		"Hyperdrive"
 
@@ -1067,7 +1065,7 @@ ship "Modified Tachytia"
 		"outfit space" 1800
 		"weapon capacity" 180
 		"engine capacity" 450
-		"self destruct" 0.9
+		"self destruct" 1
 		"spinal mount" 1
 		"anchor point" 3
 		weapon
@@ -1272,6 +1270,7 @@ ship "Prismaios"
 		"mass" 420
 		"drag" 2.4
 		"heat dissipation" 1.2
+		"shield multiplier" -1
 		"solar heat" 4.5
 		"fuel capacity" 1200
 		"cargo space" 36
@@ -1291,6 +1290,7 @@ ship "Prismaios"
 		`"Nettle" KKV` 54
 		"Green Optical Laser"
 
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Diffuse Deflector"
 		"Multispectral Scanner"
@@ -1377,7 +1377,8 @@ ship "Prismaios" "Prismaios (Orchid)"
 		"External Launch Tube" 2
 		`"Orchid" Nuclear Missile` 12
 
-		"Ultracapacitor Bank"
+		"Lantern Fission Core"
+		"Ultracapacitor Cell" 3
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
 		"Multispectral Scanner"
@@ -1416,7 +1417,7 @@ ship "Interferos"
 		"solar heat" 2.7
 		"fuel capacity" 600
 		"cargo space" 12
-		"outfit space" 294
+		"outfit space" 303
 		"weapon capacity" 102
 		"engine capacity" 66
 		"anchor point" 1
@@ -1430,6 +1431,7 @@ ship "Interferos"
 		"Speckle Turret" 2
 		"Speck Round" 4800
 
+		"Lantern Fission Core"
 		"Ultracapacitor Bank" 2
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
@@ -1491,6 +1493,7 @@ ship "Interferos" "Interferos (KKV)"
 		"Medium VLS" 2
 		`"Nettle" KKV` 216
 
+		"Lantern Fission Core"
 		"Ultracapacitor Cell" 3
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
@@ -1513,7 +1516,7 @@ ship "Interferos" "Interferos (Orchid)"
 		"External Launch Tube" 4
 		`"Orchid" Nuclear Missile` 24
 
-		"Ultracapacitor Cell" 3
+		"Lantern Fission Core"
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
 		"Magnetic Scoop"
@@ -1568,6 +1571,7 @@ ship "Diaspersi"
 		"Medium VLS" 2
 		`"Nettle" KKV` 216
 		
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
@@ -1662,7 +1666,7 @@ ship "Diaspersi" "Diaspersi (Orchid)"
 		"Ophrys Stockpile" 3
 		`"Ophrys" Nuclear Torpedo` 36
 		
-		"Ultracapacitor Bank"
+		"Lantern Fission Core"
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
 		"Multispectral Scanner" 3
@@ -1693,6 +1697,7 @@ ship "Diaspersi" "Diaspersi (UREB)"
 		"Small VLS"
 		`"Nettle" KKV` 54
 		
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Specular Deflector"
 		"Optical Lasing Generator"
@@ -1737,6 +1742,7 @@ ship "Refraktos"
 		"outfit space" 516
 		"weapon capacity" 150
 		"engine capacity" 180
+		"spinal mount" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 420
@@ -1747,6 +1753,7 @@ ship "Refraktos"
 		"Blue Optical Laser" 4
 		"Green Optical Laser" 3
 
+		"Lantern Fission Core"
 		"Photoelectric Lamina"
 		"Ultracapacitor Bank" 2
 		"Diffuse Deflector"
@@ -1758,7 +1765,7 @@ ship "Refraktos"
 		
 		`Z-666 "Zap" Fusion Torch`
 		"Inductive Extractor" 5
-		"Remass Injector" 1
+		"Remass Injector"
 		"R-360 RCS Thrusters"
 		"Hyperdrive"
 
@@ -1822,8 +1829,9 @@ ship "Refraktos" "Refraktos (UREB)"
 		"UREB Turret" 2
 		"Green Optical Laser" 3
 
+		"Lantern Fission Core"
 		"Photoelectric Lamina"
-		"Ultracapacitor Bank" 3
+		"Ultracapacitor Bank" 2
 		"Specular Deflector"
 		"Optical Lasing Generator"
 		"Multispectral Scanner" 2
@@ -1994,6 +2002,7 @@ ship "Difraktos" "Difraktos (KKV)"
 		"Medium VLS" 4
 		`"Nettle" KKV` 432
 
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
@@ -2027,6 +2036,7 @@ ship "Difraktos" "Difraktos (Orchid)"
 		"External Launch Tube" 4
 		`"Orchid" Nuclear Missile` 24
 
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Specular Deflector"
 		"Optical Lasing Generator"
@@ -2059,24 +2069,28 @@ ship "Difraktos" "Difraktos (Orchid)"
 
 ship "Difraktos" "Difraktos (UREB + Orchid)"
 	outfits
-		`"Orchid" Nuclear Missile` 24
-		"Concealment Lamina"
-		"External Launch Tube" 4
 		"Green Optical Laser" 2
-		Hyperdrive
-		"Inductive Extractor"
+		"UREB Turret" 2
+		"External Launch Tube" 4
+		`"Orchid" Nuclear Missile` 24
+
 		"Lantern Fission Core"
+		"Ultracapacitor Bank"
+		"Specular Deflector"
 		"Magnetic Scoop"
-		"Multispectral Scanner" 3
-		"Optical Laser Rifle" 42
 		"Optical Lasing Generator"
+		"Multispectral Scanner" 3
+		"Concealment Lamina"
+		"Optical Laser Rifle" 42
+
+		"Inductive Extractor"
+		"Remass Injector" 2
 		"R-180 RCS Thrusters"
 		"R-360 RCS Thrusters"
-		"Remass Injector" 2
-		"Specular Deflector"
-		"UREB Turret" 2
-		"Ultracapacitor Bank"
 		`Z-333 "Spark" Fusion Torch`
+		Hyperdrive
+
+
 
 	gun
 	gun "External Launch Tube"
@@ -2160,7 +2174,8 @@ ship "Atenuatia"
 		"Medium VLS" 2
 		`"Nettle" KKV` 216
 		
-		"Ultracapacitor Bank" 3
+		"Lantern Fission Core"
+		"Ultracapacitor Bank" 2
 		"Specular Deflector"
 		"Optical Lasing Generator" 3
 		"Multispectral Scanner" 6
@@ -2310,6 +2325,7 @@ ship "Atenuatia" "Atenuatia (Orchid)"
 		"Ophrys Stockpile" 3
 		`"Ophrys" Nuclear Torpedo` 36
 		
+		"Lantern Fission Core"
 		"Ultracapacitor Bank"
 		"Specular Deflector"
 		"Optical Lasing Generator" 2

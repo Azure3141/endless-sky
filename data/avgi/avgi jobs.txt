@@ -917,19 +917,19 @@ mission "Avgi: Special Nuclear Material Shipment 2"
 		not "avgi: fissiles shortage"
 		has "avgi: nuclear material transport jobs"
 	npc
-		government "Avgi"
+		government "Avgi (Dissonance)"
 		personality coward harvests timid secretive surveillance
 			confusion 20
 		system
 			distance 1 2
-		fleet "Small Avgi Merchants"
+		fleet "Small Dissonance Merchants"
 	npc
-		government "Avgi"
+		government "Avgi (Dissonance)"
 		personality coward harvests timid secretive surveillance
 			confusion 20
 		system
 			distance 1 2
-		fleet "Small Avgi Merchants"
+		fleet "Small Dissonance Merchants"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
@@ -953,19 +953,19 @@ mission "Avgi: Special Nuclear Material Shipment 3"
 		not "avgi: fissiles shortage"
 		has "avgi: nuclear material transport jobs"
 	npc
-		government "Avgi (Dissonance)"
+		government "Avgi (Dissonance Angry)"
 		personality coward harvests timid secretive surveillance
 			confusion 20
 		system
 			distance 1 2
-		fleet "Small Dissonance Merchants"
+		fleet "Small Dissonance Pirates" 2
 	npc
-		government "Avgi (Dissonance)"
+		government "Avgi (Dissonance Angry)"
 		personality coward harvests timid secretive surveillance
 			confusion 20
 		system
 			distance 1 2
-		fleet "Small Dissonance Merchants"
+		fleet "Large Dissonance Pirates"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete

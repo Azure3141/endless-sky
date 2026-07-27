@@ -1,0 +1,778 @@
+# Copyright (c) 2025 by Azure
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+mission "Avgi: First Contact Wait"
+	landing
+	invisible
+	to complete
+		never
+	source "Republic" "Free Worlds" "Syndicate"
+	to offer
+		has "Avgi: Twilight Escape 3: done"
+	on offer
+		event "avgi: first contact timer" 30
+		fail
+
+event "avgi: first contact timer"
+
+mission "Avgi: Intro Reminder"
+	landing
+	name "Visit the Avgi"
+	description "See if there's anything you can do for the Avgi Consonance, the government in exile headquartered at <destination>"
+	source
+		not "Peripheria"
+		attributes "avgi" "twilight" "tangled shroud"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Twilight Escape 3: done"
+		has "avgi: first contact timer"
+	on offer
+		conversation
+			`	Though you have returned to their space, it's been a while since you've spoken to the leaders of this strange race of aliens. Maybe you should check in with the Avgi government in exile on Peripheria and see if there's anything you can do to help them.`
+				accept
+
+
+# Northern Scouting Mission Chain
+
+mission "Avgi: Thread Activity 1"
+	landing
+	name "Placeholder"
+	description "Accompany Captain Lait to the <waypoints> system and investigate the radio emissions the Avgi detected, then return to <destination>"
+	source "Peripheria"
+	waypoint "Thread"
+	destination "Outpost Tekis"
+	passengers 3
+	blocked "You'll need <capacity> free aboard the <ship> for this mission."
+	to offer
+		has "avgi: first contact timer"
+	on offer
+		conversation
+			`	Your arrival on the <ship> attracts some notice, as it always does with the Avgi, curious about this interloper from beyond their space. But this time you seem to have been anticipated, for a pair of Avgi wearing hammered copper bangles greet you as you step off the <ship>.`
+			`	"Captain <last>, you are, question?" one asks, glancing down at a slate-grey tablet displaying your likeness.`
+			choice
+				`	"Yep, that's me."`
+				`	"Can I help you?"`
+
+			`	"Entreating. First Speaker Prasinos requests your council. You will accompany us, yes?"`
+			choice
+				`	"Sure, lead the way."`
+					goto meeting
+				`	"A meeting? What for?"`
+				`	"I'm busy at the moment, sorry."`
+					defer
+
+			`	The Avgi glances back down at her tablet. "Trepidation. The Speaker seeks to... further the relations of the Consonance with the good Captain, who has proven both... indispensible and generous with their freely-given aid." It rather sounds like the Avgi would like your help.`
+			choice
+				`	"Sure, lead the way."`
+				`	"I'm busy at the moment, sorry."`
+					defer
+
+			label meeting
+			`	You are marched through the slowly spinning station to a chamber much deeper than where you originally met Prasinos, along with her fellow First Speakers. This time, Prasinos is alone, greeting you outside a room that can only be her office.`
+			`	"Greetings. Well met, Captain. I am pleased you could join me today," she says, wings rustling and she slides the door open. "Invitation. Please, come inside. I have much to discuss with you."`
+			`	An appraising glance at the interior reveals a modest but well-furnished office, large enough for a few people to converse without being particularly spacious. The wooden paneling and copper trims are perhaps not the greatest of luxuries, but are downright ostentatious compared to the utilitarian construction Peripheria employes most everywhere else. Avgi-style seating rails ring an elliptical table near the back, but a chair more suitable for you has also been added.`
+			`	Only then do you realize there is another Avgi seated around the table, his creamy color blending with the pale wooden walls. You recognize him as Lait, the first Avgi you spoke with, one of the Polari scout captains who still dares patrol the Twilight. "Salutations. Captain <last>, I am pleased to see you once again."`
+			choice
+				`	"Likewise."`
+				`	"So what's going on?"`
+					goto explanation
+
+			`	"Satisfaction. Captain Lait has briefed me personally on your encounter with him, and I have heard similar praise about your conduct from others among us." She tips a wing at Lait.`
+
+			label explanation
+			`	"I have called the two of you here in the hope that you, Captain <last>, are willing to help us, and Captain Lait because of his experience surviving in the Twilight. Captain <last>, am I right in my hope that you are as benevolent an alien as your compatriots?"`
+			choice
+				`	"I'll do what I can"`
+					goto helpful
+				`	"It depends on what you mean by 'help.'"`
+			
+			`	"Beseeching. Help to those in desperate need of it, the Avgi who remain in the Twilight and seek rescue."`
+
+			choice
+				`	"I would be glad to help them."`
+				`	"No thanks."`
+					decline
+
+			label helpful
+			`	"Relief. I- no, we are grateful for your assistance, Captain. Rest assured that your aid will not be forgotten."`
+			`	Prasinos stands and begins pacing. "Explanation. You might wonder why we still bother to scout the northern reaches of the Twilight, given the dangers and our inability to project meaningful power beyond Arche."`
+			`	She stops and gestures to Lait, who taps the table a few times, causing a map to appear on it. "As you see here, we are able to sustain scouting sorties through the core systems at least weekly. They watch the enemy for any signs that they have made purchase on the planets, which yet resist their attempts at landing or bombardment."`
+			`	Lait interjects. "Regret. I wish we could do more, but the most we can do is monitor the Aberrant and maintain sporadic communication with those planets that are still willing to talk to us.`
+			
+			choice
+				`	"You mean some of them aren't?"`
+				`	"So where do I come in?"`
+					goto signals
+
+			`	Prasinos seems to laugh. "Wry regret. Most are upset at us for abandoning them, rightfully so. But it was a choice between saving our remaining fleets or sending them to die in battles that would have already been lost. Still, they are right. My only defense is that most of them have been able to resist the Aberrant with the defenses on the more developed planets, preventing catastrophe."`
+
+			label signals
+			`	Now Lait turns to you, flicking a wing. "Excitement. But a week ago, a scout's Optikons recorded radio emissions in the Thread system, not originating from the moon Cyreal, but rather from interplanetary space, in a frequency band once popular with the local minors. They were faint and full of noise, and we have not managed to decrypt them, but they suggest there are surviving Avgi in space, possibly remnants of the miners that once called the asteroids home. Someone out there is still alive."`
+			`	"Request," Prasinos continues. "Our scout tried to find the source of the signals, but her ship was driven out by the Aberrant, who may have heard it too. We need a ship strong enough to hold its own while it searches, and finds who is sending those signals. And possibly rescue them."`
+			choice
+				`	"Who could they be?"`
+				`	"Do you know what to be expecting?"`
+
+			`	"Consideration. Most likely a community of asteroid miners that managed to stay hidden from the Aberrant. Why they have let their signals leak now, I cannot guess, but there could potentially be hundreds of them."`
+			`	Lait adds, "Assurance. If there truly are hundreds of Avgi hidden in an asteroid, we could make multiple trips to rescue them, so do not worry about the bunks on your ship overly much."`
+			`	"Emphasis. But these are the stakes, Captain <last>," says Prasinos. "We have already left too many behind, so if we can retrieve any number of lost souls, ones who could be skilled and cunning miners no less, we need to make the attempt. Are you willing?"`
+			choice
+				`	"Yes, of course."`
+				`	"Sorry, this sounds too dangerous for me."`
+					decline
+
+			`	"Relief. Thank you, Captain. Your aid will not be forgotten. I will leave you to plan your mission with Captain Lait."`
+			`	With that, Prasinos excuses herself, leaving you alone with Lait. He looks excited, and the moment she leaves, he practically leaps off the rail. "Enthusiasm. Captain <first>, I have not had the chance to meet you properly, truly. Our first meeting was in a moment of danger, and I lacked the translation tools to properly communicate, and when I first greeted you in person, it was as an official act. But truly, my hope has been to speak with you more candidly, and to hear of the galaxy beyond."`
+			choice
+				`	"Sure, I can tell you quite a bit about the galaxy."`
+					goto galaxy
+				`	"Well, I wouldn't say I've explored all that far."`
+
+			`	"But you have your own space, no? You humans, with your star clusters in the north, far larger than all of the Twilight and Tangled Shroud we have managed to explore together."`
+			choice
+				`	"Yes, I suppose so. It's easy to forget how vast it is once you've explored beyond it."`
+					goto fan
+				`	"It isn't really that interesting."`
+			`	"Disappointment. Ah well, perhaps we can discuss our mission then."`
+				goto mission
+
+			label galaxy
+			`	You tell him of some of your adventures around the galaxy, and some of the aliens you've both met and even fought. Lait is suitably impressed, but then asks, "And what of human space, question? It is larger than all of the Twilight and the Tangled Shroud we have managed to explore combined!`
+			choice
+				`	"It's full of interesting people and spectacular sights, both good and bad."`
+				`	"Human space is quite interesting, but it's nothing compared to the rest of the galaxy."`
+
+			label fan
+			`	"Excitement. Either way, I am a fan, you could say, of you humans. Fascinating aliens, you are!" To your surprise, he then thrums in a deep, hard voice, without the aid of the translator. "Speech of humans, I have learned. Many years practice!"`
+			
+			choice
+				`	"Hey, that's pretty good!"`
+				`	"You need to work on the grammar a bit, but that's impressive!"`
+			`	He returns to using the translator. "Appreciation. I had Sora teach me some of the prononciations, and I studied the recordings of your compatriots quite closely."`
+
+			label mission
+			`	"Consideration. So, Thread is somewhat deep into the Twilight, and we will need to pass through the Anax system, where Aberrant tend to linger near the wrecked stations. In my Polari, I should be fast enough to evade the, but you should avoid getting bogged down in a fight before we reach our destination." He explains that Aberrant caught up in fight seem to attract attention from other Aberrant, even over interstellar distances.`
+			`"Warning. They also seemed to be lingering in Thread itself, possibly hunting for the same signal we detected."`
+			choice
+				`	"We'll need to race them to it, then."`
+				`goto race
+				`	"If it's been days since you detected the singal, won't we be too late? What if the Aberrant already found them?"`
+
+			`	Lait looks a bit uncomfortable with the suggestion. "Worry. It is a possibility, but whoever is there has managed to hide for years. A single lapse should not spell their doom too quickly, I hope."`
+				goto arrival
+
+			label race
+			`	"Agreement. We should indeed hurry, but we must be sure not to rush and accidentally overlook those we hope to rescue."`
+
+			label arrival
+			`	"Continuation. Once we arrive in Thread, you will need to engage any Aberrant in the system while I scan for the signal once more. Warning, I will also be broadcasting a strong signal to reach any hidden survivors, which may attract attention to my own ship. Amusement. I would appreciate it if you could keep me from being blown up."`
+			choice
+				`	"You got it."`
+					goto end
+				`	"No promises."`
+
+			`	"Amusement. That's a joke, right?"`
+			
+			label end
+			`	"Excitement. Disregarding that, after I hopefully locate the source of the signal, we will make contact with the survivors and assess their number. If we can fit them aboard our ships, we will evacuate them back to Peripheria, and if their number exceeds our ships' capacity, we will return escorting a larger transport. Is everything understood?"`
+			choice
+				`	"Yes, let's do this."`
+					accept
+
+	on enter "Thread"
+		conversation
+			`	The Thread system is whirling with asteroids`
+
+
+			`	Lait points out some stuff in the system. Notes that the asteroid miners probably have hideouts everywhere.`
+
+			`	Soon, Lait has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant surely would have noticed a ship out in the open, if it was ever active."`
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive waiting staying
+		system "Anax"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Latte" 3
+				"Aberrant Pileup" 2
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive vindictive uninterested waiting staying
+		system "Anax"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Junior" 2
+				"Aberrant Pike" 2
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive vindictive entering waiting staying target
+		system "Thread"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Whiskers" 2
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive vindictive entering waiting staying target
+		system "Thread"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Chomper"
+
+	npc assist
+		government "Avgi"
+		personality derelict mute pacifist target
+		system Thread
+		ship "Akoustiki" "Solid Rain"
+		conversation
+			`At first glance, the Akoustiki appears derelict, with no sign of any active systems and minimal thermal emissions. But as you dock with it, the dull amber glow of emergency lighting becomes apparent.`
+			`	As you poke your head inside the airlock, a cold, hard object presses against the side of your head. "Warning. Think fast, Captain."`
+			choice
+				`	"Whoa, calm down."`	
+					goto calm
+				`	(Try the cool karate move again.)`
+					to display
+						has "FW Katya 1: declined"
+
+			`	You try that cool karate move again, and this time it works better than it did on Katya. You knock the optical laser rifle out of the hands of a tan Avgi, sending it spinning.`
+
+			`	"Alarm, wait!"`
+
+			choice
+				`	"Okay, everyone calm down. I'm here to help."`
+					goto calm
+				`	"You know, pointing a gun at people isn't very nice"`
+			`	"Apology. We thought you were someone from Cyreal."`
+
+			choice
+				`	"No, I was sent by the Consonance to help you."`
+					goto calm
+				`	"Why would you be afraid of someone from Cyreal?"``
+					goto state
+
+			label calm
+
+
+
+
+			`	"Fear. The State holds a diamond-hand grip across all of Cyreal. People are put in stocks for minor offenses. Any dissenters vanish, and all the party tells us is that they have gone 'to the moon.' Even though Cyreal is a moon, confusion."`
+			choice
+				`	"Wow, that sounds scary."`
+					goto next
+				`	"This reminds me of an ancient human book, 'Nineteen Eighty-Four' by George Orwell."`
+					goto jorjorwel
+
+			label jorjorwel
+			`	"Have you read it, question?" asks Corsa.`
+
+			choice
+				`	"Yes."`
+					goto lie
+				`	"No, I haven't read it, but I imagine this is what the book is like."
+					goto no
+				`	"Anyway, where do you want me to take you?"`
+					goto next
+
+
+
+
+			you were too late and the asteroid station was already blown up, these are the survivors
+
+
+
+			`Talk to Ercu and Corsa Here`
+
+
+			`	Our asteroid station was destroyed by the Aberrant`
+			`	Do you want to be taken to another asteroid station?`
+			`	No, it isn't safe here, and we don't know how to find them`
+			`	What about Cyreal?`
+			`	No, Cyreal is now ruled by an autocratic dictatorship that seized power after the Incursion.`
+			`	Dissonance station instead`
+
+ 				this is just like 2984
+
+				depart
+
+
+mission "Avgi: Thread Activity 2"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Outpost Tekis"
+	destination "Peripheria"
+	passengers 3
+	to offer
+		has "Avgi: Thread Activity 1: done"
+	on offer
+		conversation
+			`	Take Ercu and Corsa back to Outpost Enka.`
+			accept
+
+	on enter "Thread"
+		conversation
+			`	A teal Avgi greets you. "Amity. Keppel, I am."`
+
+
+
+
+mission "Avgi: Amathil Contact 1"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Peripheria"
+	destination "Amathil"
+	to offer
+		has "Avgi: Thread Activity 2: done"
+	on offer
+		conversation
+			`	Go to Amathil and bring a communique to their leaders.`
+			accept
+
+
+mission "Avgi: Amathil Contact 2"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Amathil"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Amathil Contact 1: done"
+	on offer
+		set "avgi: contacted planets"
+		conversation
+			`	Talk to the Amathil government people. Get their side of the story about being left behind, though they're pleasant and cordial with the Consonance, then return to Peripheria`
+			accept
+
+
+mission "Avgi: Aviskir Extraction 1"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Peripheria"
+	destination "Aviskir"
+	to offer
+		has "Avgi: Amathil Contact 2: done"
+	on offer
+		conversation
+			`	"The Consonance relinquished its claim to represent us when they fled into the night and abandoned us to the mercy of the Aberrant" he growls out.`
+
+
+
+
+			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. She is already occupied with another project and refuses to leave`
+			accept
+
+mission "Avgi: Aviskir Extraction 2"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Aviskir"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Aviskir Extraction 1: done"
+	on offer
+		conversation
+			`	Return to Peripheria`
+			accept
+
+
+
+
+mission "Avgi: Araio Wrangling 1"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Peripheria"
+	destination "Araio"
+	to offer
+		has "Avgi: Aviskir Extraction 2: done"
+	on offer
+		conversation
+			`	Go to Araio and get into a gunfight and a cowboy chase. Get directed to Elthe. Avgi cowboys riding velociraptors and wrangling legally distinct longcow bugs. Nuclear steam trains too.
+
+
+			racing against avgi cowboy mercenaries (who have been hired by the dissonance, unbeknownst to you) to track down the survey data
+
+
+			Grassy Park (Jurassic Park)
+
+
+			Yo
+
+			`
+			accept
+
+
+
+mission "Avgi: Araio Wrangling 2"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Araio"
+	destination "Elthe"
+	to offer
+		has "Avgi: Araio Wrangling 1: done"
+	on offer
+		conversation
+			`	P ickup the memory diamond with info on interstellar mission trajectories on Elthe. This has survey locations of all the orion starships that were launched years ago, which have valuable pulse units in them. U233 pulse units instead of Pu239 ones for better material aging. Explain how U233 has similar neutronic properties to Pu but is way stronger and less finnicky.`
+
+
+
+
+
+			You retrieve the lockbox, but when you hand it over to Prasinos she opens it and reveals that it was already cracked open and replaced with a fake. The Dissonance has the Orion locations now and is likely going to retrieve the nukes.
+
+
+
+
+
+			Or maybe you can either succeed or fail depending on choices? If you succeed, Orion retrieval is an option for Fissile Shortages later. If you fail, the Dissonance gets the Orions and gets their nukes sooner
+
+
+
+
+
+
+
+			accept
+
+
+
+mission "Avgi: Araio Wrangling 3"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Elthe"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Aviskir Extraction 2: done"
+	on offer
+		conversation
+			`	Return the special data to Prasinos`
+			accept
+
+
+
+mission "Avgi: Aviskir Repatriation"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Peripheria"
+	destination "Araio"
+	to offer
+		has "Avgi: Aviskir Extraction 2: done"
+	on offer
+		conversation
+			`	A couple wants to be taken to Aviskir, where they have family. Talks about how life is better there`
+			accept
+
+
+
+# Ask for Help Mission Chain
+
+
+
+
+
+
+
+
+
+
+	npc accompany save
+		government "Deep"
+		personality timid escort
+		ship "Mule" "D.S.S. Taylor"
+		ship "Mule" "D.S.S. Nuckolls"
+		ship "Bactrian" "D.S.S. Teller"
+		ship "Bactrian" "D.S.S. Ulam"
+
+
+
+mission where you pick up human hyperspace relays from a syndie world
+
+
+place a few at the outer limits to link up the systems
+
+then you go place them at various systems to connect ensemble to arche, to test if the shrangled toud interferes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Investigate the Aberrant Mission Chain
+
+
+
+mission "Avgi: Aberrant Investigation Pointer"
+	landing
+	name "Meet the Astronomer"
+	description "Go to <destination> to meet with an Avgi astronomer who claims her work is critically important."
+	source
+		not "Ergastirio Station"
+		attributes "avgi diaspora"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Araio Wrangling 3: done"
+	on offer
+		dialog `	You find a message waiting for you, with an Avgi astronomer requesting a meeting at <destination>, claiming her work is key to fighting the Aberrant. You wonder what interest an astronomer could have in you, or how astronomy is even relevant to the war with the Aberrant.`
+			accept
+
+
+mission "Avgi: Alonis Retrieval 1"
+	landing
+	name "Visit the Alonis Observatory"
+	description "Cerise is attempting to study the region of space the Aberrant came from. Reach the <destination> and retrieve astronomical data from its computer, if it remains intact."
+	source "Ergastirio Station"
+	destination "Alonis Observatory"
+	to offer
+		has "Avgi: Araio Wrangling 2: done"
+	on offer
+		conversation
+			`	Your contact is waiting for you, a vivid pink Avgi named Cerise, who quickly escorts you to her rather cramped office. "Warm greetings. Thank you for taking the time to meet with me, Captain <last>.`
+			choice
+				`	"It's no trouble."`
+					goto next
+				`	"I'm curious about what astronomy has to do with the Aberrant."`
+					goto astronomy
+				`	"This better be important."`
+
+			`	She looks a bit crestfallen at your tone. "Assurance. It is, I promise! Just hear me out."`
+				goto next
+			
+			label astronomy
+			`	"Discomfort. You sound like the Assembly, you know, when they ask why they should keep paying me. But I promise, this is important!"`
+
+			label next
+			`	She wobbles on her perch a bit. "Well, I suppose I should get to the point. That's what everyone is always telling me. Explanation. You see, I am a scientist, but not one that works on weapons or spaceships or anything like that. That's more of my brother Cerul's line of work. But astronomy can be important too!"`
+			`	She continues to ramble a bit about the critical importance of large telescopes in discovering new worlds and physical phenomena. "But in this case, you know, I worked on this big space telescope we had back in our home cluster, in the Pinnacle system. The Alonis Observatory, a station with one of the biggest optical scopes ever, plus a whole bunch of other instruments. Enthusiasm. You really should have been there for the construction, I hear they had to modify a whole custom freighter just to ship the primary mirror segments in. And then they accidentally cooked one with a careless torch burn, hehe."`
+			choice
+				`	(Let her continue without interrupting.)`
+				`	(Tell her to get to the point.) "So what does this telescope have to do with anything?"`
+					goto thepoint
+
+			`	"...Recollection, and then there was that time Chiffon, he was a friend of mine, he cooked a star tracker by pointing it at the local primary. Right at it, a shot in a million, and no one could ever figure out why the safety locks were turned off."`
+			`	After a while your eyes start to glaze over. "...and like I said, we built Alonis because a group of fellow polities wanted to really explore the systems to our east, but the ion storms would just cook our scout ships, and we couldn't figure out why, seeing as none of them returned. So we built this observatory in the closest system we could, to look at them from a distance, see what was going on. That was how we discovered the ion storms in the first place, despite having lost so many ships to them. And that area, the Ember Waste, that's where the Aberrant came from!"`
+				goto end
+
+			label thepoint
+			`	"Embarassment. Anyway. The Alonis Observatory was built by a coalition of polities with an active interest in exploration, because the systems to our east were too hostile to actually explore with our ships at the time. Strange ion storms that would cook our scout ships, before we layered them with armor and shielding. Not the shields you humans invented, I mean, just your typical radiation shielding for charged particles, you know, a bunch of polyethylene and water and tungsten...." You cough politely before she can keep going. "Well, I mean, those systems, you know, ended up being the same systems the Aberrant came from."`
+			`	Cerise finally brings up a map of eastern Avgi space on the wall. "Vindication. And that's why astronomy is important! We monitored those systems for years, and after we finally got scout ships there, we looked at the systems beyond. The same area we think the Aberrant came from - the Ember Waste."`
+
+			label end
+			choice
+				`	"So... where do I come in?"`
+					goto actualend
+				`	"And did you ever observe anything interesting there?"`
+
+			`	"Oh, all sorts of interesthing things! Habitable worlds, for one, which had people just hovering to get there. And some odd light curves that really looked a lot like some kind of megastructure around the star, but that was before we were really sure about the Antecessors existing."`
+			choice
+				`	"The Antecessors?"`
+				`	"So... where do I come in?"`
+					goto actualend
+
+			`	"Consideration. No one really knows who they were. But once we were able to get hardened scout ships into the Ember Waste, we found all sorts of evidence that a past civilization had once existed there. Depleted minerals, layers of old plastics and radioisotopes, even some ancient hunks of metal that were once satellites. But if that light curve really is from some megastructure, it could be from an entirely different civilization, who knows?"`
+
+			label actualend
+			scene "alonis observatory picture"
+			`	Cerise waves an arm at the wall, which changes to display a grainy image. "A scout ship imaged the Observatory a few weeks ago, during a daring run to the Pinnacle system." She jumps excitedly on her perch. "Enthusiasm. You can see that the station is still intact, no? I want to go and retrieve all of the data still on board, of course. We usually just processed most of it on-site, with how expensive it was to get couriers to ship the memory pebbles back to Anax, so the bulk of the raw data is still there."`
+
+			choice
+				`	"Okay, let's go."`
+					goto actualendfinalv2(1)_
+				`	"I've actually been to those systems. They're inhabited by aliens called the Ka'het, which look a bit like the Aberrant."`
+					goto graveyard
+					to display
+						has "Graveyard Label: offered"
+				`	"You know I can just take you to those systems?"`
+			`	She just stares at you for a moment "Consideration. I would like to agree, as that would be an excellent adventure, but it isn't those further systems I care about, actually."`
+				goto actualendfinalv2(1)_
+
+			label graveyard
+			`	You explain to Cerise about the Builders and Ka'het, and how they look suspiciously similar to the Aberrant. "Awe. If that could truly explain the origin of the Aberrant, we need this data more than ever."`
+
+			label actualendfinalv2(1)_
+			`	She brings up a map of a cluster of systems just east of Avgi space. "I want to retrieve the full observation record for the systems our scouts explored, just before the Incursion. The story is that some kind of gateway or portal activated, which let the Aberrant in, and I want to see if there's any record of a similar activation happening in the years before that."`
+			`	"Excitement. The Alonis Observatory was more or less ignored by the Aberrant, as far as we know, and the onboard memory should still have all of the records I want. All we need to do is sneak onto it, without any Aberrant in the system, and transfer the data! Easy!"`
+			choice
+				`	"Alright, let's go."`
+					accept
+				`	"This is too dangerous for me. I'm out."`
+					decline
+
+	npc evade
+		government "Aberrant"
+		personality coward secretive staying vindictive waiting uninterested
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Hugger" 2
+				"Aberrant Whiskers"
+
+	on stopover
+		dialog `	You dock at the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can destroy them or get them to run away."`
+
+
+mission "Avgi: Alonis Retrieval 2"
+	landing
+	name "Return to Ergastirio Station"
+	description "Take the data back to Ergastirio Station so that Cerise can go over it."
+	source "Alonis Observatory"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Alonis Retrieval 1: done"
+	on offer
+		conversation
+			`	The station is dark, but appears to be largely unscathed. "Puzzlement. I wonder why the Aberrant spared Alonis, unlike most of the stations they came across."`
+
+
+
+While we're here, can you take me up to the Decet system you used to escape? I've never seen a Magnetar and I'm curious.
+
+Hey, there used to be a hyperlane here connecting up to the EW cluster!
+
+
+
+mission "Avgi: Astronomical Cross Referencing 1A"
+	landing
+	name "Quarg Astronomy"
+	description "See if the Quarg will provide records of their observations of the Ember Waste."
+	source "Ergastirio Station"
+	destination "Lagrange"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
+
+mission "Avgi: Astronomical Cross Referencing 2A"
+	landing
+	name "Quarg Astronomy"
+	description "See if the Quarg will provide records of their observations of the Ember Waste."
+	source "Lagrange"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
+
+
+mission "Avgi: Astronomical Cross Referencing 1B"
+	landing
+	name "Remnant Astronomy"
+	description "See if the Remnant will provide records of their observations of the Ember Waste."
+	source "Ergastirio Station"
+	destination
+		government "Remnant"
+		attributes "remnant primary"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
+
+mission "Avgi: Astronomical Cross Referencing 2B"
+	landing
+	name "Remnant Astronomy"
+	description "See if the Remnant will provide records of their observations of the Ember Waste."
+	source "Ergastirio Station"
+	destination
+		government "Remnant"
+		attributes "remnant primary"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
+
+
+
+
+"Why do you call them 'Aberrant' anyway?"
+
+
+
+
+# Cryopod Mystery Mission Chain
+
+
+mission "Avgi: Lost Freighter 1"
+	landing
+	name "Lost Freighter"
+	description "Find a derelict freighter spotted in the Tangled Shroud near the <system> system."
+	source
+		not "Ergastirio Station"
+		attributes "avgi diaspora"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Araio Wrangling 3: done"
+	on offer
+		dialog `	You find a message waiting for you, with an Avgi astronomer requesting a meeting at <destination>, claiming her work is key to fighting the Aberrant. You wonder what interest an astronomer could have in you, or how astronomy is even relevant to the war with the Aberrant.`
+			accept
+
+
+
+
+# Excimer Laser Testing
+
+
+
+Test prototype UV excimer laser (it sucks)
+
+
+
+
+
+
+
+
+# Strike Force Mission Chain
+
+
+The excimer lasers aren't ready, but the Irises are. Go pick up a bunch of them and escort a bunch of Iris equipped ships
+
+
+
+
+
+
+
+
+

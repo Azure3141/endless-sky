@@ -27,8 +27,12 @@ phrase empty
 
 mission "Avgi: Gossamer Sailors"
 	invisible
-	landing
+	non-blocking
+	transition
 	repeat
+	source
+		system "Gossamer"
+	destination "Earth"
 	to offer
 		not "Avgi: Gossamer Sailors: active"
 		not "avgi: windjammers change"
@@ -41,6 +45,7 @@ mission "Avgi: Gossamer Sailors"
 		system Gossamer
 		fleet
 			names tree
+			cargo 0
 			fighters
 				names empty
 				personality
@@ -66,6 +71,7 @@ mission "Avgi: Gossamer Sailors"
 		system Gossamer
 		fleet
 			names tree2
+			cargo 0
 			fighters
 				names empty
 				personality

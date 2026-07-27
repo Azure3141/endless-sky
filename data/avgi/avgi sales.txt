@@ -118,7 +118,6 @@ outfitter "Avgi Superconductors"
 	"Hyperdrive"
 	"Lantern Fission Core"
 	"Magnetic Scoop"
-	"Plasmadyne Scoop"
 	"Diffuse Deflector"
 	"Inductive Extractor"
 
