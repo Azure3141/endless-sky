@@ -181,7 +181,7 @@ planet Allhome
 planet "Alonis Observatory"
 	attributes avgi research station telescope uninhabited
 	landscape land/station56
-	description `Decades ago, this large observatory station was constructed in order to peer into the anomalous region known as the Ember Waste. Before the Avgi were able to harden their ships against the prevalent ion storms, this was their only way to extract its secrets. An array of advanced telescopes covering the entire electromagnetic spectrum sits side by side with more exotic equipment, from gravitational wave interferometers to neutrino detectors.`
+	description `Decades ago, this large observatory station was constructed in order to peer into the anomalous region known as the Ember Waste. Before the Avgi were able to harden their ships against the prevalent ion storms, this was their only way to extract its secrets. An array of advanced telescopes covering the entire electromagnetic spectrum sits side by side with more exotic equipment, from gravitational wave interferometers to cosmic ray traps.`
 	description `	After Avgi starships advanced to the point of being able to reliably withstand ion storms, it was trained deeper into the Ember Waste, looking further back in both space and time. It gathered an impressive amount of data before the Incursion forced its abandonment, though fortunately the telescope seems to have been left unscathed.`
 
 planet "Alta Hai"

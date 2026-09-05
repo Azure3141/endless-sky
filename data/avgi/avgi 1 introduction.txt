@@ -192,12 +192,15 @@ mission "Avgi: Thread Activity 1"
 
 	on enter "Thread"
 		conversation
-			`	The Thread system is whirling with asteroids`
+			`	The Thread system is whirling with asteroids, a dense belt extending throughout the inner system. In the distance, the greenish marble of Cyreal orbits its parent, (which Lait tells you is nicknamed 'Big Brother' by the locals) a bright source of radio emissions. But the rest of the system appears silent as Lait checks his instruments.`
+			`	"Disappointment. There were once mining outposts all throughout the system, but I can't even find them on the optical scope." He reconsiders for a moment "Hope. But maybe they have just found a way to stay hidden for all these years. I've not seen anything here before, but I am of course fallible."`
+				choice
+					`	"Well, the Optikons picked up a signal, so we know someone is out here."`
+					`	"Maybe that signal was just sensor noise then?"`
 
-
-			`	Lait points out some stuff in the system. Notes that the asteroid miners probably have hideouts everywhere.`
-
-			`	Soon, Lait has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant surely would have noticed a ship out in the open, if it was ever active."`
+			`	Suddenly, as if on cue, Lait picks up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly?"`
+			`	Soon, Lait has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant surely would have noticed a ship out in the open, if it was ever active. Their sensors can pick out even our most low-observability ships."`
+			`	It sounds like you should check out this ship.`
 
 	npc
 		government "Aberrant"
@@ -250,16 +253,31 @@ mission "Avgi: Thread Activity 1"
 		system Thread
 		ship "Akoustiki" "Solid Rain"
 		conversation
-			`At first glance, the Akoustiki appears derelict, with no sign of any active systems and minimal thermal emissions. But as you dock with it, the dull amber glow of emergency lighting becomes apparent.`
-			`	As you poke your head inside the airlock, a cold, hard object presses against the side of your head. "Warning. Think fast, Captain."`
+			`At first glance, the Akoustiki appears derelict, with no sign of any active systems and minimal thermal emissions. You broadcast a short message explaining who you are and why you're here, to no avail. Perhaps the small utility craft is simply derelict. But as you dock with it, the dull amber glow of emergency lighting becomes apparent.`
+			`	"Puzzlement. Surely the Aberrant would have noticed a disabled ship by now," says Lait.
 			choice
-				`	"Whoa, calm down."`	
-					goto calm
+				`	"Maybe it just took off from somewhere?"`
+				`	"Maybe they missed it because it's disabled?"`
+
+			`	"Doubt. Perhaps. We should use caution nonetheless." Lait looks wary.`
+			choice
+				`	(Open the airlock.)`
+					goto open
+				`	(Knock on the airlock.)`
+
+			`	You pound on the airlock door a few times, but receive no response. However, you hear a faint scratching sound from the other side. "Concern. Maybe the pilot is injured," says Lait.`
+			`	"Okay, I'm going in," you say.`
+
+			label open
+			`	As you poke your head inside the airlock, a cold, hard object presses against the side of your head. "Warning. Think fast, ...alien?"`
+			choice
+				`	"Whoa, calm down. I'm here to help"`	
+					goto defused
 				`	(Try the cool karate move again.)`
 					to display
 						has "FW Katya 1: declined"
 
-			`	You try that cool karate move again, and this time it works better than it did on Katya. You knock the optical laser rifle out of the hands of a tan Avgi, sending it spinning.`
+			`	You try that cool karate move again, and this time it works better than it did on Katya. You spin and knock the Optical Laser Rifle out of the hands of what is revealed to be a beige Avgi, who hops away in fright.`
 
 			`	"Alarm, wait!"`
 
@@ -267,45 +285,78 @@ mission "Avgi: Thread Activity 1"
 				`	"Okay, everyone calm down. I'm here to help."`
 					goto calm
 				`	"You know, pointing a gun at people isn't very nice"`
-			`	"Apology. We thought you were someone from Cyreal."`
+			`	"Apology. Shock. We thought you were someone from Cyreal, uncertainty."`
 
 			choice
 				`	"No, I was sent by the Consonance to help you."`
 					goto calm
 				`	"Why would you be afraid of someone from Cyreal?"``
-					goto state
 
 			label calm
+			`	The Avgi looks to be in shock. "Disbelief. Who are you? An alien? How are you speaking to me?" A second Avgi, dull yellow in color, appears to be speechless.`
+			goto lait
+
+			label defused
+			`	You feel the object vanish from your head, and you turn to see a beige Avgi holding an Optical Laser Rifle. "Disbelief. Who are you? How are you speaking to me?" A second Avgi, dull yellow in color, appears to be speechless.`
+
+			label lait
+			`	Lait emerges from behind you, looking as though he's enjoying their surprise at meeting an alien. "Satisfaction. That's right, you're speaking to a real life alien. Way better than the plays, right? I am Captain Lait, Twilight Guard scout, and this is Captain <first> <last>."`
+			`	The pair introduce themselves as Ecru and Corsa respectively, siblings. "Uncertainty. The Twilight Guard? We thought you were all dead in that battle around Anax?"`
+
+			`	"Nope!" Lait replies cheerfully. "Pride. We escaped through the Tangled Shroud, and the Consonance carries on the fight to this day. Which is why we came to rescue you, by the way, after one of our scouts caught a signal here."`
+
+			`	These last words seem to anger the pair. "Frustration. Why has no one come for us before?" says Corsa. "We hid for years in the asteroids, even as our habitats were cracked open by the Aberrant one by one... until they came for us only yesterday. Why have you only come now?" She seems almost distraught.`
+			`	"Not to mention what is happening on Cyreal," adds Ecru. "Why has no one from the Consonance come to stop that, question?"`
+			choice
+				`	"We're sorry. We came as soon as we heard that there might still be someone alive here."`
+				`	"Wait, what's happening on Cyreal?"`
+					goto state
+
+			`	Lait looks abashed. "Apology, I had no idea. I am sorry for your losses. We came as soon as we received reports of activity in the Thread system. There was nothing before... You were able to hide from our eyes well enough, at least." He looks up. "What's this about Cyreal? We have been unable to contact the Mining Guilds for over a year."
 
 
 
-
-			`	"Fear. The State holds a diamond-hand grip across all of Cyreal. People are put in stocks for minor offenses. Any dissenters vanish, and all the party tells us is that they have gone 'to the moon.' Even though Cyreal is a moon, confusion."`
+			label state
+			`	"Fear. The State holds a diamond grip across all of Cyreal. People are put in stocks for minor offenses. Any dissenters vanish, and all the party tells us is that they have gone 'to the moon.' Even though Cyreal is a moon, confusion."`
 			choice
 				`	"Wow, that sounds scary."`
 					goto next
-				`	"This reminds me of an ancient human book, 'Nineteen Eighty-Four' by George Orwell."`
+				`	"This is just like this ancient human book, 'Nineteen Eighty-Four' by George Orwell."`
 					goto jorjorwel
 
 			label jorjorwel
 			`	"Have you read it, question?" asks Corsa.`
 
 			choice
-				`	"Yes."`
+				`	(Lie) "Yes."`
 					goto lie
-				`	"No, I haven't read it, but I imagine this is what the book is like."
+				`	"No, I haven't read it, but this is what I imagine the book is like."
 					goto no
 				`	"Anyway, where do you want me to take you?"`
 					goto next
 
 
 
+			`	"We came here to rescue you," you say.`
+			choice
+				`	"Do you want to be taken to another asteroid mine?"`
+				no, they aren't safe and we don't even know how to find the others
+				`	"Do you want to be taken to Cyreal?"`
+				lolno
+				`	"We can take you to the Consonance"`
+
+
+			`	Take us to the Dissonance instead, we always heard rumors that distant relatives might have survived among them`
+
 
 			you were too late and the asteroid station was already blown up, these are the survivors
 
 
 
-			`Talk to Ercu and Corsa Here`
+			`	"So, I'm assuming taking you to Cyreal is out of the question."`
+
+			`	""`
+
 
 
 			`	Our asteroid station was destroyed by the Aberrant`
@@ -313,14 +364,14 @@ mission "Avgi: Thread Activity 1"
 			`	No, it isn't safe here, and we don't know how to find them`
 			`	What about Cyreal?`
 			`	No, Cyreal is now ruled by an autocratic dictatorship that seized power after the Incursion.`
-			`	Dissonance station instead`
+			`	Dissonance station instead, we heard miners with rumors about them and how they might have family there`
 
  				this is just like 2984
 
 				depart
 
 
-mission "Avgi: Thread Activity 2"
+mission "Avgi: Thread Activity 2A"
 	landing
 	name "Placeholder"
 	description "Placeholder"
@@ -331,13 +382,41 @@ mission "Avgi: Thread Activity 2"
 		has "Avgi: Thread Activity 1: done"
 	on offer
 		conversation
-			`	Take Ercu and Corsa back to Outpost Enka.`
+			`	Take Ecru and Corsa back to Outpost Enka.`
 			accept
 
 	on enter "Thread"
 		conversation
 			`	A teal Avgi greets you. "Amity. Keppel, I am."`
 
+
+		You meet Keppel, who introduces himself as an interested party. Refuses to elaborate, acts mysterious, but there are hints he holds influence in the Dissonance (people are deferent to him, etc)
+
+		He welcomes Ecru and Corsa, then talks to you
+
+		He asks you what you've heard of the Dissonance
+
+		You get a few options, he reacts to them. Add option to say they shot at you if your angry dissonance rep is lower than default
+
+
+
+mission "Avgi: Thread Activity 2B"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Outpost Tekis"
+	destination "Peripheria"
+	passengers 3
+	to offer
+		has "Avgi: Thread Activity 1: done"
+	on offer
+		conversation
+			`	Take Ecru and Corsa back to Peripheria.`
+			accept
+
+	on enter "Thread"
+		conversation
+			You bring Ecru and Corsa back to Peripheria, against their wishes. They are upset but understanding, and say they'll just find passage to the Dissonance station themselves
 
 
 
@@ -353,6 +432,7 @@ mission "Avgi: Amathil Contact 1"
 		conversation
 			`	Go to Amathil and bring a communique to their leaders.`
 			accept
+			Prasinos asks you to bring a message from her to the local leaders on Amathil, promising that the Consonance is still there to support them, and talking about how they are totally going to win with the aid of these friendly aliens
 
 
 mission "Avgi: Amathil Contact 2"
@@ -366,7 +446,20 @@ mission "Avgi: Amathil Contact 2"
 	on offer
 		set "avgi: contacted planets"
 		conversation
-			`	Talk to the Amathil government people. Get their side of the story about being left behind, though they're pleasant and cordial with the Consonance, then return to Peripheria`
+			Talk to the Amathil government people. Share a message from Prasinos promising aid, and apologizing for the long abandonment. 
+
+			They're pleasant and cordial toward you
+			
+			It is recieved negatively, with some accusations of past corruption (before the Incursion) against Prasinos.
+			Amathil leaders emphasize their shared identity as being community-first, and say Prasinos only cared for herself and not her community.
+			Player can choose to defend her, either saying it never happened or that it should be forgiven because the Aberrant need to be fought. More politics stuff.
+
+
+			When you get back, report to Prasinos, who seems regretful and admits to selfishness but claims she's trying to atone for it.
+			She says she should have sent Hriso with you, as he is familiar with her and a good negotiator.
+
+
+
 			accept
 
 
@@ -385,8 +478,9 @@ mission "Avgi: Aviskir Extraction 1"
 
 
 
-			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. She is already occupied with another project and refuses to leave`
+			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. He is already occupied with another project and refuses to leave`
 			accept
+
 
 mission "Avgi: Aviskir Extraction 2"
 	landing
@@ -427,6 +521,18 @@ mission "Avgi: Araio Wrangling 1"
 
 			`
 			accept
+
+
+
+
+
+
+
+
+
+
+			`	A gleaming silver train chugs before you
+			`	"Stay away from the front, warning. "
 
 
 
@@ -498,10 +604,116 @@ mission "Avgi: Aviskir Repatriation"
 
 
 
+mission "Avgi: Ask for Help: Humanity 1"
+	landing
+	name "Contact Darius"
+	description ""
+	source "Peripheria"
+	destination "Valhalla"
+	to offer
+		has
+	on offer
+		conversation
+			``
+Asime asks some questions about the human government. Explain FW vs Republic
+She asks if you can arrange a meeting so the Avgi can ask for help and establish relations. Suggests checking in with Darius to see if he can help
+
+
+Go to Valhalla. Find Darius, who is getting his life back together after being assumed dead. He tries calling people but they are skeptical. Katrina ends up providing the solution with a friend who is a staffer in Parliament. She is trusted because she returned Darius's death benefit, appearing honest to Parliament. Joke that Darius is going to end up getting a bunch of backpay from the Deep to make up for it anyway.
+
+
+
+mission "Avgi: Ask for Help: Humanity 2"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Valhalla"
+	destination "Earth"
+	to offer
+		has
+	on offer
+		conversation
+			``
+Go to Earth with Darius and Katrina.
+
+Talk to Parliament. Darius explains his experiences and assessment of the Aberrant
+
+They trust you because of completing the main campaign, but ask you to come back with an Avgi so they can negotiate in person. Polite but skeptical.
+
+
+mission "Avgi: Ask for Help: Humanity 3"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Earth"
+	destination "Peripheria"
+	to offer
+		has
+	on offer
+		conversation
+			``
+Return to Peripheria 
+
+
+
+Hriso offers to go, but Asime says she should attend in person as well
 
 
 
 
+
+
+mission "Avgi: Ask for Help: Humanity 4"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Earth"
+	destination "Vinci"
+	to offer
+		has
+	on offer
+		conversation
+			``
+
+Take Asime and Hriso to Earth
+
+
+Parliament goes on recess to discuss things. Frustration with the slow pace. They agree to reconvene in a week
+
+Run into Leon and Sora. They're both like "you should have contacted us too", Leon asks you to come meet a friend of his
+
+
+
+
+mission "Avgi: Ask for Help: Humanity 5"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Vinci"
+	destination "Earth"
+	to offer
+		has
+	on offer
+		conversation
+			``
+
+Meet Leon's friend
+
+
+
+mission "Avgi: Ask for Help: Humanity 6"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Valhalla"
+	destination "Earth"
+	to offer
+		has
+	on offer
+		conversation
+			``
+Return to Earth. Parliament has agreed to begin aiding the Avgi by sending samples of technology and a few Navy advisors (?)
+Deep representative offers to send hyperlane relays so the Avgi can communicate at FTL speeds. 
 
 
 
@@ -515,20 +727,87 @@ mission "Avgi: Aviskir Repatriation"
 
 
 
-mission where you pick up human hyperspace relays from a syndie world
+mission "Avgi: Ask for Help: Humanity 7"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Earth"
+	destination "Hephestaus"
+	to offer
+		has
+	on offer
+		conversation
+			``
 
 
-place a few at the outer limits to link up the systems
-
-then you go place them at various systems to connect ensemble to arche, to test if the shrangled toud interferes
+Pick up human hyperspace relays from the syndicate
 
 
 
+mission "Avgi: Hyperlane Relays 1"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Hephestaus"
+	destination "Feo Platform"
+	to offer
+		has
+	on offer
+		conversation
+			``
+
+Deliver the relays to Feo. Try an experiment where you string relays between a few systems in the shroud
+
+mission "Avgi: Hyperlane Relays 2"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Feo Platform"
+	destination "Feo Platform"
+	to offer
+		has
+	on offer
+		conversation
+			``
+String a single relay to H-1 or something. It works but the signal is distorted.
+
+String relays all the way through the shroud
+
+
+mission "Avgi: Hyperlane Relays 3"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Feo Platform"
+	destination "Peripheria"
+	to offer
+		has
+	on offer
+		conversation
+			``
+The experiment fails, Peripheria cannot contact Feo.
+
+As a consolation try to link up the Outer Limits so that they have a full communication network out there
+
+
+mission "Avgi: Hyperlane Relays 4"
+	landing
+	name "Petitioning Parliament"
+	description ""
+	source "Valhalla"
+	destination "Earth"
+	to offer
+		has
+	on offer
+		conversation
+			``
+
+Link up the inhabited outer limits systems
 
 
 
 
-
+# Quarg ask for help missions
 
 
 
@@ -650,7 +929,7 @@ mission "Avgi: Alonis Retrieval 1"
 				"Aberrant Whiskers"
 
 	on stopover
-		dialog `	You dock at the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can destroy them or get them to run away."`
+		dialog `	You dock at the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can chase them away, or destroy them if you can."`
 
 
 mission "Avgi: Alonis Retrieval 2"
@@ -659,6 +938,7 @@ mission "Avgi: Alonis Retrieval 2"
 	description "Take the data back to Ergastirio Station so that Cerise can go over it."
 	source "Alonis Observatory"
 	destination "Ergastirio Station"
+	waypoint "Decet"
 	to offer
 		has "Avgi: Alonis Retrieval 1: done"
 	on offer
@@ -666,10 +946,50 @@ mission "Avgi: Alonis Retrieval 2"
 			`	The station is dark, but appears to be largely unscathed. "Puzzlement. I wonder why the Aberrant spared Alonis, unlike most of the stations they came across."`
 
 
+			Cerise takes you on a tour of the telescope - primary optics, gravitational wave interferometers (connecting to satellites at lagrange points, all dead), cosmic ray traps - big electromagnets - Cerise says it's probably really valuable: hint at cosmic ray traps components being used by the aberrant for the antimatter station in the future - mention they can store antimatter?
 
-While we're here, can you take me up to the Decet system you used to escape? I've never seen a Magnetar and I'm curious.
 
-Hey, there used to be a hyperlane here connecting up to the EW cluster!
+
+
+			Try to access the main computer to get a datalink; it's broken
+
+			Have to go enter the computer banks manually and sort through the bricks of diamond, find the ones corresponding to dates of interest
+
+			Lug those back
+
+			Cerise says she was kind of expecting the Aberrant to attack, and that this is kind of anticlimactic
+
+			`	Disappointment. Hmm. I was sort of expecting the Aberrant to attack us while we were in there, you know? This is really anticlimactic.`
+
+
+
+			While we're here, can you take me up to the Decet system you used to escape? I've never seen a Magnetar and I'm curious.
+
+			Hey, there used to be a hyperlane here connecting up to the EW cluster!
+
+
+			Once you get back, Cerise asks you if you know anyone with detailed observations of the Ember Waste to cross reference against
+			If you've done Ask for Help, Quarg are an option. If you know the Remnant, they show up
+			If you have done neither, you say you will come back once you find some options (set tag). Get active mission (2b) as reminder
+
+
+mission "Avgi: Alonis Retrieval 2b"
+	landing
+	name "Return to Ergastirio Station"
+	description "Come back to Ergastirio once you've found someone with reference astronomy data on the Ember Waste."
+	source "Ergastirio Station"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Alonis Retrieval 1: done"
+	on offer
+		conversation
+
+		Get back to Ergastirio. You get the same dialog where Cerise asks if you know anyone.
+
+
+	to complete
+		has
+
 
 
 
@@ -684,6 +1004,12 @@ mission "Avgi: Astronomical Cross Referencing 1A"
 	on offer
 		conversation
 
+
+Requires Ask For Help: Quarg and Alonis Retrieval
+
+The Quarg refuse to provide records of the Ember Waste, but hand over records of human and Avgi space. After some negotiations where they ask you exactly what you're looking for a Quarg does come over with a very heavily censored/redacted record of a few Ember Waste systems of interest (Builder systems). Note that the Queri system is entirely missing
+
+
 mission "Avgi: Astronomical Cross Referencing 2A"
 	landing
 	name "Quarg Astronomy"
@@ -694,6 +1020,13 @@ mission "Avgi: Astronomical Cross Referencing 2A"
 		has "Avgi: Alonis Retrieval 2: done"
 	on offer
 		conversation
+
+Return home. Cerise is hyped to have the data and makes several comments on astronomy in Avgi space
+- Notes that many of the stars in Avgi space are younger
+- There is an active star-forming nebula just south (the triangle) of Aviskir
+- The Twilight itself is a series of reflection nebulas illuminated by several neutron stars that appear to have formed at around the same time - hint that they were made by the Drak civil war
+- Human space is remarkably stable, few supernovae nearby
+- The Ember Waste data is heavily redacted, not much useful there. The records of the Builder systems likewise have large gaps in them (Quarg not showing their explorations into the Gateway)
 
 
 mission "Avgi: Astronomical Cross Referencing 1B"
@@ -709,14 +1042,28 @@ mission "Avgi: Astronomical Cross Referencing 1B"
 	on offer
 		conversation
 
+Talk to Dawn. Agree to mutually trade astronomical records with the Avgi. You have to go back to Ergastirio and get a copy from Cerise and then return, but Dawn gives you the Remnant data early as a sign of good faith
+
+
 mission "Avgi: Astronomical Cross Referencing 2B"
 	landing
 	name "Remnant Astronomy"
 	description "See if the Remnant will provide records of their observations of the Ember Waste."
 	source "Ergastirio Station"
-	destination
-		government "Remnant"
-		attributes "remnant primary"
+	destination "Vimimal"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
+
+Cerise is very interested in how large the Remnant dataset is, but notes that it's all fairly recent (500 years) and doesn't really contain any answers. She gives you a copy of Avgi data to take back to Dawn
+
+mission "Avgi: Astronomical Cross Referencing 2C"
+	landing
+	name "Remnant Astronomy"
+	description "See if the Remnant will provide records of their observations of the Ember Waste."
+	source "Viminal"
+	destination "Ergastirio Station"
 	to offer
 		has "Avgi: Alonis Retrieval 2: done"
 	on offer
@@ -724,9 +1071,283 @@ mission "Avgi: Astronomical Cross Referencing 2B"
 
 
 
+mission "Avgi: Astronomical Cross Referencing 3"
+	landing
+	name "Remnant Astronomy"
+	description ""
+	source "Viminal"
+	destination "Ergastirio Station"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on offer
+		conversation
 
-"Why do you call them 'Aberrant' anyway?"
+		Concludes chain. 
 
+
+
+
+
+
+mission "Avgi: Field Science 1"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		Meet Sepia, a xenobiologist studying the Aberrant for weaknesses. 
+		Light info about Aberrant. They reproduce after mining asteroids, and also eat their own dead. "Why do you call them 'Aberrant' anyway?"
+
+		She has heard from Cerise about the astronomy records and wants to know if you can trace the origin of the Aberrant
+
+		Lait shows up and tells the story of the Aberrant emerging from the Twilit Embers systems after a crew supposedly meddled with some alien artifact.
+
+		Sepia suggests you go there with Lait (on your ship) and see if you can find any location nearby the Aberrant could have come from. Also suggest looking for this artifact. Add a mission check for proximity to the Gateway object if possible
+
+		If you've discovered the Ka'het you get the option to tell them about the Graveyard. If you do Sepia suggests visiting it directly.
+
+		Waypoint marker on the nearest Graveyard system to the Twilight.
+
+
+	on enter Fereti
+
+		Lait notes that these ka'het do resemble Aberrant, but larger and with different materials. Notes same engines and similar weapons
+
+		If you told them about the Graveyard he's like "yeah you were right"
+
+
+
+
+
+
+	npc
+		government "Ka'het"
+		personality harvests waiting mining plunders staying
+		ship "Vareti'het (Strong)" 2
+		system "Fereti"
+
+
+
+
+
+
+
+
+mission "Avgi: Field Science 2"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		Talk about how the ka'het strongly resemble the Aberrant
+
+
+
+		Sepia asks you to gather anomalous mass samples from different systems
+		- Arche
+		- Anax
+		- Septet
+
+		Can't actually check for this, so just add waypoints and tell the player to return with at least 20 anomalous masses
+
+
+
+
+
+mission "Avgi: Field Science 3"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Ergastirio Station"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		Sepia runs a quick analysis on the samples and finds that the anomalous masses vary in density significantly, with a gradient of the ones from Septet being heaviest, the ones in Arche being very fluffy, and those from Anax being in the middle. Notes that it could just be random variance from the different Aberrant they came from, but needs further analysis to be sure. Says that if true, this would support the hypothesis of the Aberrant migrating from the Graveyard, though their difference in appearance would still be unexplained
+
+		Has you take the samples over to Ergastirio Station for Alizarin to zap with her big ass beam
+
+		Aliza introduces herself if you haven't already met. She explains that Anomalous Masses contain some kind of exotic, non-atomic matter that they can measure the quantity of with a linac. Zaps the samples and measures how much of this unknown substance is in each tissue mass. Ends up producing 1 Vitrified Anomalous Mass through some unknown interaction with the substance, and it cooks off the flesh.
+
+		Aliza thinks this interaction is a physical one with the particles and the unknown matter. Notes that this has never happened before, but they haven't ever really had many samples of Anomalous Mass to test either.
+
+		Has you take data and Vitrified Anomalous Mass to Sepia.
+
+
+
+mission "Avgi: Field Science 4"
+	landing
+	name ""
+	description ""
+	source "Ergastirio Station"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		Sepia is very surprised by the Vitrified Anomalous Mass, taking special note in how the 'het flesh was unbonded from it and how the properties changed afterwards
+		She thinks this hints at some kind of biological interaction rather than it being with the radiation
+
+		Sepia asks you to go board an Aberrant and retrieve any outfits you can. Mission requires 1 of any of the standard ka'het outfits that spawn on Aberrant
+
+
+
+mission "Avgi: Field Science 5"
+	boarding
+	invisible
+	source
+		government "Aberrant"
+	destination "Earth"
+	to offer
+		has ""
+	on offer
+		conversation
+			branch "boarded ka'het"
+				has "Disabled Ka'het: offered"
+			action
+				log `Successfully boarded an Aberrant. A strange presence seemed to watch during the investigation, one that gave a sense of foreboding. It appears to be a single, ship-sized organism that can travel in space using a special exoskeleton.`
+			`You draw the <flagship> alongside this strange entity, which, despite its lack of motion, seems to exude an ominous presence. Something feels fundamentally wrong with this ship as you approach a hole in a vulnerable part of its hull, which seems to be some kind of shell encasing a large, slug-like creature. Exposed to weapons fire, the creature seems to be dead, but you feel almost as if something is watching you.`
+			`	You have no trouble docking with what seems to be its "exoskeleton," trying to decide what to do next. While the Aberrant is too different from a normal ship for you to command it, it's safe to say that you can now loot some of its outfits. The rest appear to be embedded in some kind of hard, glassy tissue; perhaps destroying the ship could release them.`
+				decline
+			label "boarded ka'het"
+			action
+				log `Successfully boarded an Aberrant. It appears to strongly resemble a Ka'het, yet one that has been twisted into a new form, one that feels fundamentally wrong.`
+			`You draw the <flagship> alongside this strange, yet almost-familiar entity, which, despite its lack of motion, seems to exude an ominous presence. Something feels fundamentally wrong with this ship, which superficially resembles a Ka'het, yet is clearly not one - perhaps a distant relation, or a Ka'het that has been irrevocably changed by something else. You approach a hole in a vulnerable part of its hull, where a 'het slug appears dead, but you feel almost as if it still watches you.`
+			`	You have no trouble docking with its "exoskeleton," trying to decide what to do next. While the Aberrant is too different from a normal ship for you to command it, it's safe to say that you can now loot some of its outfits. The rest appear to be embedded in some kind of hard, glassy tissue; perhaps destroying the ship could release them.`
+
+			comment more on its appearance
+
+
+
+
+
+mission "Avgi: Field Science 6"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		Sepia comments on how the ka'het outfits seem to be designed for biological integration, but using comprehensible methods, unlike whatever the anomalous mass bonding is doing
+
+		She says there are some additional reports of Aberrant that seem to be above the rest in strength/capabilities. Theorizes it's due to some special outfits embedded deep within their systems, based on the previous boarding mission, and asks you to try destroying a bunch to see if you can gather any of these outfits.
+
+
+mission "Avgi: Field Science: Nucleolysis Beam"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+		"yeah we have no idea how this shit works"
+
+
+mission "Avgi: Field Science: Antimatter Power Cell"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+		Weird antimatter generator that seems to eat itself. Makes more power than we think it should, seems to downscatter the gammas very efficiently
+
+
+mission "Avgi: Field Science: Anomalous Shield Generator"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+		conversation
+
+		yeah we have no idea how this shit works
+
+
+
+mission "Avgi: Ka'het Revealed 1"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+		available once you've done at least 1 of the outfit retrieval missions
+	on offer
+		conversation
+		Sepia explains how the Aberrant use mined minerals to reproduce
+
+		Sepia asks you to collect mineral samples from some of the Twilit Embers systems and Graveyard so she can run an isotopic analysis to see if she can actually track down the origin of the Aberrant
+
+		Also asks you to go and board a Ka'het in the graveyard and gather samples/observation data
+
+
+		The Aberrant's isotope ratios don't match any of the Graveyard samples, so they can't have originated there. Several of them likewise don't exactly match any of the systems in Avgi space, though most of them do and were presumably born there. She also explains that since they cannibalize their dead, there should at least be some similiary to the Graveyard ratios, but she can't measure it so it must be small
+
+
+
+mission "Avgi: Ka'het Revealed 2"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+		available once you've done at least 1 of the outfit retrieval missions
+	on offer
+		conversation
+		Sepia wants you to get samples from a really old Aberrant. Explains how to spot them and says they're likely to hang around the Septet system, based on previous results with the anomlaous mass data (they become npc marked targets)
+
+		Board an Aberrant in one of those systems, random chance for an "old aberrant vs new aberrant" conversation to fire on board, and return
+
+
+
+
+mission "Avgi: Ka'het Revealed 3"
+	landing
+	name ""
+	description ""
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has ""
+		available once you've done at least 1 of the outfit retrieval missions
+	on offer
+		conversation
+
+		She analyzes the sample and tells you it doesn't match the Graveyard, so she asks you to collect more samples from further areas
+
+		Gather samples from neighboring regions - southern human space, Quarg triangle, Ember Waste, one more from Graveyard.
+		Sepia checks them all and finds that none of them match the elder Aberrant samples.
+		End on this mystery, Sepia promises to think on it more.
 
 
 
@@ -738,14 +1359,87 @@ mission "Avgi: Lost Freighter 1"
 	name "Lost Freighter"
 	description "Find a derelict freighter spotted in the Tangled Shroud near the <system> system."
 	source
-		not "Ergastirio Station"
 		attributes "avgi diaspora"
-	destination "Ergastirio Station"
+	destination "Peripheria"
 	to offer
-		has "Avgi: Araio Wrangling 3: done"
+		has ""
 	on offer
-		dialog `	You find a message waiting for you, with an Avgi astronomer requesting a meeting at <destination>, claiming her work is key to fighting the Aberrant. You wonder what interest an astronomer could have in you, or how astronomy is even relevant to the war with the Aberrant.`
-			accept
+	You are told by a random Twilight Guardsman that there is a drifting, derelict freighter matching the description of an old ship from the evacuation of the Twilight
+
+	Find it in the Tangled Shroud. Board it, and discover it ts packed with vitriamphora (vitrification amphora, aka avgi cryopod) with thousands of sleeping Avgi.
+
+	'Capture' it and return to Peripheria with it.
+
+
+mission "Avgi: Lost Freighter 2"
+	landing
+	name ""
+	description ""
+	source "Peripheria
+	destination "Aktina Cylinder"
+	to offer
+		has ""
+	on offer
+
+	When to return there is an argument over whether to reanimate them or leave them in storage.
+
+	You can ask what a 'vitriamphora' is and basically get tl;dr'd that it's a sleeping pod
+
+	Talk about how there are still millions more Avgi in stasis waiting to be revived, and how they cannot currently house or feed them all, especially if they are normie civvies that are unproduictive in the war industry
+
+	Someone proposes taking them to Weledos and reviving them there, as it has space, but it is shot down as too dangerous given that Weledos is frequently raided and there is no protection for civilians on the surface
+
+	You are asked to take the vitriamphora to Aktina Cylinder to be stored temporarily.
+
+
+mission "Avgi: Vitriamphora Abduction 1"
+	landing
+	name ""
+	description ""
+	source "Peripheria
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+	Drop the vitriamphoras off on Aktina. You can ask how exactly they work to one of the dudes there and get a loredump
+
+	While you're there you get a call that Lait's ship has missed its check in. If you did the scout rescue branch of the intro, mention that this is a similar occurance
+
+	Go look for Lait up north. Once you find him (enter the system) it turns out the Aberrant are using a new weapon and he wanted to record more data before returning
+
+	Introduce one of the new Aberrant weapons here? Standing Wave Oscillator maybe?
+
+	Or plasmoid distributor
+
+
+mission "Avgi: Vitriamphora Abduction 2"
+	landing
+	name ""
+	description ""
+	source "Peripheria
+	destination "Outpost Pilos"
+	to offer
+		has ""
+	on offer
+	When you get back you learn the vitriamphoras have been stolen. 
+
+	A nervous construction worker says they saw the pods being loaded onto a freighter and assumed they were just being transported elsewhere. He gets kind of intimated by Avgi police. Introduce Avgi law enforcement here? Consonance FBI with authority across all participating polities?
+
+	You are given the freighter's name and are told to search for it, and if you find it, disable and board it, given that this is a kidnapping case. Temporarily deputized into Avgi FBI because your JD will allow you to catch up with the freighter.
+
+	on enter messages explaining that you catch glimpses of it and track it past Outpost Pilos
+
+
+mission "Avgi: Vitriamphora Abduction 3"
+	landing
+	name ""
+	description ""
+	source "Peripheria
+	destination "Peripheria"
+	to offer
+		has ""
+	on offer
+
 
 
 
@@ -771,7 +1465,7 @@ The excimer lasers aren't ready, but the Irises are. Go pick up a bunch of them 
 
 
 
-
+mission at the end where you are offered the twilight guard colors + the license
 
 
 

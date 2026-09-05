@@ -26,7 +26,7 @@ ship "Koryfi"
 		"required crew" 2
 		"bunks" 24
 		"mass" 180
-		"drag" 3
+		"drag" 1.5
 		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 60
@@ -134,7 +134,7 @@ ship "Melodikos"
 		"required crew" 6
 		"bunks" 144
 		"mass" 360
-		"drag" 4.5
+		"drag" 2.1
 		"heat dissipation" 0.72
 		"fuel capacity" 1200
 		"cargo space" 120
@@ -280,7 +280,7 @@ ship "Avlaki"
 		"required crew" 2
 		"bunks" 6
 		"mass" 180
-		"drag" 3
+		"drag" 1.5
 		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 240
@@ -387,7 +387,7 @@ ship "Harmonikos"
 		"required crew" 6
 		"bunks" 12
 		"mass" 360
-		"drag" 4.5
+		"drag" 2.1
 		"heat dissipation" 0.72
 		"fuel capacity" 1200
 		"cargo space" 600
@@ -528,7 +528,7 @@ ship "Phononos"
 		"hull" 1500
 		"automaton" 1
 		"mass" 72
-		"drag" 0.72
+		"drag" 0.36
 		"heat dissipation" 0.6
 		"fuel capacity" 300
 		"cargo space" 240
@@ -592,7 +592,7 @@ ship "Frequentia"
 		"required crew" 2
 		"bunks" 6
 		"mass" 300
-		"drag" 4.5
+		"drag" 2.1
 		"heat dissipation" 1.2
 		"solar heat" 2.7
 		"fuel capacity" 2400
@@ -663,7 +663,7 @@ ship "Polari"
 		"required crew" 6
 		"bunks" 12
 		"mass" 240
-		"drag" 3.6
+		"drag" 1.8
 		"heat dissipation" 0.9
 		"solar heat" 2.4
 		"fuel capacity" 1800
@@ -748,7 +748,7 @@ ship "Entasi"
 		"required crew" 6
 		"bunks" 12
 		"mass" 720
-		"drag" 6
+		"drag" 3
 		"heat dissipation" 0.72
 		"fuel capacity" 1200
 		"cargo space" 240
@@ -887,7 +887,7 @@ ship "Undsyni"
 		"bunks" 60
 		"cargo space" 600
 		"mass" 2100
-		"drag" 15
+		"drag" 7.5
 		"heat dissipation" 1.2
 		"solar heat" 21
 		"fuel capacity" 2400
@@ -995,7 +995,7 @@ ship "Undsyni" "Undsyni (Tanker)"
 		"Optical Lasing Generator"
 		"Magnetic Scoop"
 		"Cryogenic Deuterium Tank" 18
-		"Deuterium Slush Tank" 12
+		"Deuterium Slush Tank" 6
 		"Multispectral Scanner"
 		"Spectrometer Array"
 		"Outfits Expansion"
@@ -1025,7 +1025,7 @@ ship "Undsyni" "Undsyni (Plasmadyne)"
 		"Diffuse Deflector"
 		"Optical Lasing Generator"
 		"Plasmadyne Scoop"
-		"Cryogenic Deuterium Tank" 18
+		"Cryogenic Deuterium Tank" 9
 		"Multispectral Scanner"
 		"Spectrometer Array"
 
@@ -1055,7 +1055,7 @@ ship "Modified Tachytia"
 		"required crew" 600
 		"bunks" 900
 		"mass" 6000
-		"drag" 6
+		"drag" 3
 		"heat dissipation" 0.66
 		"solar heat" 60
 		"fuel capacity" 60000
@@ -1191,7 +1191,7 @@ ship "Tremoros"
 		"crew equivalent" 1
 		"threshold percentage" 0.15
 		"mass" 90
-		"drag" 1.5
+		"drag" 0.75
 		"heat dissipation" 0.72
 		"fuel capacity" 900
 		"cargo space" 12
@@ -1268,7 +1268,7 @@ ship "Prismaios"
 		"required crew" 2
 		"bunks" 6
 		"mass" 420
-		"drag" 2.4
+		"drag" 1.2
 		"heat dissipation" 1.2
 		"shield multiplier" -1
 		"solar heat" 4.5
@@ -1412,7 +1412,7 @@ ship "Interferos"
 		"automaton" 1
 		"crew equivalent" 3
 		"mass" 270
-		"drag" 5.4
+		"drag" 2.7
 		"heat dissipation" 0.9
 		"solar heat" 2.7
 		"fuel capacity" 600
@@ -1552,7 +1552,7 @@ ship "Diaspersi"
 		"required crew" 15
 		"bunks" 36
 		"mass" 810
-		"drag" 6
+		"drag" 3
 		"heat dissipation" 1.2
 		"solar heat" 8.1
 		"fuel capacity" 2400
@@ -1734,7 +1734,7 @@ ship "Refraktos"
 		"required crew" 12
 		"bunks" 24
 		"mass" 810
-		"drag" 6
+		"drag" 3
 		"heat dissipation" 1.44
 		"solar heat" 8.1
 		"fuel capacity" 1800
@@ -1764,7 +1764,7 @@ ship "Refraktos"
 		"Optical Laser Rifle" 24
 		
 		`Z-666 "Zap" Fusion Torch`
-		"Inductive Extractor" 5
+		"Inductive Extractor" 3
 		"Remass Injector"
 		"R-360 RCS Thrusters"
 		"Hyperdrive"
@@ -1898,7 +1898,7 @@ ship "Difraktos"
 		"required crew" 15
 		"bunks" 42
 		"mass" 1200
-		"drag" 7.2
+		"drag" 3.6
 		"heat dissipation" 1.2
 		"solar heat" 1.2
 		"fuel capacity" 1800
@@ -2152,7 +2152,7 @@ ship "Atenuatia"
 		"required crew" 60
 		"bunks" 90
 		"mass" 2700
-		"drag" 18
+		"drag" 9
 		"heat dissipation" 1.2
 		"solar heat" 2.7
 		"fuel capacity" 2400
@@ -2365,7 +2365,7 @@ ship "Akoustiki"
 		"required crew" 1
 		"bunks" 6
 		"mass" 60
-		"drag" 1.8
+		"drag" 0.9
 		"heat dissipation" 0.66
 		"fuel capacity" 120
 		"cargo space" 30
@@ -2437,7 +2437,7 @@ ship "Photikon"
 		"crew equivalent" 1
 		"threshold percentage" 0.15
 		"mass" 45
-		"drag" 0.6
+		"drag" 0.3
 		"heat dissipation" 0.72
 		"fuel capacity" 90
 		"outfit space" 90
@@ -2539,7 +2539,7 @@ ship "Vibratia"
 		"crew equivalent" 1
 		"threshold percentage" 0.12
 		"mass" 24
-		"drag" 0.3
+		"drag" 0.15
 		"heat dissipation" 0.9
 		"outfit space" 75
 		"weapon capacity" 18
@@ -2604,7 +2604,7 @@ ship "Undulon"
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 60
-		"drag" 15
+		"drag" 7.5
 		"heat dissipation" .45
 		"fuel capacity" 60
 		"outfit space" 84
@@ -2672,7 +2672,7 @@ ship "Optikon"
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 30
-		"drag" 1.2
+		"drag" 0.6
 		"heat dissipation" .9
 		"fuel capacity" 300
 		"outfit space" 60
@@ -2722,7 +2722,7 @@ ship "Sonikis"
 		"automaton" 1
 		"crew equivalent" 1
 		"mass" 24
-		"drag" 0.9
+		"drag" 0.45
 		"heat dissipation" .72
 		"fuel capacity" 120
 		"cargo space" 60
