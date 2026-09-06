@@ -1173,3 +1173,34 @@ mission "Avgi: Twilight Guard Relief 3"
 	on complete
 		dialog phrase "avgi twilight guards relief complete"
 		payment 9000 270
+
+# TODO
+mission "Avgi: Avgi Repatriation (Repeatable)"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source
+		government "Avgi"
+		not attributes "avgi diaspora"
+	destination "Peripheria"
+	to offer
+		has "avgi: repatriation jobs"
+	on offer
+		conversation
+			Repeatable job to do more repatriation missions
+
+mission "Avgi: Avgi Evacuation (Repeatable)"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source
+		government "Avgi"
+		not attributes "avgi diaspora"
+	destination "Peripheria"
+	to offer
+		has "avgi: evacuation jobs"
+	on offer
+		conversation
+			Repeatable job to do more evacuation missions
+
+

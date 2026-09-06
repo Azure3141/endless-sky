@@ -398,7 +398,7 @@ mission "Avgi: Thread Activity 2A"
 
 		You get a few options, he reacts to them. Add option to say they shot at you if your angry dissonance rep is lower than default
 
-
+		Depending on what you say about the Dissonance, add to the pro Dissonance flag counter here
 
 mission "Avgi: Thread Activity 2B"
 	landing
@@ -455,12 +455,6 @@ mission "Avgi: Amathil Contact 2"
 			Player can choose to defend her, either saying it never happened or that it should be forgiven because the Aberrant need to be fought. More politics stuff.
 
 
-			When you get back, report to Prasinos, who seems regretful and admits to selfishness but claims she's trying to atone for it.
-			She says she should have sent Hriso with you, as he is familiar with her and a good negotiator.
-
-
-
-			accept
 
 
 mission "Avgi: Aviskir Extraction 1"
@@ -473,13 +467,15 @@ mission "Avgi: Aviskir Extraction 1"
 		has "Avgi: Amathil Contact 2: done"
 	on offer
 		conversation
-			`	"The Consonance relinquished its claim to represent us when they fled into the night and abandoned us to the mercy of the Aberrant" he growls out.`
+
+
+			When you get back, report to Prasinos, who seems regretful and admits to selfishness but claims she's trying to atone for it.
+			She says she should have sent Hriso with you, as he is familiar with her and a good negotiator, but he is working on finalizing a formal diplomatic package for humanity
+
+			Prasinos tells you that the Consonance is still short on expertise in certain niche fields, and asks you to visit Aviskir to retrieve (she says evacuate) a VIP nuclear scientist to Ergastirio.
 
 
 
-
-			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. He is already occupied with another project and refuses to leave`
-			accept
 
 
 mission "Avgi: Aviskir Extraction 2"
@@ -492,8 +488,19 @@ mission "Avgi: Aviskir Extraction 2"
 		has "Avgi: Aviskir Extraction 1: done"
 	on offer
 		conversation
-			`	Return to Peripheria`
-			accept
+			You land on Aviskir and do the first contact stuff with one of the governments on the Avgi homeworld. You hear their side of the story, and they are not happy about being abandoned and then asked to send their best people to the Consonance
+
+
+			`	"The Consonance relinquished its claim to represent us when they fled into the night and abandoned us to the mercy of the Aberrant"`
+
+			It turns out the scientist is occupied with another project for the defense of Aviskir, which they refuse to explain to you, and they don't want to send him to the Consonance.
+
+			Instead, a family wants you to take them to be reunited with their (adult) child, who is serving in the Twilight Guard. You take them instead.
+
+
+
+
+			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. He is already occupied with another project and refuses to leave`
 
 
 
@@ -508,6 +515,33 @@ mission "Avgi: Araio Wrangling 1"
 		has "Avgi: Aviskir Extraction 2: done"
 	on offer
 		conversation
+
+			You return, and Prasinos is disappointed but doesn't blame you at all. Overall she comments that diplomacy with the Avgi planets is difficult, as they are both upset with the Consonance for abandoing them and don't believe in their ability to really help against the Aberrant, thinking that they are more concerned with hiding in space and saving themselves at the cost of the planets' resources. Prasinos is convinced that the Consonance will need to really do something to inspire them before they'll accept their leadership again.
+
+
+			Lait contacts you as you leave Prasinos' office and tells you he's been placed in command of reconaissance expeditions in Aviskir and beyond.
+
+			You congratulate him and he asks if you're up for a more exciting mission.
+
+			Lait says that Consonance leadership wants a certain package to be retrieved from Araio, where a contact has apparently completed a mission assigned months ago. He says he hasn't really been given much information as he's new to his new role, but that it's probably not too sketchy given everyone is nominally on the same side.
+
+
+
+
+
+mission "Avgi: Araio Wrangling 2"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source "Araio"
+	destination "Elthe"
+	to offer
+		has "Avgi: Araio Wrangling 1: done"
+	on offer
+		conversation
+
+
+
 			`	Go to Araio and get into a gunfight and a cowboy chase. Get directed to Elthe. Avgi cowboys riding velociraptors and wrangling legally distinct longcow bugs. Nuclear steam trains too.
 
 
@@ -536,29 +570,6 @@ mission "Avgi: Araio Wrangling 1"
 
 
 
-mission "Avgi: Araio Wrangling 2"
-	landing
-	name "Placeholder"
-	description "Placeholder"
-	source "Araio"
-	destination "Elthe"
-	to offer
-		has "Avgi: Araio Wrangling 1: done"
-	on offer
-		conversation
-			`	P ickup the memory diamond with info on interstellar mission trajectories on Elthe. This has survey locations of all the orion starships that were launched years ago, which have valuable pulse units in them. U233 pulse units instead of Pu239 ones for better material aging. Explain how U233 has similar neutronic properties to Pu but is way stronger and less finnicky.`
-
-
-
-
-
-			You retrieve the lockbox, but when you hand it over to Prasinos she opens it and reveals that it was already cracked open and replaced with a fake. The Dissonance has the Orion locations now and is likely going to retrieve the nukes.
-
-
-
-
-
-			Or maybe you can either succeed or fail depending on choices? If you succeed, Orion retrieval is an option for Fissile Shortages later. If you fail, the Dissonance gets the Orions and gets their nukes sooner
 
 
 
@@ -580,23 +591,34 @@ mission "Avgi: Araio Wrangling 3"
 		has "Avgi: Aviskir Extraction 2: done"
 	on offer
 		conversation
-			`	Return the special data to Prasinos`
-			accept
 
 
 
-mission "Avgi: Aviskir Repatriation"
-	landing
-	name "Placeholder"
-	description "Placeholder"
-	source "Peripheria"
-	destination "Araio"
-	to offer
-		has "Avgi: Aviskir Extraction 2: done"
-	on offer
-		conversation
-			`	A couple wants to be taken to Aviskir, where they have family. Talks about how life is better there`
-			accept
+		
+			`	Pickup the memory diamond with info on interstellar mission trajectories on Elthe. This has survey locations of all the orion starships that were launched years ago, which have valuable pulse units in them. U233 pulse units instead of Pu239 ones for better material aging. Explain how U233 has similar neutronic properties to Pu but is way stronger and less finnicky.`
+
+
+
+
+
+			You retrieve the lockbox, but when you hand it over to Prasinos she opens it and reveals that it was already cracked open and replaced with a fake. The Dissonance has the Orion locations now and is likely going to retrieve the nukes.
+
+
+
+
+
+			Or maybe you can either succeed or fail depending on choices? If you succeed, Orion retrieval is an option for Fissile Shortages later. If you fail, the Dissonance gets the Orions and gets their nukes sooner
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1366,7 +1388,7 @@ mission "Avgi: Lost Freighter 1"
 	on offer
 	You are told by a random Twilight Guardsman that there is a drifting, derelict freighter matching the description of an old ship from the evacuation of the Twilight
 
-	Find it in the Tangled Shroud. Board it, and discover it ts packed with vitriamphora (vitrification amphora, aka avgi cryopod) with thousands of sleeping Avgi.
+	Find it in the Tangled Shroud. Board it, and discover it ts packed with vitreamphorae (vitrification amphora, aka avgi cryopod) with thousands of sleeping Avgi.
 
 	'Capture' it and return to Peripheria with it.
 
@@ -1383,16 +1405,16 @@ mission "Avgi: Lost Freighter 2"
 
 	When to return there is an argument over whether to reanimate them or leave them in storage.
 
-	You can ask what a 'vitriamphora' is and basically get tl;dr'd that it's a sleeping pod
+	You can ask what a 'vitreamphora' is and basically get tl;dr'd that it's a sleeping pod
 
 	Talk about how there are still millions more Avgi in stasis waiting to be revived, and how they cannot currently house or feed them all, especially if they are normie civvies that are unproduictive in the war industry
 
 	Someone proposes taking them to Weledos and reviving them there, as it has space, but it is shot down as too dangerous given that Weledos is frequently raided and there is no protection for civilians on the surface
 
-	You are asked to take the vitriamphora to Aktina Cylinder to be stored temporarily.
+	You are asked to take the vitreamphorae to Aktina Cylinder to be stored temporarily.
 
 
-mission "Avgi: Vitriamphora Abduction 1"
+mission "Avgi: Vitreamphora Abduction 1"
 	landing
 	name ""
 	description ""
@@ -1401,7 +1423,7 @@ mission "Avgi: Vitriamphora Abduction 1"
 	to offer
 		has ""
 	on offer
-	Drop the vitriamphoras off on Aktina. You can ask how exactly they work to one of the dudes there and get a loredump
+	Drop the vitreamphorae off on Aktina. You can ask how exactly they work to one of the dudes there and get a loredump
 
 	While you're there you get a call that Lait's ship has missed its check in. If you did the scout rescue branch of the intro, mention that this is a similar occurance
 
@@ -1412,7 +1434,7 @@ mission "Avgi: Vitriamphora Abduction 1"
 	Or plasmoid distributor
 
 
-mission "Avgi: Vitriamphora Abduction 2"
+mission "Avgi: Vitreamphora Abduction 2"
 	landing
 	name ""
 	description ""
@@ -1427,10 +1449,10 @@ mission "Avgi: Vitriamphora Abduction 2"
 
 	You are given the freighter's name and are told to search for it, and if you find it, disable and board it, given that this is a kidnapping case. Temporarily deputized into Avgi FBI because your JD will allow you to catch up with the freighter.
 
-	on enter messages explaining that you catch glimpses of it and track it past Outpost Pilos
+	on enter messages explaining that you catch glimpses of it heading towards the Tangled Shroud, and track it past Outpost Pilos
 
 
-mission "Avgi: Vitriamphora Abduction 3"
+mission "Avgi: Vitreamphora Abduction 3"
 	landing
 	name ""
 	description ""
@@ -1440,11 +1462,34 @@ mission "Avgi: Vitriamphora Abduction 3"
 		has ""
 	on offer
 
+	Land on Outpost Pilos to access the station's sensor logs
+
+	Get exact details of the freighter, including its apparent mass and fuel load, and use that to figure out its range
+
+	Learn that it could have reached some of the Dissonance systems, which the Avgi FBI suspects
+
+
+	Fly around until you find the Freighter in one of the Dissonance systems. You have to disable and board it. Remind the player of the initial task.
+
+	Reencounter Keppel, who is captaining the freighter. He tells you they stole the vitreamphorae to prevent the Avgi inside from being stuck in stasis for years, as the other refugees from the Twilight have been..
+
+	He reveals the amphoras are long gone, as they have already been smuggled to other Dissonance stations where the Avgi are being revived as you speak.
+
+	You get the option to arrest him and turn him in. If you do, set a condition for this (him being imprisoned, he will break out offscreen later and you will get a notification).
+
+	If you try to arrest him, a 0g gunfight happens both around and outside the asteroid station. Describe the cool Avgi spacesuits with the bubble helmets. You prevent Keppel from escaping in an Akoustiki and arrest him.
+
+	Alternatively, you can spare him and report to the Twilight Guard that you were unable to find the amphoras, which is technically the truth. Keppel gives you the now empty freighter + its outfits so you don't look like a total failure. Good opportunity for the player to earn a torch drive. Add a bunch of Dissonance rep too and add to the flag of pro Dissonance actions
+
+	If you took the previous Dissonance opportunity with Ecru and Corsa the dialogue is more friendly (b version of the mission?) and he tries much harder to persuade you not to arrest him
 
 
 
 
-# Excimer Laser Testing
+
+# Strike Force Mission Chain
+
+
 
 
 
@@ -1457,7 +1502,7 @@ Test prototype UV excimer laser (it sucks)
 
 
 
-# Strike Force Mission Chain
+
 
 
 The excimer lasers aren't ready, but the Irises are. Go pick up a bunch of them and escort a bunch of Iris equipped ships

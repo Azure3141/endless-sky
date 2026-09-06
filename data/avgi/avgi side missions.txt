@@ -1114,3 +1114,42 @@ mission "Avgi: Atomics Testing 2"
 				`	"Sounds good."`
 
 			`	"Appreciation. Well, it was a pleasure to meet you, <first>, but I've got to go start analyzing the data from the test," Aliza says. "If you're ever around Ergastirio or Dokimi, feel free to stop by and chat. I'm sure we'll see more of each other in the future."`
+
+# TODO
+mission "Avgi: Avgi Repatriation"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source
+		government "Avgi"
+		attributes "avgi diaspora"
+	destination "Aviskir"
+	to offer
+		has "Avgi: Aviskir Extraction 2: done"
+	on offer
+		conversation
+			`	An Avgi wants to be taken to Aviskir, where they have family. Talks about how life is better there`
+
+			action
+				set "avgi: repatriation jobs"
+
+
+mission "Avgi: Avgi Evacuation"
+	landing
+	name "Placeholder"
+	description "Placeholder"
+	source
+		government "Avgi"
+		not attributes "avgi diaspora"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Aviskir Extraction 2: done"
+	on offer
+		conversation
+			`	A couple wants to be taken to Peripheria, where they have family.`
+
+			action
+				set "avgi: evacuation jobs"
+
+
+
