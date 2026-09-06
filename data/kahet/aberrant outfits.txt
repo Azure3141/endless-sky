@@ -38,10 +38,10 @@ outfit "Aberrant Spiker"
 		"hit effect" "spiker impact"
 		"inaccuracy" 7
 		"reload" 90
-		"firing energy" 4
-		"firing heat" 6
-		"firing fuel" 10
-		"firing hull" 150
+		"firing energy" 40
+		"firing heat" 60
+		"firing fuel" 20
+		"firing hull" 450
 		"velocity" 15
 		"lifetime" 700
 		"acceleration" 1.45
@@ -50,8 +50,8 @@ outfit "Aberrant Spiker"
 		"homing"
 			"throttle control"
 		"optical tracking" 0.9
-		"hit force" -1350
-		"hull damage" 730
+		"hit force" -1400
+		"hull damage" 670
 		"shield damage" 1270
 		"corrosion damage" 3
 		"missile strength" 31
@@ -99,16 +99,16 @@ outfit "Nucleolysis Beam"
 			"frame rate" 15
 		sound "nucleolysis"
 		"hit effect" "acuit hit"
-		"inaccuracy" .2
+		"inaccuracy" .4
 		"velocity" 420
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 4.2
-		"firing heat" 1.5
+		"firing energy" 8.4
+		"firing heat" 3.5
 		"shield damage" 0.8
 		"hull damage" 1.6
 		"heat damage" -9.1
-		"fuel damage" 1.66
+		"fuel damage" 1
 		"corrosion damage" 0.015
 	description "This beam weapon creates a field inside which otherwise stable atomic nuclei rapidly decay. This effect seems to be inversely proportional to the mass of the nucleus, causing isotopes like deuterium to break down at a higher rate than heavier elements. As the resultant products have a higher energy state than the original nucleus, the beam cools its target, defying conventional thermodynamics."
 	description "In practice, this beam can deplete a ship's deuterium fuel while causing the very matter of its hull to decay."

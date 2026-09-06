@@ -499,7 +499,7 @@ mission "Avgi: Aviskir Extraction 2"
 
 
 
-
+			Summary
 			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. He is already occupied with another project and refuses to leave`
 
 
@@ -542,6 +542,13 @@ mission "Avgi: Araio Wrangling 2"
 
 
 
+
+
+
+
+
+
+			Summary
 			`	Go to Araio and get into a gunfight and a cowboy chase. Get directed to Elthe. Avgi cowboys riding velociraptors and wrangling legally distinct longcow bugs. Nuclear steam trains too.
 
 
@@ -549,13 +556,6 @@ mission "Avgi: Araio Wrangling 2"
 
 
 			Grassy Park (Jurassic Park)
-
-
-			Yo
-
-			`
-			accept
-
 
 
 
@@ -574,10 +574,6 @@ mission "Avgi: Araio Wrangling 2"
 
 
 
-
-
-
-			accept
 
 
 
