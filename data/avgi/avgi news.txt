@@ -40,6 +40,7 @@ news "avgi siege civilian"
 			`"Curiosity. I've never been to the Tangled Shroud, but I heard it is a safe place away from the Aberrant."`
 			`"Satisfaction. Every time an Aberration comes too close, we hit it with half a dozen surface-to-orbit nuclear missiles."`
 			`"Optimism. Despite the siege of our star systems, the surface of our inhabited planets remain quite safe from attack."`
+			`"Despair. Our age of atoms is collapsing."`
 
 
 news "avgi siege merchant"

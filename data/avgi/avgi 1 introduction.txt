@@ -20,11 +20,13 @@ mission "Avgi: First Contact Wait"
 	source "Republic" "Free Worlds" "Syndicate"
 	to offer
 		has "Avgi: Twilight Escape 3: done"
+		has "main plot completed"
 	on offer
 		event "avgi: first contact timer" 30
 		fail
 
 event "avgi: first contact timer"
+
 
 mission "Avgi: Intro Reminder"
 	landing
@@ -47,18 +49,18 @@ mission "Avgi: Intro Reminder"
 
 mission "Avgi: Thread Activity 1"
 	landing
-	name "Placeholder"
+	name "Radio Silence"
 	description "Accompany Captain Lait to the <waypoints> system and investigate the radio emissions the Avgi detected, then return to <destination>"
 	source "Peripheria"
 	waypoint "Thread"
 	destination "Outpost Tekis"
-	passengers 3
+	passengers 2
 	blocked "You'll need <capacity> free aboard the <ship> for this mission."
 	to offer
 		has "avgi: first contact timer"
 	on offer
 		conversation
-			`	Your arrival on the <ship> attracts some notice, as it always does with the Avgi, curious about this interloper from beyond their space. But this time you seem to have been anticipated, for a pair of Avgi wearing hammered copper bangles greet you as you step off the <ship>.`
+			`	Your arrival in the <ship> attracts some notice, as it always does with the Avgi, curious about this interloper from beyond their space. But this time you seem to have been anticipated, for a pair of Avgi wearing hammered copper bangles greet you as you step off the <ship>.`
 			`	"Captain <last>, you are, question?" one asks, glancing down at a slate-grey tablet displaying your likeness.`
 			choice
 				`	"Yep, that's me."`
@@ -109,7 +111,6 @@ mission "Avgi: Thread Activity 1"
 			`	Prasinos stands and begins pacing. "Explanation. You might wonder why we still bother to scout the northern reaches of the Twilight, given the dangers and our inability to project meaningful power beyond Arche."`
 			`	She stops and gestures to Lait, who taps the table a few times, causing a map to appear on it. "As you see here, we are able to sustain scouting sorties through the core systems at least weekly. They watch the enemy for any signs that they have made purchase on the planets, which yet resist their attempts at landing or bombardment."`
 			`	Lait interjects. "Regret. I wish we could do more, but the most we can do is monitor the Aberrant and maintain sporadic communication with those planets that are still willing to talk to us.`
-			
 			choice
 				`	"You mean some of them aren't?"`
 				`	"So where do I come in?"`
@@ -194,13 +195,12 @@ mission "Avgi: Thread Activity 1"
 		conversation
 			`	The Thread system is whirling with asteroids, a dense belt extending throughout the inner system. In the distance, the greenish marble of Cyreal orbits its parent, (which Lait tells you is nicknamed 'Big Brother' by the locals) a bright source of radio emissions. But the rest of the system appears silent as Lait checks his instruments.`
 			`	"Disappointment. There were once mining outposts all throughout the system, but I can't even find them on the optical scope." He reconsiders for a moment "Hope. But maybe they have just found a way to stay hidden for all these years. I've not seen anything here before, but I am of course fallible."`
-				choice
-					`	"Well, the Optikons picked up a signal, so we know someone is out here."`
-					`	"Maybe that signal was just sensor noise then?"`
+			choice
+				`	"Well, the Optikons picked up a signal, so we know someone is out here."`
+				`	"Maybe that signal was just sensor noise then?"`
 
 			`	Suddenly, as if on cue, Lait picks up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly?"`
-			`	Soon, Lait has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant surely would have noticed a ship out in the open, if it was ever active. Their sensors can pick out even our most low-observability ships."`
-			`	It sounds like you should check out this ship.`
+			`	Soon, he has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant here should have noticed a ship out in the open, if it was ever active. Their sensors can pick out even our most low-observability ships. Captain, you should deal with them before they notice the Akoustiki."`
 
 	npc
 		government "Aberrant"
@@ -225,7 +225,7 @@ mission "Avgi: Thread Activity 1"
 				"Aberrant Junior" 2
 				"Aberrant Pike" 2
 
-	npc
+	npc kill
 		government "Aberrant"
 		personality
 			confusion 90
@@ -236,7 +236,7 @@ mission "Avgi: Thread Activity 1"
 			variant
 				"Aberrant Whiskers" 2
 
-	npc
+	npc kill
 		government "Aberrant"
 		personality
 			confusion 90
@@ -540,16 +540,33 @@ mission "Avgi: Araio Wrangling 2"
 	on offer
 		conversation
 
+			You and Lait head to Araio. Lait explains that it's a bit of a frontier planet with relatively old fashioned technology, but that has helped it to remain self sufficient through the Aberrant blockade. Terrain is Colorado inspired
 
+			Lait says he was given a description of the contact and a name (TBD) and was told to meet him at a uranium mine to retrieve a lockbox.
 
+			You overfly the mine, but the terrain is far too rugged to land your ship anywhere.
+			You land at the nearest spaceport and head to a nearby ranch, 'Grassy Park' and commandeer some Avgi mounts, which look like velociraptors (feathers and all.) Lait finds you a larger 6 ft dromaeosaur normally used as a draft animal. Choices should be here for dialogue, mostly flavor
 
+			You make it to the mine but the contact is nowhere to be seen. After exploring it a bit you end up finding what looks to be the lockbox in question buried under some rock. Add a few choices here that let you uncover the lockbox.
 
+			You are accosted on the way back by a group of Avgi bandits, who claim the contact owed them money, and demand that the Consonance cover for his debts since he's fled town. Lait tries to talk his way out of the situation but they are interested in the lockbox and demand that you hand it over. They imply another party was looking for the item, which is why the contact fled.
 
+			You can comply or refuse.
 
+			If you refuse you all get into a scuffle that ends with Lait being held hostage, and you are forced to hand the lockbox over.
+
+			Either way the bandits get the lockbox and get away, and you see them get into an atomic steam train
+
+			You proceed to chase the train. Add some choices here for how you conduct it. (Shoot them) options as appropriate.
+
+			Eventually you board the train and after a gunfight, get the leader of the bandits to surrender. However, he reveals that the lockbox has already been taken to the local spaceport, where an interested buyer was apparently going to pick it up
+			"Concession. You are very persistent for someone who is not being paid"
+
+			You get to the spaceport just in time to see a SSTO take off, headed for Elthe.
 
 
 			Summary
-			`	Go to Araio and get into a gunfight and a cowboy chase. Get directed to Elthe. Avgi cowboys riding velociraptors and wrangling legally distinct longcow bugs. Nuclear steam trains too.
+			`	Go to Araio and get into a gunfight and a cowboy chase. Get directed to Elthe. Avgi cowboys riding velociraptors and wrangling legally distinct longcow bugs. Nuclear steam trains too. Choice heavy mission, lots of action
 
 
 			racing against avgi cowboy mercenaries (who have been hired by the dissonance, unbeknownst to you) to track down the survey data
@@ -566,7 +583,7 @@ mission "Avgi: Araio Wrangling 2"
 
 
 			`	A gleaming silver train chugs before you
-			`	"Stay away from the front, warning. "
+			`	"Stay away from the front, warning. It looks like the reactor shielding has been stripped off"
 
 
 
@@ -588,28 +605,22 @@ mission "Avgi: Araio Wrangling 3"
 	on offer
 		conversation
 
+			You chase the SSTO to Elthe, but right as you come in to land, the Avgi inside ditch it, leaving it to crash on the moon's surface. They eject what looks to be a rock hopper Akoustiki, fleeing into the rings.
+
+			Once on Elthe, you and Lait commandeer another Akoustiki and chase them into the rings. You can ask why you don't just use your flagship, and Lait responds that it'd be too noticeable in the rings, disturbing the dust, so you need something smaller.
+
+			Chase the rock hopper to an asteroid, where a small outpost has been constructed. Have a space gunfight, and eventually invade the outpost.
+
+			Eventually you overpower the defenders and get to interrogate them. They reveal that the lockbox holds a memory diamond with info on interstellar mission trajectories on Elthe. This has survey locations of all the orion starships that were launched years ago, which have valuable pulse units in them. 
+
+			Depending on your interrogation choices you can either succeed at getting the right lockbox or get duped into taking a fake. If you succeed, Orion retrieval is an option for Fissile Shortages later in Chapter 2/3. If you fail, the Dissonance gets the Orions and gets their nukes sooner (also Chapter 2/3)
 
 
-		
-			`	Pickup the memory diamond with info on interstellar mission trajectories on Elthe. This has survey locations of all the orion starships that were launched years ago, which have valuable pulse units in them. U233 pulse units instead of Pu239 ones for better material aging. Explain how U233 has similar neutronic properties to Pu but is way stronger and less finnicky.`
+			You retrieve the lockbox, but if it's a fake, when you hand it over to Prasinos she opens it and reveals that it was already cracked open and the memory diamond replaced with a fake. The Dissonance has the Orion locations now and is likely going to retrieve the nukes.
 
+			If you succeed Prasinos is able to hand the diamond off to a historian (existing character options?) for analysis, and she says that they'll want to track down the Orions in the future.
 
-
-
-
-			You retrieve the lockbox, but when you hand it over to Prasinos she opens it and reveals that it was already cracked open and replaced with a fake. The Dissonance has the Orion locations now and is likely going to retrieve the nukes.
-
-
-
-
-
-			Or maybe you can either succeed or fail depending on choices? If you succeed, Orion retrieval is an option for Fissile Shortages later. If you fail, the Dissonance gets the Orions and gets their nukes sooner
-
-
-
-
-
-
+			The Orions use U233 pulse units instead of Pu239 ones for better material aging. Prasinos or someone else explains how U233 has similar neutronic properties to Pu but is way mechanically stronger and less finnicky, so the pulse units should still be usable despite being centuries old.`
 
 
 
@@ -672,11 +683,7 @@ mission "Avgi: Ask for Help: Humanity 3"
 			``
 Return to Peripheria 
 
-
-
 Hriso offers to go, but Asime says she should attend in person as well
-
-
 
 
 
@@ -695,8 +702,9 @@ mission "Avgi: Ask for Help: Humanity 4"
 
 Take Asime and Hriso to Earth
 
+Parliament is shocked to meet a real alien, which is a first for most of them (hint at the Hai). Asime gives an address to Parliament explaining some of who the Avgi are and their current situation, and implores humanity for aid and diplomatic relations.
 
-Parliament goes on recess to discuss things. Frustration with the slow pace. They agree to reconvene in a week
+Parliament goes on recess to discuss things. Avgi frustration with the slow pace. They agree to reconvene in a week
 
 Run into Leon and Sora. They're both like "you should have contacted us too", Leon asks you to come meet a friend of his
 
@@ -715,7 +723,9 @@ mission "Avgi: Ask for Help: Humanity 5"
 		conversation
 			``
 
-Meet Leon's friend
+Meet Leon's friend, who turns out to be a former director in the Syndicate who owes Leon a favor, who now works at whatever the computer company on Vinci is. He explains that he was involved in dealing with the retrieval of Korath technology, and has experience in alien matters.
+
+He says that Leon has filled him in about the Avgi and offers to use his connections to get some technology added to an assistance package. Expresses interest at what Leon has told him of Avgi photonic computing and advises you and the Avgi to use Avgi technology as a bargaining chip, as many in human space will be interested
 
 
 
@@ -730,8 +740,9 @@ mission "Avgi: Ask for Help: Humanity 6"
 	on offer
 		conversation
 			``
-Return to Earth. Parliament has agreed to begin aiding the Avgi by sending samples of technology and a few Navy advisors (?)
-Deep representative offers to send hyperlane relays so the Avgi can communicate at FTL speeds. 
+Return to Earth. Parliament has agreed to begin aiding the Avgi by sending samples of technology (mostly shields) and a few Navy advisors (?). The Deep is selected to be the primary logistics liason, with Darius/Sora/Leon as intermediaries given their experience.
+
+Deep representative offers to send hyperlane relays so the Avgi can communicate at FTL speeds. The Deep ends up donating a whole order of theirs, currently being finished in the Syndicate.
 
 
 
@@ -756,10 +767,16 @@ mission "Avgi: Ask for Help: Humanity 7"
 	on offer
 		conversation
 			``
-
-
 Pick up human hyperspace relays from the syndicate
 
+
+	npc accompany save
+		government "Deep"
+		personality timid escort
+		ship "Mule" "D.S.S. Taylor"
+		ship "Mule" "D.S.S. Nuckolls"
+		ship "Bactrian" "D.S.S. Teller"
+		ship "Bactrian" "D.S.S. Ulam
 
 
 mission "Avgi: Hyperlane Relays 1"
@@ -822,14 +839,17 @@ mission "Avgi: Hyperlane Relays 4"
 
 Link up the inhabited outer limits systems
 
-
+Maybe linking up the outer limits systems (peripheria to navigeo for example) should happen first, and then you attempt the chain through the tangled shroud? This would make more sense
 
 
 # Quarg ask for help missions
 
 
+Need to figure out how to do this in such a way that doesn't trivialize the situation with Quarg aid, but also shows them in a good light that wants to help
 
+Quarg should explain their history in the Twilight and how they made an agreement with the Pug for them to take over their watch over the area in exchange for noninterference with the Coalition.
 
+Explain that the Quarg see the Pug as neglecting their duty but can't interfere without possibly starting a destructive war in Avgi space.
 
 
 
@@ -1423,7 +1443,9 @@ mission "Avgi: Vitreamphora Abduction 1"
 
 	While you're there you get a call that Lait's ship has missed its check in. If you did the scout rescue branch of the intro, mention that this is a similar occurance
 
-	Go look for Lait up north. Once you find him (enter the system) it turns out the Aberrant are using a new weapon and he wanted to record more data before returning
+	You get the chance to volunteer to go look for Lait up north. If you decline you just get a rest timer for a week. Important for the player to have a choice so they can feel like they're choosing to do something good for Lait.
+
+	Once you find him (enter the system) it turns out the Aberrant are using a new weapon and he wanted to record more data before returning
 
 	Introduce one of the new Aberrant weapons here? Standing Wave Oscillator maybe?
 
@@ -1493,15 +1515,155 @@ Test prototype UV excimer laser (it sucks)
 
 
 
+mission "Avgi: Pil Foward Base 1"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+		Escort Kokkino's ship to Navigeo to make his case to fleet command. Kokkino wants to send a strike force in to establish a force on Pil in the Rivulet system, which will cut off the southwestern cluster and let them cut the Aberrant off from each other. Kokkino talks about the old Pil mining installations and mass driver catapults and how they could form the seed of a new base.
+
+
+mission "Avgi: Pil Foward Base 2"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+	You can listen to Kokkino's arguments or help him make his case. Meet Lazuli, who is skeptical that the Twilight Guard can push that far, and who calls Kokkino young and enthusiastic but somewhat reckless. Kokkino argues that with your OP as fuck ship they have a better chance against the Aberrant than ever before
+
+
+
+mission "Avgi: Pil Foward Base 3"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+	Lazuli says there is too much unknown about Pil and its suitability for fortification, as it would likely become cut off from support frequently. Asks you to check out Pil and the condition of its mining outpost to see if it can be made sustainable. Escort a Diaspersi with Optikons to go scan the moon in detail. Loredump about phosphate caves on Pil - alien space bats joke. When you return the strike is approved and Kokkino is placed in command of the operation
+
+
+
+mission "Avgi: Pil Foward Base 4"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+
+	Escort some freighters to Ergastirio, then bring them to the Feo Platform with Excimer Lasers to outfit the strike force.
+
+
+mission "Avgi: Pil Strike 1"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+		Defeat a few fleets of Aberrant in the systems along the way so that the main strike force can move unimpeded
 
 
 
 
 
+mission "Avgi: Pil Strike 2"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer
+
+	Move with the strike force and its utility ships towards Rivulet. Encounter major opposition in Stream, defeat it. When you win, Kokkino talks about how they are just one jump away from Anax and how he wishes they could go there instead. Head to Pil and land there.																												
+																												
+		
+mission "Avgi: Pil Base 1"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer																										
+		With an initial landing secured, Kokkino asks you to escort additional Undsynis to Pil to bring more materials for the base. Fight off increasing Aberrant raids. When you pass Stream, get a popup that there are lots of Aberrant jumping into the system from Anax.																												
+																												
+																												
+mission "Avgi: Pil Base 2"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer																										After landing with the transports, talk to Kokkino about stuff. While you're talking, a bunch of Aberrant jump in and you have to take off to fight them. Barely win, land again, and talk about how many ships were damaged and destroyed, and the position seems untenable. Kokkino is grim but optimistic to his troops, but privately tells you he thinks this may have been a mistake, and to tell the captains of the Undsynis to prepare to evacuate. As you're talking again, another wave of Aberrant jumps in																												
+																												
+																												
+mission "Avgi: Pil Retreat 1"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer																																									Fight off the second wave of Aberrant with your remaining ships, barely win again. Get a report from a scout after landing that another wave is massing in Stream. Kokkino realizes you cannot win, orders the retreat. You fight the third wave while the NPC ships take off and fly back to Feo. If you beat the third wave and land again, you find Kokkino waiting for the last Avgi to evacuate, and he tells you another wave is coming. If you beat that wave the mission loops and you have to face infinite waves.																												
+																														
+mission "Avgi: Pil Retreat 2"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer																											Arrive back at Feo and see how many ships were damaged or lost in the failed strike. Kokkino is ordered to report to Lazuli back on Navigeo. Just before he leaves, a straggler Avgi jumps in and reports that Lait's Polari was disabled back in the Stream system. Kokkino gives you one last order to go and rescue him.																												
+																												
+	mission "Avgi: Feo Loss 1"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer																										Go repair the ships in Stream, see a huge Aberrant fleet ignore you and jump towards Arche. Return to Feo, but find it destroyed with many Avgi ships disabled. The on enter popup tells you to try and repair as many ships as you can and take them to emergency landings on Viso in the H-1 system directly south, where there is an ammonia mining operation.																												
+																												
+																												
+mission "Avgi: Feo Loss 2"
+	landing
+	name ""
+	description ""
+	source "Weledos"
+	destination "Navigeo Yards"
+	to offer
+		has ""
+	on offer		
+
+	Once you land, everyone is in shock at the destruction of Feo. End on the desolate icy landscape perhaps? Mention the Aberrant are carrying off parts of Feo to set up the Aberrant Antivili repair plotline																												
+																												
+																												
+																												
 
 
-
-The excimer lasers aren't ready, but the Irises are. Go pick up a bunch of them and escort a bunch of Iris equipped ships
 
 
 
