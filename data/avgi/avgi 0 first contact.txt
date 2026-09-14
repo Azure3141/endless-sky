@@ -300,7 +300,7 @@ mission "Avgi: First Contact"
 
 	npc save accompany escort
 		government "Avgi (Twilight Guard Translator)"
-		personality escort fleeing launching timid
+		personality escort timid
 		ship "Polari" "Distant Shores"
 
 	on accept

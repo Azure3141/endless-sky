@@ -47,18 +47,19 @@ mission "Avgi: Intro Reminder"
 
 # Northern Scouting Mission Chain
 
-mission "Avgi: Thread Activity 1"
+mission "Avgi: Thread Rescue 1"
 	landing
-	name "Radio Silence"
-	description "Accompany Captain Lait to the <waypoints> system and investigate the radio emissions the Avgi detected, then return to <destination>"
+	name "Radio Silence Rescue"
+	description "Accompany Captain Lait to the <waypoints> system and investigate the radio emissions the Avgi detected, then return to <destination> with any survivors."
 	source "Peripheria"
 	waypoint "Thread"
-	destination "Outpost Tekis"
+	destination "Peripheria"
 	passengers 2
-	blocked "You'll need <capacity> free aboard the <ship> for this mission."
+	blocked "You'll need <capacity> free aboard the <ship> in case there are any survivors to bring home."
 	to offer
 		has "avgi: first contact timer"
 	on offer
+		log "Factions" "Avgi Consonance" `The Consonance still sends scouting missions north into space occupied by the Aberrant, both to watch them and to aid the Avgi who were left behind during the evacuation.`
 		conversation
 			`	Your arrival in the <ship> attracts some notice, as it always does with the Avgi, curious about this interloper from beyond their space. But this time you seem to have been anticipated, for a pair of Avgi wearing hammered copper bangles greet you as you step off the <ship>.`
 			`	"Captain <last>, you are, question?" one asks, glancing down at a slate-grey tablet displaying your likeness.`
@@ -193,15 +194,41 @@ mission "Avgi: Thread Activity 1"
 
 	on enter "Thread"
 		conversation
-			`	The Thread system is whirling with asteroids, a dense belt extending throughout the inner system. In the distance, the greenish marble of Cyreal orbits its parent, (which Lait tells you is nicknamed 'Big Brother' by the locals) a bright source of radio emissions. But the rest of the system appears silent as Lait checks his instruments.`
-			`	"Disappointment. There were once mining outposts all throughout the system, but I can't even find them on the optical scope." He reconsiders for a moment "Hope. But maybe they have just found a way to stay hidden for all these years. I've not seen anything here before, but I am of course fallible."`
+			`	The Thread system is whirling with asteroids, a dense belt extending throughout the inner system. In the distance, the greenish marble of Cyreal orbits its parent, (which Lait tells you is nicknamed 'Big Brother' by the locals) a bright source of radio emissions. But the rest of the system appears silent as Lait checks his instruments from aboard the Distant Shores.`
+			`	"Disappointment. There were once mining outposts all throughout the system, but I can't even find them on the optical scope," he transmits. He reconsiders for a moment "Hope. But maybe they have just found a way to stay hidden for all these years. I've not seen anything here before, but I am of course fallible."`
 			choice
 				`	"Well, the Optikons picked up a signal, so we know someone is out here."`
 				`	"Maybe that signal was just sensor noise then?"`
 
-			`	Suddenly, as if on cue, Lait picks up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly?"`
+			`	Suddenly, as if on cue, Lait tells you he's picked up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly?"`
 			`	Soon, he has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant here should have noticed a ship out in the open, if it was ever active. Their sensors can pick out even our most low-observability ships. Captain, you should deal with them before they notice the Akoustiki."`
 
+	npc save accompany escort
+		government "Avgi (Twilight Guard Translator)"
+		personality escort timid
+		ship "Polari" "Distant Shores"
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive waiting staying
+		system "Arche"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Hugger" 3
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive waiting staying
+		system "Corporeal"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Longfellow" 3
+				"Aberrant Hugger" 2
+				"Aberrant Chomper" 3
 	npc
 		government "Aberrant"
 		personality
@@ -253,7 +280,7 @@ mission "Avgi: Thread Activity 1"
 		system Thread
 		ship "Akoustiki" "Solid Rain"
 		conversation
-			`At first glance, the Akoustiki appears derelict, with no sign of any active systems and minimal thermal emissions. You broadcast a short message explaining who you are and why you're here, to no avail. Perhaps the small utility craft is simply derelict. But as you dock with it, the dull amber glow of emergency lighting becomes apparent.`
+			`At first glance, the Akoustiki appears derelict, with no sign of any active systems and minimal thermal emissions. You broadcast a short message explaining who you are and why you're here, to no avail. Perhaps the small utility craft is simply derelict. But as both your <ship> and Lait's Distant Shores dock with it, the dull amber glow of emergency lighting becomes apparent.`
 			`	"Puzzlement. Surely the Aberrant would have noticed a disabled ship by now," says Lait.
 			choice
 				`	"Maybe it just took off from somewhere?"`
@@ -277,34 +304,34 @@ mission "Avgi: Thread Activity 1"
 					to display
 						has "FW Katya 1: declined"
 
-			`	You try that cool karate move again, and this time it works better than it did on Katya. You spin and knock the Optical Laser Rifle out of the hands of what is revealed to be a beige Avgi, who hops away in fright.`
+			`	You try that cool karate move again, and this time it works better than it did on Katya. You spin and knock the Optical Laser Rifle out of the hands of what is revealed to be a dull yellow Avgi, who hops backwards in fright.`
 
-			`	"Alarm, wait!"`
+			`	"Alarm, wait!" he says, raising his hands.`
 
 			choice
 				`	"Okay, everyone calm down. I'm here to help."`
 					goto calm
 				`	"You know, pointing a gun at people isn't very nice"`
-			`	"Apology. Shock. We thought you were someone from Cyreal, uncertainty."`
-
-			choice
-				`	"No, I was sent by the Consonance to help you."`
-					goto calm
-				`	"Why would you be afraid of someone from Cyreal?"``
+			`	"Apology. Shock. We thought you were an agent from Cyreal, uncertainty."`
 
 			label calm
-			`	The Avgi looks to be in shock. "Disbelief. Who are you? An alien? How are you speaking to me?" A second Avgi, dull yellow in color, appears to be speechless.`
+			`	The Avgi looks to be in shock. "Disbelief. Who are you? An... alien? How are you speaking to me?" A second Avgi, bright beige in color, appears to be speechless.`
 			goto lait
 
 			label defused
-			`	You feel the object vanish from your head, and you turn to see a beige Avgi holding an Optical Laser Rifle. "Disbelief. Who are you? How are you speaking to me?" A second Avgi, dull yellow in color, appears to be speechless.`
+			`	You feel the object vanish from your head, and you turn to see a dull yellow Avgi holding an Optical Laser Rifle. "Disbelief. Who are you? How are you speaking to me?" A second Avgi, bright beige in color, appears to be speechless.`
 
 			label lait
 			`	Lait emerges from behind you, looking as though he's enjoying their surprise at meeting an alien. "Satisfaction. That's right, you're speaking to a real life alien. Way better than the plays, right? I am Captain Lait, Twilight Guard scout, and this is Captain <first> <last>."`
 			`	The pair introduce themselves as Ecru and Corsa respectively, siblings. "Uncertainty. The Twilight Guard? We thought you were all dead in that battle around Anax?"`
+			choice
+				`	"No, the Consonance escaped into the Tangled Shroud. They sent us to rescue you after a scout picked up a signal here."`
+					goto anger
+				`	(Let Lait respond.)`
 
 			`	"Nope!" Lait replies cheerfully. "Pride. We escaped through the Tangled Shroud, and the Consonance carries on the fight to this day. Which is why we came to rescue you, by the way, after one of our scouts caught a signal here."`
 
+			label anger
 			`	These last words seem to anger the pair. "Frustration. Why has no one come for us before?" says Corsa. "We hid for years in the asteroids, even as our habitats were cracked open by the Aberrant one by one... until they came for us only yesterday. Why have you only come now?" She seems almost distraught.`
 			`	"Not to mention what is happening on Cyreal," adds Ecru. "Why has no one from the Consonance come to stop that, question?"`
 			choice
@@ -312,80 +339,130 @@ mission "Avgi: Thread Activity 1"
 				`	"Wait, what's happening on Cyreal?"`
 					goto state
 
-			`	Lait looks abashed. "Apology, I had no idea. I am sorry for your losses. We came as soon as we received reports of activity in the Thread system. There was nothing before... You were able to hide from our eyes well enough, at least." He looks up. "What's this about Cyreal? We have been unable to contact the Mining Guilds for over a year."
-
-
+			`	Lait looks abashed. "Apology, I had no idea. I am sorry for your losses. We came as soon as we received reports of activity in the Thread system. There was nothing before... You were able to hide from our eyes well enough, at least." He looks up. "What's this about Cyreal? We have been unable to contact the Thread mining guilds for over a year."
 
 			label state
-			`	"Fear. The State holds a diamond grip across all of Cyreal. People are put in stocks for minor offenses. Any dissenters vanish, and all the party tells us is that they have gone 'to the moon.' Even though Cyreal is a moon, confusion."`
+			`	"Fear. A new government has taken control of the entire moon. The State hold a diamond grip across all of Cyreal. People are put in stocks for days for minor offenses. Any dissenters vanish, and all the Autocrats tell us is that they have gone 'mining.'" Corsa shivers, and Ecru comforts his sister.`
 			choice
-				`	"Wow, that sounds scary."`
+				`	"That sounds awful."`
 					goto next
-				`	"This is just like this ancient human book, 'Nineteen Eighty-Four' by George Orwell."`
+				`	"This reminds me of this ancient human book, 'Nineteen Eighty-Four.'"`
 					goto jorjorwel
 
 			label jorjorwel
 			`	"Have you read it, question?" asks Corsa.`
-
 			choice
 				`	(Lie) "Yes."`
-					goto lie
-				`	"No, I haven't read it, but this is what I imagine the book is like."
-					goto no
-				`	"Anyway, where do you want me to take you?"`
-					goto next
+				`	"No, but this is what I imagine it's like."
+					goto 1984
+				`	"Anyway, we came here to rescue you. Where do you want to go?"`
+					goto rescue
 
+			`	You attempt to describe the book despite never having read it. You can only hope that Lait doesn't suddenly develop an interest in human literature from a thousand years ago.`
 
+			label 1984
+			`	"Consuion. Oh. Okay. I will take your word for it, then."`
 
-			`	"We came here to rescue you," you say.`
+			label rescue
+			`	"Uncertainty." The pair seem to think it over. "Our outpost is gone, and we do not know how to find the others," says Corsa.""
+			`	Ecru concurs. "Confirmation. We all concealed our asteroid mines as best we could, first from the Aberrant, and then from Cyreal."`
 			choice
-				`	"Do you want to be taken to another asteroid mine?"`
-				no, they aren't safe and we don't even know how to find the others
-				`	"Do you want to be taken to Cyreal?"`
-				lolno
-				`	"We can take you to the Consonance"`
+				`	"I take it you don't want to go to Cyreal then."`
+				`	"We were ordered to take any survivors to Peripheria, the station the Consonance is headquartered on"`
+					goto destination
 
+			`	"Firm. Absolutely not" says Ecru.`
 
-			`	Take us to the Dissonance instead, we always heard rumors that distant relatives might have survived among them`
+			label destination
+			`	Ecru thinks it over. "Consideration. The miners who escaped during the Incursion, we knew they also meant to make for the Shroud. Did they go to the Consonance as well?"`
+			`	"Reluctance. Many of them live on stations within the Shroud, outside the influence of the Consonance," Lait admits. "But many do live among us on Peripheria" he hastens to add.`
+			choice
+				`	"Peripheria is safer. It's beyond the Tangled Shroud, where the Aberrant rarely go."`
+					goto peripheria
+				`	"It sounds like more of your people are among the Dissonance then."`
+					goto dissonance
+				`	(Say nothing.)`
+					goto end
 
+			label peripheria
+			Ecru looks tempted by the prospect of safety, but Corsa seems wary. "Consideartion. The Aberrant are not the only danger. I would want to verify that the Consonance does not gift us with the same absolute security that Cyreal has."
+				goto end
 
-			you were too late and the asteroid station was already blown up, these are the survivors
+			label dissonance
+			`	"Consideration. Perhaps. We will see how many of them truly made it," says Corsa.`
+				goto end
 
-
-
-			`	"So, I'm assuming taking you to Cyreal is out of the question."`
-
-			`	""`
-
-
-
-			`	Our asteroid station was destroyed by the Aberrant`
-			`	Do you want to be taken to another asteroid station?`
-			`	No, it isn't safe here, and we don't know how to find them`
-			`	What about Cyreal?`
-			`	No, Cyreal is now ruled by an autocratic dictatorship that seized power after the Incursion.`
-			`	Dissonance station instead, we heard miners with rumors about them and how they might have family there`
-
- 				this is just like 2984
-
+			label end
+				`	The siblings discuss it among themselves for a while, then appear to reach a decision. "Finality. We will go with you to Peripheria, and see what it is like there. But we will not pledge ourselves to the Consonance just yet."`
+				`	Lait seems satisfied with this, and you take Ecru and Corsa aboard the <ship> with their few belongings. Ecru pauses one last time to look back at the darkened Akoustiki, the last remnant of their home. You then undock both of your ships from the Solid Rain, scuttling it to leave nothing for the Aberrant.`
 				depart
 
+	on visit
+		dialog `You've returned to <planet>, but you haven't brought the refugees on your ship. Make sure you've either collected them or that the ship they're on is in the system.`
 
-mission "Avgi: Thread Activity 2A"
+	on complete
+		conversation
+			`	You bring the <ship> into one of Peripheria's docking bays, Ecru and Corsa taking in the scale of the station through the windows.`
+			`	While Ecru and Corsa ask around the spaceport, seeking a familiar face, you and Lait head off to debrief Prasinos.`
+			`	"Relief. Survivors. Well done, Captain Lait, Captain <last>" she says after you confirm the rescue. 
+			choice
+				`	(Explain how the asteroid outpost was destroyed.)`
+				`	(Explain the situation on Cyreal.)`
+					goto cyreal
+			"Sorrow. A pity their outpost was destroyed before we could arrive, though. I will direct additional scouting resources to warn any surviving outposts and offer them similar refuge."`
+
+			label cyreal
+			`	"Apprehension. This situation on Cyreal worries me, however. This would explain why they have refused our outreach for a year, though we have never been able to learn of the conditions on the ground. Resolve. We lack the resources to intervene, but I will see if anything can be done for the people of Cyreal. Now, what of the survivors themselves?"`
+
+			choice
+				`	"They are considering going to one of the Dissonance outposts now."`
+				goto end
+				`	(Let Lait explain.)`
+
+			`	"Trepidation. They are seeking out anyone they might know, and have heard that the other miners that fled Cyreal have largely joined the Dissonance." Lait explains.`
+			`	"Amusement. Who did they hear that from?" asks Prasinos wryly.`
+			`	Lait looks somewhat abashed. "It may have come up during conversation."`
+			`	"Acceptance. It is no matter," says Prasinos. "They are not prisoners, of course."`
+
+			label end
+			`	Prasinos looks faintly disappointed, but dismisses you with another word of thanks. "Rquest. Take them where they wish to go, then, and tell me what you make of those who live there."
+			`You leave Prasinos' office, and Lait bids you farewell as he leaves to take on another mission.`
+			`	You should meet back up with Ecru and Corsa in the spaceport to see if they've reached a decision yet.`
+
+
+mission "Avgi: Thread Rescue 2"
+	spaceport
+	name "Dissonance Reunion"
+	description "Take Ecru and Corsa to <destination>, where they believe they have surviving family."
+	source "Peripheria"
+	destination "Outpost Tekis"
+	passengers 2
+	to offer
+		has "Avgi: Thread Rescue 1: done"
+	on offer
+		conversation
+			`	Ecru and Corsa are waiting for you, sipping drinks. "Satisfaction. It has been far too long since I've had something sweet," says Corsa.`
+			`	Ecru seems eager to get to the point. "Anticipation. It seems there are not just other miners, but family on Outpost Tekis. A few dockworkers recognized the descriptions of a few of our aunts and uncles."`
+			choice
+				`	"Alright, I can take you there"`
+					accept
+				`	"Sorry, I'm not going that way.`
+
+			`	"Disappointment. Very well, Captain, we will find our own way there. We must thank you and Captain Lait for rescuing us, however. That is not something we will ever forget," Corsa says.`
+				decline
+
+
+mission "Avgi: Thread Rescue 3"
 	landing
 	name "Placeholder"
 	description "Placeholder"
 	source "Outpost Tekis"
 	destination "Peripheria"
-	passengers 3
 	to offer
-		has "Avgi: Thread Activity 1: done"
+		has "Avgi: Thread Rescue 2: done"
 	on offer
-		conversation
-			`	Take Ecru and Corsa back to Outpost Enka.`
-			accept
-
-	on enter "Thread"
+		log "People" "Keppel" `A teal Avgi who met you at Outpost Tekis. He gave no title or position of importance, but those around him seem to defer to him. He appears to hold considerable influence within the Dissonance.`
+		log "Factions" "Avgi Dissonance" `The Dissonance.
 		conversation
 			`	A teal Avgi greets you. "Amity. Keppel, I am."`
 
@@ -400,23 +477,6 @@ mission "Avgi: Thread Activity 2A"
 
 		Depending on what you say about the Dissonance, add to the pro Dissonance flag counter here
 
-mission "Avgi: Thread Activity 2B"
-	landing
-	name "Placeholder"
-	description "Placeholder"
-	source "Outpost Tekis"
-	destination "Peripheria"
-	passengers 3
-	to offer
-		has "Avgi: Thread Activity 1: done"
-	on offer
-		conversation
-			`	Take Ecru and Corsa back to Peripheria.`
-			accept
-
-	on enter "Thread"
-		conversation
-			You bring Ecru and Corsa back to Peripheria, against their wishes. They are upset but understanding, and say they'll just find passage to the Dissonance station themselves
 
 
 
@@ -427,7 +487,7 @@ mission "Avgi: Amathil Contact 1"
 	source "Peripheria"
 	destination "Amathil"
 	to offer
-		has "Avgi: Thread Activity 2: done"
+		has "Avgi: Thread Rescue 2: done"
 	on offer
 		conversation
 			`	Go to Amathil and bring a communique to their leaders.`
@@ -749,11 +809,29 @@ Deep representative offers to send hyperlane relays so the Avgi can communicate 
 	npc accompany save
 		government "Deep"
 		personality timid escort
-		ship "Mule" "D.S.S. Taylor"
-		ship "Mule" "D.S.S. Nuckolls"
-		ship "Bactrian" "D.S.S. Teller"
-		ship "Bactrian" "D.S.S. Ulam"
+		ship "Bactrian (Jump)" "D.S.S. Teller"
 
+
+
+
+ship "Bactrian" "Bactrian (Jump)"
+	outfits
+		"Fuel Pod" 2
+		"Torpedo Launcher"
+		"Torpedo" 30
+		"Heavy Laser Turret" 4
+		"Heavy Anti-Missile Turret" 2
+		"Fusion Reactor"
+		"Geode Reactor"
+		"Hai Gorge Batteries"
+		"D67-TM Shield Generator"
+		"Hai Williwaw Cooling" 3
+		"Catalytic Ramscoop"
+		"Laser Rifle" 15
+		"Outfits Expansion" 2
+		`"Bufaer" Atomic Thruster`
+		`"Bufaer" Atomic Steering`
+		"Jump Drive"
 
 
 mission "Avgi: Ask for Help: Humanity 7"
