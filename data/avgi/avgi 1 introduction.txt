@@ -94,7 +94,7 @@ mission "Avgi: Thread Rescue 1"
 			`	"Satisfaction. Captain Lait has briefed me personally on your encounter with him, and I have heard similar praise about your conduct from others among us." She tips a wing at Lait.`
 
 			label explanation
-			`	"I have called the two of you here in the hope that you, Captain <last>, are willing to help us, and Captain Lait because of his experience surviving in the Twilight. Captain <last>, am I right in my hope that you are as benevolent an alien as your compatriots?"`
+			`	"I have called the two of you here in the hope that you, Captain <last>, are willing to help us, and Captain Lait because of his experience surviving in the Twilight. Captain <last>, am I right in my hope that you are as benevolent an alien as your compatriots, question?"`
 			choice
 				`	"I'll do what I can"`
 					goto helpful
@@ -128,7 +128,7 @@ mission "Avgi: Thread Rescue 1"
 
 			`	"Consideration. Most likely a community of asteroid miners that managed to stay hidden from the Aberrant. Why they have let their signals leak now, I cannot guess, but there could potentially be hundreds of them."`
 			`	Lait adds, "Assurance. If there truly are hundreds of Avgi hidden in an asteroid, we could make multiple trips to rescue them, so do not worry about the bunks on your ship overly much."`
-			`	"Emphasis. But these are the stakes, Captain <last>," says Prasinos. "We have already left too many behind, so if we can retrieve any number of lost souls, ones who could be skilled and cunning miners no less, we need to make the attempt. Are you willing?"`
+			`	"Emphasis. But these are the stakes, Captain <last>," says Prasinos. "We have already left too many behind, so if we can retrieve any number of lost souls, ones who could be skilled and cunning miners no less, we need to make the attempt. Are you willing, question?"`
 			choice
 				`	"Yes, of course."`
 				`	"Sorry, this sounds too dangerous for me."`
@@ -141,7 +141,7 @@ mission "Avgi: Thread Rescue 1"
 					goto galaxy
 				`	"Well, I wouldn't say I've explored all that far."`
 
-			`	"But you have your own space, no? You humans, with your star clusters in the north, far larger than all of the Twilight and Tangled Shroud we have managed to explore together."`
+			`	"But you have your own space, no, question? You humans, with your star clusters in the north, far larger than all of the Twilight and Tangled Shroud we have managed to explore together."`
 			choice
 				`	"Yes, I suppose so. It's easy to forget how vast it is once you've explored beyond it."`
 					goto fan
@@ -184,10 +184,10 @@ mission "Avgi: Thread Rescue 1"
 					goto end
 				`	"No promises."`
 
-			`	"Amusement. That's a joke, right?"`
+			`	"Amusement. That's a joke, right, question?"`
 			
 			label end
-			`	"Excitement. Disregarding that, after I hopefully locate the source of the signal, we will make contact with the survivors and assess their number. If we can fit them aboard our ships, we will evacuate them back to Peripheria, and if their number exceeds our ships' capacity, we will return escorting a larger transport. Is everything understood?"`
+			`	"Excitement. Disregarding that, after I hopefully locate the source of the signal, we will make contact with the survivors and assess their number. If we can fit them aboard our ships, we will evacuate them back to Peripheria, and if their number exceeds our ships' capacity, we will return escorting a larger transport. Is everything understood, question?"`
 			choice
 				`	"Yes, let's do this."`
 					accept
@@ -200,7 +200,7 @@ mission "Avgi: Thread Rescue 1"
 				`	"Well, the Optikons picked up a signal, so we know someone is out here."`
 				`	"Maybe that signal was just sensor noise then?"`
 
-			`	Suddenly, as if on cue, Lait tells you he's picked up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly?"`
+			`	Suddenly, as if on cue, Lait tells you he's picked up a signal, pulsing rhythmically. "Excitement. It's right in the middle of the spectrum used by the miners from Cyreal. An emergency beacon, possibly, question?"`
 			`	Soon, he has managed to pinpoint the signal, not to an asteroid as he expected, but to what looks to be a derelict utility tug. "Confusion. The Aberrant here should have noticed a ship out in the open, if it was ever active. Their sensors can pick out even our most low-observability ships. Captain, you should deal with them before they notice the Akoustiki."`
 
 	npc save accompany escort
@@ -315,15 +315,15 @@ mission "Avgi: Thread Rescue 1"
 			`	"Apology. Shock. We thought you were an agent from Cyreal, uncertainty."`
 
 			label calm
-			`	The Avgi looks to be in shock. "Disbelief. Who are you? An... alien? How are you speaking to me?" A second Avgi, bright beige in color, appears to be speechless.`
+			`	The Avgi looks to be in shock. "Disbelief. Who are you, question? An... alien? How are you speaking to me, question?" A second Avgi, bright beige in color, appears to be speechless.`
 			goto lait
 
 			label defused
-			`	You feel the object vanish from your head, and you turn to see a dull yellow Avgi holding an Optical Laser Rifle. "Disbelief. Who are you? How are you speaking to me?" A second Avgi, bright beige in color, appears to be speechless.`
+			`	You feel the object vanish from your head, and you turn to see a dull yellow Avgi holding an Optical Laser Rifle. "Disbelief. Who are you, question? An... alien? How are you speaking to me, question?" A second Avgi, bright beige in color, appears to be speechless.`
 
 			label lait
 			`	Lait emerges from behind you, looking as though he's enjoying their surprise at meeting an alien. "Satisfaction. That's right, you're speaking to a real life alien. Way better than the plays, right? I am Captain Lait, Twilight Guard scout, and this is Captain <first> <last>."`
-			`	The pair introduce themselves as Ecru and Corsa respectively, siblings. "Uncertainty. The Twilight Guard? We thought you were all dead in that battle around Anax?"`
+			`	The pair introduce themselves as Ecru and Corsa respectively, siblings. "Uncertainty. The Twilight Guard, question? We thought you were all dead in that battle around Anax, confusion."`
 			choice
 				`	"No, the Consonance escaped into the Tangled Shroud. They sent us to rescue you after a scout picked up a signal here."`
 					goto anger
@@ -332,14 +332,14 @@ mission "Avgi: Thread Rescue 1"
 			`	"Nope!" Lait replies cheerfully. "Pride. We escaped through the Tangled Shroud, and the Consonance carries on the fight to this day. Which is why we came to rescue you, by the way, after one of our scouts caught a signal here."`
 
 			label anger
-			`	These last words seem to anger the pair. "Frustration. Why has no one come for us before?" says Corsa. "We hid for years in the asteroids, even as our habitats were cracked open by the Aberrant one by one... until they came for us only yesterday. Why have you only come now?" She seems almost distraught.`
+			`	These last words seem to anger the pair. "Frustration. Why has no one come for us before, question?" says Corsa. "We hid for years in the asteroids, even as our habitats were cracked open by the Aberrant one by one... until they came for us only yesterday. Why have you only come now, question?" She seems almost distraught.`
 			`	"Not to mention what is happening on Cyreal," adds Ecru. "Why has no one from the Consonance come to stop that, question?"`
 			choice
 				`	"We're sorry. We came as soon as we heard that there might still be someone alive here."`
 				`	"Wait, what's happening on Cyreal?"`
 					goto state
 
-			`	Lait looks abashed. "Apology, I had no idea. I am sorry for your losses. We came as soon as we received reports of activity in the Thread system. There was nothing before... You were able to hide from our eyes well enough, at least." He looks up. "What's this about Cyreal? We have been unable to contact the Thread mining guilds for over a year."
+			`	Lait looks abashed. "Apology, I had no idea. I am sorry for your losses. We came as soon as we received reports of activity in the Thread system. There was nothing before... You were able to hide from our eyes well enough, at least." He looks up. "What's this about Cyreal, question? We have been unable to contact the Thread mining guilds for over a year."
 
 			label state
 			`	"Fear. A new government has taken control of the entire moon. The State hold a diamond grip across all of Cyreal. People are put in stocks for days for minor offenses. Any dissenters vanish, and all the Autocrats tell us is that they have gone 'mining.'" Corsa shivers, and Ecru comforts his sister.`
@@ -374,7 +374,7 @@ mission "Avgi: Thread Rescue 1"
 			`	"Firm. Absolutely not" says Ecru.`
 
 			label destination
-			`	Ecru thinks it over. "Consideration. The miners who escaped during the Incursion, we knew they also meant to make for the Shroud. Did they go to the Consonance as well?"`
+			`	Ecru thinks it over. "Consideration. The miners who escaped during the Incursion, we knew they also meant to make for the Shroud. Did they go to the Consonance as well, question?"`
 			`	"Reluctance. Many of them live on stations within the Shroud, outside the influence of the Consonance," Lait admits. "But many do live among us on Peripheria" he hastens to add.`
 			choice
 				`	"Peripheria is safer. It's beyond the Tangled Shroud, where the Aberrant rarely go."`
@@ -412,7 +412,7 @@ mission "Avgi: Thread Rescue 1"
 			"Sorrow. A pity their outpost was destroyed before we could arrive, though. I will direct additional scouting resources to warn any surviving outposts and offer them similar refuge."`
 
 			label cyreal
-			`	"Apprehension. This situation on Cyreal worries me, however. This would explain why they have refused our outreach for a year, though we have never been able to learn of the conditions on the ground. Resolve. We lack the resources to intervene, but I will see if anything can be done for the people of Cyreal. Now, what of the survivors themselves?"`
+			`	"Apprehension. This situation on Cyreal worries me, however. This would explain why they have refused our outreach for a year, though we have never been able to learn of the conditions on the ground. Resolve. We lack the resources to intervene, but I will see if anything can be done for the people of Cyreal. Now, what of the survivors themselves, question?"`
 
 			choice
 				`	"They are considering going to one of the Dissonance outposts now."`
@@ -420,7 +420,7 @@ mission "Avgi: Thread Rescue 1"
 				`	(Let Lait explain.)`
 
 			`	"Trepidation. They are seeking out anyone they might know, and have heard that the other miners that fled Cyreal have largely joined the Dissonance." Lait explains.`
-			`	"Amusement. Who did they hear that from?" asks Prasinos wryly.`
+			`	"Amusement. Who did they hear that from, question?" asks Prasinos wryly.`
 			`	Lait looks somewhat abashed. "It may have come up during conversation."`
 			`	"Acceptance. It is no matter," says Prasinos. "They are not prisoners, of course."`
 
@@ -442,7 +442,7 @@ mission "Avgi: Thread Rescue 2"
 	on offer
 		conversation
 			`	Ecru and Corsa are waiting for you, sipping drinks. "Satisfaction. It has been far too long since I've had something sweet," says Corsa.`
-			`	Ecru seems eager to get to the point. "Anticipation. It seems there are not just other miners, but family on Outpost Tekis. A few dockworkers recognized the descriptions of a few of our aunts and uncles."`
+			`	Ecru seems eager to get to the point. "Anticipation. It seems there are not just other miners, but family on Outpost Tekis. A few dockworkers recognized the descriptions of a few of our cousins."`
 			choice
 				`	"Alright, I can take you there"`
 					accept
@@ -458,26 +458,130 @@ mission "Avgi: Thread Rescue 3"
 	description "Placeholder"
 	source "Outpost Tekis"
 	destination "Peripheria"
+	clearance "You manage to obtain permission to dock only once you explain that you are helping Ecru and Corsa find their kin."
 	to offer
 		has "Avgi: Thread Rescue 2: done"
 	on offer
 		log "People" "Keppel" `A teal Avgi who met you at Outpost Tekis. He gave no title or position of importance, but those around him seem to defer to him. He appears to hold considerable influence within the Dissonance.`
 		log "Factions" "Avgi Dissonance" `The Dissonance.
 		conversation
-			`	A teal Avgi greets you. "Amity. Keppel, I am."`
+			`	Outpost Tekis is as rough as you remember it, but the spaceport is more crowded than ever, with Avgi leaping into the air to catch a glimpse of Ecru and Corsa. Being one of the few Avgi to return from the blockaded systems must have some novelty among the Dissonance.`
+			`	A teal Avgi greets you, standing before the rest. "Amity. Keppel, I am." He does not offer a title and wears no uniform or insignia, but the crowd seems deferrent to him nonetheless. "Welcome, friends. Word of your rescue traveled ahead of you."`
+			`	"Greetings. Err, we're looking for our cousins. We think they live he-" Ecru is cut off by a veritable crowd of Avgi who wave frantically at them. "Recognition. Ah, there they are!"`
+			`	Keppel inclines a wing to them. "We will speak after your reunion."`
+			`Corsa says a last goodbye to you as she and Ecru are practically swept away by their presumed cousins. "Gratitude. We will meet again, Captain <first>, I am sure. We can never thank you enough for rescuing us, and Captain Lait too."`
+			choice
+				`	"Of course.`
+				`	"Just doing my job."`
+
+			`	You turn back to Keppel, who is watching you intently`
+			choice
+				`	"Who are you?"`
+					goto who
+				`	"Hello, I'm Captain <first> <last>."`
+
+		`	"Recognition. Well met, Captain. As for myself, well," he pauses.`
+
+		label who
+		`	"Consideration. An interested party, you could call me." You wait a bit, but no more information is forthcoming from him.`
+		`	Instead, he questions you. "Curiosity. A human. I have met only one of your kind before. I confess I was quite eager to meet you here today."`
+		choice
+			`	"What other human did you meet?"`
+			`	"Why did you want to meet me?"`	
+				goto meet
+
+		`	"Amusement. Leon, he called himself. Quite the character, if you will forgive me." Keppel focuses back on you. "But it is you that I wished to meet today."`
+		choice
+			`	"Why was that?"`
+
+		label meet
+		`	"Candor. Interested in what someone like yourself decides to do next, mostly. But indulge me first, please. Inquiry, whave have you heard of the Dissonance before this day, question?"`
+		choice
+			`	"You're all the groups that don't recognize the Consonance's authority."`
+				goto authority
+			`	"I've heard that you refuse to help fight the Aberrant."`
+				goto refuse
+			`	"That you're mostly a bunch of miners, I guess."`
+				goto miners
+			`	"Mostly rumors. I don't know what I can trust."`
+				goto rumors
+			`	"Well, some of you shot at me."`
+				to display
+					"reputation: Avgi (Dissonance Angry)" < -10
+				goto angry
 
 
-		You meet Keppel, who introduces himself as an interested party. Refuses to elaborate, acts mysterious, but there are hints he holds influence in the Dissonance (people are deferent to him, etc)
+		label authority
+		`	"Amusement. 'All' of them may be generous. But yes, there are many who do not feel the Consonance may represent the entirety of our species. They in fact do not even speak for any of the billions of Avgi on our home planets, for all that they claim to be our government."`
+			goto explanation
 
-		He welcomes Ecru and Corsa, then talks to you
+		label refuse
+		`	"Rebuke. We do fight and die against the Aberrant, when they dare to enter the Shroud. That we do not throw our bodies at them to die in futile expeditions beyond Arche is a different matter entirely."`
+			goto explanation
 
-		He asks you what you've heard of the Dissonance
+		label miners
+		`	"Consideration. Miners. Yes, I suppose that is true in part, but we are far more than a few miners in a cave."`
+			goto explanation
 
-		You get a few options, he reacts to them. Add option to say they shot at you if your angry dissonance rep is lower than default
+		label rumors
+		action
+			"avgi: dissonant song" ++
+		`	"Appreciation. You are wise to withold judgement, though the thoughts of your peers must never go ignored. Much has been said about the Dissonance, especially on Peripheria, where we are seen as cowards at best and traitors at worst. Perhaps there is a sliver of truth in both, and yet it would be foolish to end your understanding there."`
+			goto explanation
 
-		Depending on what you say about the Dissonance, add to the pro Dissonance flag counter here
+		label angry
+		`	"Regret. Some of us are fools with more weapons than sense, it is true. The Consonance has their own, of course. You may have noticed their uniforms."`
+			goto explanation
 
+		label explanation
+		`	Keppel spreads his wings. "Explanation. We are no government, Captain. We are those left outside the song the Consonance has composed, the ones who did not agree to yield our voices to their own. They claim to speak for us all, but what of the billions on Aviskir abandoned to their fate? What of the millions left in cold storage solely because housing and feeding them would be inconvenient?"`
+		`	He continues. "The Consonance means to rule us all, and promises representation for every polity and faction that will recognize their authority. But they use the Twilight Guard to enforce their laws against all within their reach, regardless of sovereignty or consent. I do not know how you humans rule yourselves, but this is unnatural to us Avgi, regardless of the threat posed by the Aberrant."`
 
+		choice
+			`	"Wouldn't you be stronger if you united against the Aberrant?"`
+				goto united
+			`	"Without the Twilight Guard, wouldn't the Aberrant wipe you out?"`
+
+		`	He lets out a sad thrum. "Reluctance. We are safe here, Captain. The Aberrant disdain the Shroud, and the few that slip in could be easily dealt with by the Twilight Guard should they abandon their expeditions beyond Arche. None of their failed raids have resulted in any progress or saved more lives than they spent. Sorrow. Better to save our strength and protect what we can, especially when it is Dissonance metals that build the warships they so carelessly spend."`
+			goto dissonance
+
+		label united
+		`	"Dismissal. They say the war with the Aberrant leaves no room for outsiders, that we must all join together under their banner in order to survive. And I say to that, contempt, why must it be one banner, and only theirs? The Consonance has failed in its duty to billions of Avgi left behind, and the Twilight Guard squanders its ships and lives on pointless raids and strikes when they could otherwise preserve their strength from within the Tangled Shroud. Then they come back to us to demand more materials and more labor to build a new fleet to throw against the Aberrant once more."`
+
+		label dissonance
+		`	Keppel points to Avgi all around the spaceport, going about their business in peace. "Resolve. And so we must stand apart, for if we do not husband our resources carefully to eke out a life in the Shroud, the Consonance will take and take until we starve. We do not hate them, not truly, but neither will we allow them to demand our obedience."`
+
+		choice
+			`	"The Aberrant won't care about your disagreements in the end."`
+				goto politics
+			`	"You make some interesting points."`
+
+		action
+			"avgi: dissonant song" ++
+		`	"Appreciation. I should hope so, given that it is my true and sincere belief that we cannot defeat the Aberrant under the leadership of the Consonance, nor any group that claims a rule they have not earned."`
+			goto ask
+
+		label politics
+		action
+			"avgi: dissonant song" --
+		`	"Agreement. They do not. Which is why we continue to mine, and build, and trade with the Consonance. We fight the Aberrant as much as any Twilight Guardsman. We are unwilling only to be ruled by a government that shows no care for those under its protection, or even the ones that fight and die for it."`
+
+		label ask
+		choice
+			`	"I'll still focus on fighting the Aberrant."`
+				goto fight
+			`	"So what do you want from me?"`
+
+		`	"Supplication. Only that you are thoughtful in your dealings with all Avgi, and remember that none may speak for us all."`	
+			goto end
+
+		label fight
+		`	"A commendable decision, Captain. But do not forget that the Consonance are not the only ones who fight to live."`
+			goto end
+
+		label end
+		`	With that, Keppel leaves you to your thoughts and wishes you a safe journey.`
+			accept
 
 
 mission "Avgi: Amathil Contact 1"
@@ -961,7 +1065,7 @@ mission "Avgi: Alonis Retrieval 1"
 	source "Ergastirio Station"
 	destination "Alonis Observatory"
 	to offer
-		has "Avgi: Araio Wrangling 2: done"
+		has "Avgi: Aberrant Investigation Pointer: done"
 	on offer
 		conversation
 			`	Your contact is waiting for you, a vivid pink Avgi named Cerise, who quickly escorts you to her rather cramped office. "Warm greetings. Thank you for taking the time to meet with me, Captain <last>.`
@@ -1038,11 +1142,32 @@ mission "Avgi: Alonis Retrieval 1"
 	npc evade
 		government "Aberrant"
 		personality coward secretive staying vindictive waiting uninterested
+		system "Pinnacle"
 		fleet
 			names "aberrant names"
 			variant
 				"Aberrant Hugger" 2
 				"Aberrant Whiskers"
+
+	npc evade
+		government "Aberrant"
+		personality coward secretive staying vindictive waiting uninterested
+		system "Tailwind"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Chomper" 2
+				"Aberrant Longfellow" 2
+
+	npc evade
+		government "Aberrant"
+		personality coward secretive staying vindictive waiting uninterested
+		system "Tumble"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Trip"
+				"Aberrant Triplet" 2
 
 	on stopover
 		dialog `	You dock at the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can chase them away, or destroy them if you can."`
