@@ -534,7 +534,7 @@ mission "Avgi: Thread Rescue 3"
 			goto explanation
 
 		label explanation
-		`	Keppel spreads his wings. "Explanation. We are no government, Captain. We are those left outside the song the Consonance has composed, the ones who did not agree to yield our voices to their own. They claim to speak for us all, but what of the billions on Aviskir abandoned to their fate? What of the millions left in cold storage solely because housing and feeding them would be inconvenient?"`
+		`	Keppel spreads his wings. "Explanation. We are no government, Captain. We are those left outside the song the Consonance has composed, the ones who did not agree to suborn our voices to their own. They claim to speak for us all, but what of the billions on Aviskir abandoned to their fate? What of the millions left in cold storage solely because housing and feeding them would be inconvenient?"`
 		`	He continues. "The Consonance means to rule us all, and promises representation for every polity and faction that will recognize their authority. But they use the Twilight Guard to enforce their laws against all within their reach, regardless of sovereignty or consent. I do not know how you humans rule yourselves, but this is unnatural to us Avgi, regardless of the threat posed by the Aberrant."`
 
 		choice
@@ -1054,7 +1054,7 @@ mission "Avgi: Aberrant Investigation Pointer"
 	to offer
 		has "Avgi: Araio Wrangling 3: done"
 	on offer
-		dialog `	You find a message waiting for you, with an Avgi astronomer requesting a meeting at <destination>, claiming her work is key to fighting the Aberrant. You wonder what interest an astronomer could have in you, or how astronomy is even relevant to the war with the Aberrant.`
+		dialog `	You find a message waiting for you, from an Avgi astronomer requesting a meeting at <destination>, claiming her work is key to fighting the Aberrant. You wonder what interest an astronomer could have in you, or how astronomy is even relevant to the war with the Aberrant.`
 			accept
 
 
@@ -1068,7 +1068,7 @@ mission "Avgi: Alonis Retrieval 1"
 		has "Avgi: Aberrant Investigation Pointer: done"
 	on offer
 		conversation
-			`	Your contact is waiting for you, a vivid pink Avgi named Cerise, who quickly escorts you to her rather cramped office. "Warm greetings. Thank you for taking the time to meet with me, Captain <last>.`
+			`	Your contact is waiting for you, a vivid pink Avgi named Cerise who quickly escorts you to her rather cramped office. "Warm greetings. Thank you for taking the time to meet with me, Captain <last>.`
 			choice
 				`	"It's no trouble."`
 					goto next
@@ -1100,37 +1100,37 @@ mission "Avgi: Alonis Retrieval 1"
 
 			label end
 			choice
-				`	"So... where do I come in?"`
-					goto actualend
 				`	"And did you ever observe anything interesting there?"`
+				`	"So... where do I come in?"`
+					goto pitch
 
-			`	"Oh, all sorts of interesthing things! Habitable worlds, for one, which had people just hovering to get there. And some odd light curves that really looked a lot like some kind of megastructure around the star, but that was before we were really sure about the Antecessors existing."`
+			`	"Oh, all sorts of interesthing things! Habitable worlds, for one, which had people just hovering to get there. And some odd light curves that really looked a lot like some kind of megastructure around the star, but that was before we were really sure about the Antecessors existing, so we dismissed them as a dust ring or a swarm of comets."`
 			choice
 				`	"The Antecessors?"`
 				`	"So... where do I come in?"`
-					goto actualend
+					goto pitch
 
 			`	"Consideration. No one really knows who they were. But once we were able to get hardened scout ships into the Ember Waste, we found all sorts of evidence that a past civilization had once existed there. Depleted minerals, layers of old plastics and radioisotopes, even some ancient hunks of metal that were once satellites. But if that light curve really is from some megastructure, it could be from an entirely different civilization, who knows?"`
 
-			label actualend
-			scene "alonis observatory picture"
-			`	Cerise waves an arm at the wall, which changes to display a grainy image. "A scout ship imaged the Observatory a few weeks ago, during a daring run to the Pinnacle system." She jumps excitedly on her perch. "Enthusiasm. You can see that the station is still intact, no? I want to go and retrieve all of the data still on board, of course. We usually just processed most of it on-site, with how expensive it was to get couriers to ship the memory pebbles back to Anax, so the bulk of the raw data is still there."`
+			label pitch
+			scene "alonis multipectral"
+			`	Cerise waves an arm at the wall, which changes to display a pair of grainy images. "A scout ship imaged the Observatory a few weeks ago, during a daring run to the Pinnacle system." She jumps excitedly on her perch. "Enthusiasm. You can see that the station is still intact, no? I want to go and retrieve all of the data still on board, of course. We usually just processed most of it on-site, with how expensive it was to get couriers to ship the memory pebbles back to Anax, so the bulk of the raw data is still there."`
 
 			choice
 				`	"Okay, let's go."`
-					goto actualendfinalv2(1)_
+					goto plan
 				`	"I've actually been to those systems. They're inhabited by aliens called the Ka'het, which look a bit like the Aberrant."`
 					goto graveyard
 					to display
 						has "Graveyard Label: offered"
 				`	"You know I can just take you to those systems?"`
 			`	She just stares at you for a moment "Consideration. I would like to agree, as that would be an excellent adventure, but it isn't those further systems I care about, actually."`
-				goto actualendfinalv2(1)_
+				goto plan
 
 			label graveyard
 			`	You explain to Cerise about the Builders and Ka'het, and how they look suspiciously similar to the Aberrant. "Awe. If that could truly explain the origin of the Aberrant, we need this data more than ever."`
 
-			label actualendfinalv2(1)_
+			label plan
 			`	She brings up a map of a cluster of systems just east of Avgi space. "I want to retrieve the full observation record for the systems our scouts explored, just before the Incursion. The story is that some kind of gateway or portal activated, which let the Aberrant in, and I want to see if there's any record of a similar activation happening in the years before that."`
 			`	"Excitement. The Alonis Observatory was more or less ignored by the Aberrant, as far as we know, and the onboard memory should still have all of the records I want. All we need to do is sneak onto it, without any Aberrant in the system, and transfer the data! Easy!"`
 			choice
@@ -1169,8 +1169,8 @@ mission "Avgi: Alonis Retrieval 1"
 				"Aberrant Trip"
 				"Aberrant Triplet" 2
 
-	on stopover
-		dialog `	You dock at the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can chase them away, or destroy them if you can."`
+	on visit
+		dialog `	You dock to the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can chase them away, or destroy them if you must."`
 
 
 mission "Avgi: Alonis Retrieval 2"
@@ -1185,108 +1185,204 @@ mission "Avgi: Alonis Retrieval 2"
 	on offer
 		conversation
 			`	The station is dark, but appears to be largely unscathed. "Puzzlement. I wonder why the Aberrant spared Alonis, unlike most of the stations they came across."`
+			`	Cerise gives you atour on the way in, unable to help herself. The primary optical mirror is still perfect. "Reverence. More than four hundred segments. We only ever scratched one during installation."`
+			`	The gravitational wave interferometer is sadly dead, its suborned Lagrange point reflectors long since dead and drifting.`
+			`	The building-sized cosmic ray traps, designed to capture and study the emissions of hypernovas and quasars galaxies away, remain intact, however, still chilled and humming from a trickle of emergency poiwer. "Aside. These are some of the largest electromagnetic traps outside Antivli Station itself. They had to be, of course, to capture as many particles from space as we could. A shame they didn't put the Observatory outside the heliopause though, we would have had way more flux to look at!"`
+			choice
+				`	"Are they valuable?"`
+				`	(Keep moving.)`
+					goto computer
 
+			`	"Delight. Oh, extremely. They were made on special order. I doubt you could find a facility outside Avsikir itself that could build another one today." She looks wistful for a moment. "Perhaps someone will come back for them one day."`
 
-			Cerise takes you on a tour of the telescope - primary optics, gravitational wave interferometers (connecting to satellites at lagrange points, all dead), cosmic ray traps - big electromagnets - Cerise says it's probably really valuable: hint at cosmic ray traps components being used by the aberrant for the antimatter station in the future - mention they can store antimatter?
+			label computer
+			`	You finally reach the observatory's control room, where Cerise attempts to power on the main computer. She works for several minutes before making a noise of disappointment. "Dismay. These terminals are dead for whatever reason. Not designed to go unmaintained for decades, I suppose. We can still do this the old-fashioned way."`
+			`	The "old-fashioned way" turns out to involve physically accessing the station's memory. Cerise directs you down a hatch that is definitely too small for you, into a literal vault filled with thousands of diamond memory bricks, all neatly sorted by date. Cerise gives you a list and unhelpfully holds a flashlight.`
+			choice
+				`	(Pull everything you can carry.)`
+				`	(Pull the five years before the Incursion.)`
 
+			`	Between the two of you, it takes five trips back and forth between the vault and the <ship>. You are both covered in dust by the end, but Cerise is delighted with what you manage to recover.`
+			`	"Disappointment. Hmm. I was sort of expecting the Aberrant to attack us while we were in there, you know? This is really anticlimactic."`
+			choice
+				`	"I'm not going to complain."`
+				`	"Don't tempt fate."`
 
-
-
-			Try to access the main computer to get a datalink; it's broken
-
-			Have to go enter the computer banks manually and sort through the bricks of diamond, find the ones corresponding to dates of interest
-
-			Lug those back
-
-			Cerise says she was kind of expecting the Aberrant to attack, and that this is kind of anticlimactic
-
-			`	Disappointment. Hmm. I was sort of expecting the Aberrant to attack us while we were in there, you know? This is really anticlimactic.`
-
-
-
-			While we're here, can you take me up to the Decet system you used to escape? I've never seen a Magnetar and I'm curious.
-
-			Hey, there used to be a hyperlane here connecting up to the EW cluster!
-
-
-			Once you get back, Cerise asks you if you know anyone with detailed observations of the Ember Waste to cross reference against
-			If you've done Ask for Help, Quarg are an option. If you know the Remnant, they show up
-			If you have done neither, you say you will come back once you find some options (set tag). Get active mission (2b) as reminder
+			`	"Concession. Of course, yes. Still, it would have made for a better story, in my opinion." She muses for a moment. "Inspiration. While we're here, would you mind taking me to see the Decet system? I've never seen a magnetar up close before."`
+			choice
+				`	"Sure, it shouldn't take more than a few days."`
+				`	"It's too dangerous up there. Let's go back to Ergastirio Station."`
 
 
 mission "Avgi: Alonis Retrieval 2b"
 	landing
+	name "Visit Decet"
+	description "Cerise wants to see the Decet system and its magnetar for herself."
+	source "Alonis Observatory"
+	destination "Ergastirio Station"
+	waypoint "Decet"
+	to offer
+		has "Avgi: Alonis Retrieval 2: done"
+	on enter
+		system "Quintet"
+		system "Nonet"
+		log "According to Cerise, there should be a hyperlane connection between Quintet and Nonet, but it appears to be missing."
+		dialog `"Attentive. Hey, there should have been a hyperlane here, between Quintet and Nonet. I wonder why it's missing?"`
+
+
+mission "Avgi: Astronomical Cross Reference 0"
+	landing
 	name "Return to Ergastirio Station"
 	description "Come back to Ergastirio once you've found someone with reference astronomy data on the Ember Waste."
 	source "Ergastirio Station"
-	destination "Ergastirio Station"
 	to offer
 		has "Avgi: Alonis Retrieval 1: done"
 	on offer
 		conversation
+			`	By the time you dock, Cerise has already called porters to help unload the memory bricks. Back in her cramped office, Cerise fiddles with one of them, trying to connect a drive meant for a server to her personal computer.`
+			`	She finally sets it down and gives you her full attention. "Inquiry. Captain, before I start properly here, have you happened to meet anyone else in your travels with detailed observations of the Ember Waste? Anyone at all? Anything that could supplement our own records, once I have extracted them, would be of critical value."`
 
-		Get back to Ergastirio. You get the same dialog where Cerise asks if you know anyone.
+			choice
+				`	(Tell her about the Quarg)`
+					to display
+						has "First Contact: Quarg: declined"
+					goto quarg
+				`	(Tell her about the Remnant)`
+					to display
+						has "license: Remnant"
+					goto remnant
+				`	(Tell her about the Remnant, but keep it vague)`
+					to display
+						has "license: Remnant"
+					goto secrets
 
+			label quarg
+			`	You mention the Quarg, and how they are millions of years old, and likely have observations of the entire galaxy.`
+			`	"Astonishment. Astronomical surveys older than my species itself. If they will give us anything at all, Captain, it could revolutionize our understanding of the cosmos. Optimism. Old people like being asked about their hobbies; surely they will be similar."`
+			action
+				set "avgi: quarg astronomy"
 
-	to complete
-		has
+			label remnant
+			`	With some trepidation, you tell Cerise about the Remnant, and how they have lived in the Ember Wastes itself for half a millenium, and prize astronomy and science.`
+			`	"Joy. Captain, hundreds of years of observations from inside the Ember Wastes would be invaluable. Please, ask them if they would be willing to share their findings."`
+			action
+				set "avgi: remnant astronomy"
 
+			label secrets
+			`	With some trepidation, you tell Cerise about the Remnant, but avoid mentioning where they live or who exactly they are. Keeping things in vague terms, you imply that they could have information about the Ember Wastes. `
+			`	"Interest. This group sounds fascinating. If they do indeed have observations of the Ember Wastes, please ask them if they would be willing to share them."`
+			action
+				set "avgi: remnant astronomy"
+			
 
-
-
-mission "Avgi: Astronomical Cross Referencing 1A"
+mission "Avgi: Astronomical Cross Reference: Quarg 1"
 	landing
 	name "Quarg Astronomy"
 	description "See if the Quarg will provide records of their observations of the Ember Waste."
-	source "Ergastirio Station"
-	destination "Lagrange"
-	to offer
-		has "Avgi: Alonis Retrieval 2: done"
-	on offer
-		conversation
-
-
-Requires Ask For Help: Quarg and Alonis Retrieval
-
-The Quarg refuse to provide records of the Ember Waste, but hand over records of human and Avgi space. After some negotiations where they ask you exactly what you're looking for a Quarg does come over with a very heavily censored/redacted record of a few Ember Waste systems of interest (Builder systems). Note that the Queri system is entirely missing
-
-
-mission "Avgi: Astronomical Cross Referencing 2A"
-	landing
-	name "Quarg Astronomy"
-	description "See if the Quarg will provide records of their observations of the Ember Waste."
-	source "Lagrange"
+	source 
+		attributes "quarg"
 	destination "Ergastirio Station"
 	to offer
-		has "Avgi: Alonis Retrieval 2: done"
+		has "avgi: quarg astronomy"
 	on offer
 		conversation
+			`	It takes no time at all to find down a Quarg who seems to know everything there is about astronomy, but once you mention the Ember Wastes, it goes still.`
+			`	"No, human, we will not provide records of that place. You will find nothing there but regrets and sorrow."`
+			choice
+				`	(Try to explain about the Avgi, and why they need the records.)`
+				`	`"Come on, what's the harm?"`
 
-Return home. Cerise is hyped to have the data and makes several comments on astronomy in Avgi space
-- Notes that many of the stars in Avgi space are younger
-- There is an active star-forming nebula just south (the triangle) of Aviskir
-- The Twilight itself is a series of reflection nebulas illuminated by several neutron stars that appear to have formed at around the same time - hint that they were made by the Drak civil war
-- Human space is remarkably stable, few supernovae nearby
-- The Ember Waste data is heavily redacted, not much useful there. The records of the Builder systems likewise have large gaps in them (Quarg not showing their explorations into the Gateway)
+			`	The Quarg sighs. "I will share with you our recordings of human space, as we do for every curious child that asks, and on behalf of the Avgi you may take our observations of their homeland as well. But the Ember Wastes are a matter beyond this..."`
+			`	Somehow, a second, much older Quarg appears behind you. "A child asks conspicuously of matters of inordinate importance beyond it? You are astonishingly bold, young one. But for what is the reason of this strange and wondrous inquisition?"`
+			choice
+				`	(Try to explain about the Avgi, and why they need the records.)`
+					goto explain
+				`	"I don't understand, what's so special about the Ember Wastes anyway?"`
+
+			`	The Quarg's eyes expand slightly. "What a grand and intoxicating innocence. This is not for you, so naive, to know comprehensively for your recall or intervention, child. Come! Lay down your true reasons. It is not too late for my answer."`
+
+			label explain
+			`	You quickly explain about the Avgi, and how Cerise needs data from the time of the Incursion on particular systems of interest. One long negotiation later, in which you explain precisely which systems Cerise is interested in, and the older Quarg hands over a small data stick, seemingly amused.`
+			`	"These are the peculiar systems your inquisitive astronomer asks after. Some few of them, appropriately."`
+			`	The record of the Ember Wastes is indeed heavily redacted. Whole years are simply absent from otherwise continuous series, and the Queri system does not appear at all. However, the amount of data on human space and the Twilight is staggering.`
+			choice
+				`	"Thank you. This is more than I was expecting."`
+					goto end
+				`	"Why the gaps?"`
+
+			`	"There are tragedies we do not tell of, out of sorrowful respect, and because they are not ours to share. You may tell your astronomer that the gaps do not hold what she is looking for, and that she should not waste her small lifespan searching for them."`
+
+			label end
+			`	"Tell her also that we will keep our long watch, and if we see this happen once more, she will be told."`
+
+	on complete
+		conversation
+			`	Cerise literally hits the ceiling of her small office in excitement when you hand over the Quarg data, together with their message to her.`
+			`	"Observation. Our stars are young, <first>, compared to those in your species' space. Much of the Twilight is a new neighborhood. The nebula southeast of Aviskir is an active stellar nursery, this much we have known, but, awe, the Quarg have observed the actual formation of several of these stars directly. Such is the longevity of their civilization."`
+			`	She then points to a series of disconnected stars surrounding the Twilight. "Wonder. And this. The Twilight itself is a group of reflection nebulae, lit by the very neutron stars that survive their parents' deaths, but the Quarg estimate that these stars went supernova at almost exactly the same time. Within decades of each other at most."`
+			`	She is nearly trembling in excitement, or possibly fear. "Agitation. No astronomical phenomenon I know of does that. Nothing natural can do that."`
+			choice
+				`	"What could?"`
+				`	"...You know, in my travels I've encountered stars that died unnatural deaths."`
+					to display
+						has: "Wanderers: Nova Remnants: done"
+					goto korath
+				`	"What about human space?"`
+					goto human
+
+			`	"Unease. I do not know. If they were destroyed... if it is possible to kill a star... who knows what lurks in the galaxy? Beings far worse than the Aberrant? Civilizations that destroy stars in their wars?"`
+				goto human
+
+			label korath
+			`	You quickly tell Cerise about the stars destroyed by either the Korath or Archons, and she shrinks in fear. "Dread. The galaxy truly is filled with terrors far worse than the Aberrant, if those with such power make the choice to exercise it."`
+
+			label human
+			`	Cerise shakes her head, clearing these dark thoughts. "Envy. Human space is almost absurdly stable. Almost no supernovae or destructive stellar events nearby, nothing violent that could sterilize a world for a very long time. Your people live in a cradle, it seems."`
+			choice
+				`	"What about the gaps in the data?"`
+				`	"Is this everything you needed?"`
+
+			`	"Consideration. These missing 'Builder' systems in the Ember Wastes, they are inconsistent. The Queri system has nothing on record more recent than a million years, and these other systems in the Graveyard are missing data for specific dates. The Feraticus system in particular has a gap a hundred thousand years ago that spans ninety years, and a second gap a few years later that spans nearly two hundred years."`
+			choice
+				`	"That's oddly specific for data from a hundred millenia ago."`
+					goto gaps
+				`	"Why would that be?"`
+					goto gaps
+				`	"The Queri system is probably censored because it held a Quarg ringworld that was destroyed."`
+					to display
+						has "Ringworld Debris: Quarg: declined"
+
+			`	Cerise goes still once more. "Dismay. The more you tell me about the galaxy, the more frightening it seems."`
+			choice
+				`	"The other gaps are strange, though."`
+				`	"Anyway, what about the other missing data?"`
+
+			label gaps
+			`	"Pensive. It is indeed strange, <first>. Some events in Feraticus that the Quarg did not wish to record must have occurred over that timespan, and then possibly repeated themselves? Doubt. Perhaps you can find out more by visiting the system, but with how long ago it was, I would be surprised. For now, I will continue studying this data. I will let you know if I find anything worth investigating further."`
 
 
-mission "Avgi: Astronomical Cross Referencing 1B"
+
+mission "Avgi: Astronomical Cross Reference: Remnant 1"
 	landing
 	name "Remnant Astronomy"
 	description "See if the Remnant will provide records of their observations of the Ember Waste."
 	source "Ergastirio Station"
-	destination
-		government "Remnant"
-		attributes "remnant primary"
+	destination "Vimimal"
 	to offer
-		has "Avgi: Alonis Retrieval 2: done"
+		has "avgi: remnant astronomy"
 	on offer
 		conversation
+			`	After reaching out to Dawn, she hears you out and quickly agrees to share the Remnant's wealth of astronomical data with the Avgi.`
+			`	"We will of course not mark our own locations, but it sounds as though your friends are more interested in the Graveyard anyway. And in exchange, could you bring us the Avgi's own records?"`
+			choice
+				`	"That shouldn't be too hard to arrange."`
+				`	"I'll ask them for a copy."`
 
-Talk to Dawn. Agree to mutually trade astronomical records with the Avgi. You have to go back to Ergastirio and get a copy from Cerise and then return, but Dawn gives you the Remnant data early as a sign of good faith
+			`	With arrangements made for a mutual exchange of data, Dawn is happy to give you a copy immediately.`
+			`	"Just come back with the data from these Avgi whenever you're in the area." She waves you off and wishes you goodbye.`
 
 
-mission "Avgi: Astronomical Cross Referencing 2B"
+mission "Avgi: Astronomical Cross Reference: Remnant 2"
 	landing
 	name "Remnant Astronomy"
 	description "See if the Remnant will provide records of their observations of the Ember Waste."
@@ -1299,7 +1395,8 @@ mission "Avgi: Astronomical Cross Referencing 2B"
 
 Cerise is very interested in how large the Remnant dataset is, but notes that it's all fairly recent (500 years) and doesn't really contain any answers. She gives you a copy of Avgi data to take back to Dawn
 
-mission "Avgi: Astronomical Cross Referencing 2C"
+
+mission "Avgi: Astronomical Cross Reference: Remnant 3"
 	landing
 	name "Remnant Astronomy"
 	description "See if the Remnant will provide records of their observations of the Ember Waste."
