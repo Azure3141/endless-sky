@@ -454,8 +454,8 @@ mission "Avgi: Thread Rescue 2"
 
 mission "Avgi: Thread Rescue 3"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Return to Peripheria"
+	description "Return to <destination> to see if Prasinos has another task for you."
 	source "Outpost Tekis"
 	destination "Peripheria"
 	clearance "You manage to obtain permission to dock only once you explain that you are helping Ecru and Corsa find their kin."
@@ -495,7 +495,7 @@ mission "Avgi: Thread Rescue 3"
 			`	"Why was that?"`
 
 		label meet
-		`	"Candor. Interested in what someone like yourself decides to do next, mostly. But indulge me first, please. Inquiry, whave have you heard of the Dissonance before this day, question?"`
+		`	"Candor. Interested in what someone like yourself decides to do next, mostly. But indulge me first, please. Inquiry, what have you heard of the Dissonance before this day, question?"`
 		choice
 			`	"You're all the groups that don't recognize the Consonance's authority."`
 				goto authority
@@ -586,17 +586,102 @@ mission "Avgi: Thread Rescue 3"
 
 mission "Avgi: Amathil Contact 1"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Amathil Diplomacy"
+	description "Bring a sealed communique from First Speaker Prasinos to the governing council of <destination>"
 	source "Peripheria"
 	destination "Amathil"
 	to offer
-		has "Avgi: Thread Rescue 2: done"
+		has "Avgi: Thread Rescue 1: done"
+		or
+			has "Avgi: Thread Rescue 2: done"
+			has "Avgi: Thread Rescue 2: declined"
 	on offer
 		conversation
-			`	Go to Amathil and bring a communique to their leaders.`
+			`	Prasinos sends for you once more, but this time there is no escort. A note handed to you at the spaceport simply asks ytou to come to her office at your own convenience. After confirming that she is free, you find her alone, a bronze cylinder the size of your forearm resting on the table in front of her.`
+			branch tekis
+				has "Avgi: Thread Rescue 3: done"
+			
+			`	"Greetings. I trust, Ecru and Corsa found their way, question?"`
+			choice
+				`	"They said they'd find their own way there."`
+				`	"They found their cousins on Outpost Tekis"`
+
+			`	"Satisfaction. That is good. It is a small thing, but I am glad for them." She gestures to a chair in front of her desk. "Request. I have another mission for you, if you are willing."`
+				goto request
+
+			label tekis
+			`	"Greetings. Welcome back, Captain. I trust you were able to were able to deliver Ecru and Corsa to their intended destination, question? I must admit I am curious as to what you made of it."`
+			choice
+				`	"It seemed like a functioning station, if a bit rough."`
+					goto functioning
+				`	"I met someone who called himself Keppel. He had a lot to say about the Consonance."`
+					goto keppel
+				`	"I'd rather not get involved in politics"`
+
+			`	"Amusement. Captain <last>, you have been involved in our politics from the moment you arrived. Everyone you transport, everywhere you land, is a statement of some kind. Reassurance. But I will not press you on this." She gestures to a chair in front of her desk. "Request. I have another mission for you, if you are willing."`
+				goto request
+
+			label functioning
+			`	"Acknowledgement. It is both, that is true. Many in the Assembly do not like to hear it, but the Dissonance is more than capable of surviving on their own, even with struggle. Some would prefer the Dissonance to be starving, so that they could be said to have chosen wrongly in rejecting our concord." She gestures to a chair in front of her desk. "Request. I have another mission for you, if you are willing."`
+
+			label keppel
+			`	Prasinos' goes quite still at the name, and she relaxes with deliberate effort. "Recognition. Yes, Keppel. He has a great deal to say to everyone he meets and deems to be interesting, and a great deal to say about the Consonance in particular. He says it well, frustration, and the maddening part is that some of it is perhaps even true." She considers you for a moment. "Inquiry. Did he tell you that we abandoned the planets, question? And of the injustice of the sleepers, or the control we exercise over the flow of materials and goods, question?"`
+			choice
+				`	"He did."`
+				`	"He said you waste resources on battles that don't achieve anything."`
+
+			`	"Weariness. He is not wrong in that we have failed in the past. He is wrong, however, when he says that our efforts are without value, and that argument will not be settled with words." She gestures to a chair in front of her desk. "Request. I have another mission for you, if you are willing."`
+
+			label request
+			`	Prasinos rests a hand on the bronze cylinder. "Explanation. Amathil is a proud world, one of the later ones to be settled before the hyperdrive, but old nonetheless. Unique among the settled worlds, Amathil has been united under one loose polity for centuries, and they understand the value of cooperation and community more than perhaps any other world."`
+			`	She stands and paces behind her desk. "Reservation. But Amathil does not yet recognize the continuity of the Consonance as the same governing body that existed before the Incursion. They are perhaps the ones most open to collaboration and reintegration, by their nature, but they are hesitant."`
+			`	She hands you the cylinder. It is rather light for its size, and you guess that it is hollow. "This is a message from me, personally, to Amathil's Council of Elders."`
+			choice
+				`	"What does it say?"`
+					goto contents
+				`	"Why send me and not a diplomat?"`
+					goto diplomat
+				`	"Why only contact them now?"`
+					goto now
+				`	"Alright, I'll see it delivered."`
+					goto deliver
+
+			label contents
+			`	"Resolve. A promise that we have not forgotten them, and that the Consonance still stands, and that with the aid of friendly aliens the war may yet be won."`
+
+			choice
+				`	"Why send me and not a diplomat?"`
+					goto diplomat
+				`	"Why only contact them now?"`
+					goto now
+				`	"Alright, I'll see it delivered."`
+					goto deliver
+
+			label diplomat
+			`	"Honesty. Because you are evidence of a wider galaxy, Captain <last>, and one that contains at least some aliens that are friendly. You are a living message that Amathil should not remain insular, and that through the Consonance lies possibilities for the future."`
+
+			choice
+				`	"What does it say?"`
+					goto contents
+				`	"Why only contact them now?"`
+					goto now
+				`	"Alright, I'll see it delivered."`
+					goto deliver
+
+			label now
+			`	"Regret. Because of you, in part. Contact with the outside galaxy has restored flagging confidence, "`
+
+
+			choice
+				`	"What does it say?"`
+					goto contents
+				`	"Why send me and not a diplomat?"`
+					goto diplomat
+				`	"Alright, I'll see it delivered."`
+					goto deliver
+
+
 			accept
-			Prasinos asks you to bring a message from her to the local leaders on Amathil, promising that the Consonance is still there to support them, and talking about how they are totally going to win with the aid of these friendly aliens
 
 
 mission "Avgi: Amathil Contact 2"
@@ -1061,12 +1146,21 @@ mission "Avgi: Aberrant Investigation Pointer"
 mission "Avgi: Alonis Retrieval 1"
 	landing
 	name "Visit the Alonis Observatory"
-	description "Cerise is attempting to study the region of space the Aberrant came from. Reach the <destination> and retrieve astronomical data from its computer, if it remains intact."
+	description "Cerise is attempting to study the region of space the Aberrant came from. First visit the marked systems, then reach the <destination> and retrieve astronomical data from its computer, if it remains intact."
+	mark "Headwind"
+	mark "Duet"
+	mark "Trio"
+	mark "Quartet"
+	waypoint "Quintet"
 	source "Ergastirio Station"
 	destination "Alonis Observatory"
+	passengers 1
+	blocked "You'll need <capacity> for Cerise and her equipment."
+	cargo 36
 	to offer
 		has "Avgi: Aberrant Investigation Pointer: done"
 	on offer
+		log "People" "Cerise" `Cerise is a vivid pink Avgi astronomer studying the origin of the Aberrant.`
 		conversation
 			`	Your contact is waiting for you, a vivid pink Avgi named Cerise who quickly escorts you to her rather cramped office. "Warm greetings. Thank you for taking the time to meet with me, Captain <last>.`
 			choice
@@ -1115,6 +1209,7 @@ mission "Avgi: Alonis Retrieval 1"
 			label pitch
 			scene "alonis multipectral"
 			`	Cerise waves an arm at the wall, which changes to display a pair of grainy images. "A scout ship imaged the Observatory a few weeks ago, during a daring run to the Pinnacle system." She jumps excitedly on her perch. "Enthusiasm. You can see that the station is still intact, no? I want to go and retrieve all of the data still on board, of course. We usually just processed most of it on-site, with how expensive it was to get couriers to ship the memory pebbles back to Anax, so the bulk of the raw data is still there."`
+			`	"Excitement. And thanks to the frankly unfair nature of faster-than-light travel, if we visit the right system, we can bring sensors aboard your <ship> to observe the Incursion as if in real time."`
 
 			choice
 				`	"Okay, let's go."`
@@ -1128,16 +1223,21 @@ mission "Avgi: Alonis Retrieval 1"
 				goto plan
 
 			label graveyard
+			action
+				set "avgi: ka'het similarities"
 			`	You explain to Cerise about the Builders and Ka'het, and how they look suspiciously similar to the Aberrant. "Awe. If that could truly explain the origin of the Aberrant, we need this data more than ever."`
 
 			label plan
-			`	She brings up a map of a cluster of systems just east of Avgi space. "I want to retrieve the full observation record for the systems our scouts explored, just before the Incursion. The story is that some kind of gateway or portal activated, which let the Aberrant in, and I want to see if there's any record of a similar activation happening in the years before that."`
-			`	"Excitement. The Alonis Observatory was more or less ignored by the Aberrant, as far as we know, and the onboard memory should still have all of the records I want. All we need to do is sneak onto it, without any Aberrant in the system, and transfer the data! Easy!"`
+			`	She brings up a map of a cluster of systems just east of Avgi space. "I want to retrieve the full observation record for the systems our scouts explored, just before the Incursion. The story is that some kind of gateway or portal activated somewhere in that cluster, which let the Aberrant in."`
+			`	Cerise marks a few systems. "Consideration. Depending on where this actually took place, we could catch the light front of any signal this activation may have produced by visiting one of these systems. Then, if we can get the observation record for that system, we can see if there's any record of a similar activation happening in the years before that."`
+			`	She again points to the Pinnacle system. "Excitement. The Alonis Observatory was more or less ignored by the Aberrant, as far as we know, and the onboard memory should still have all of the records I want. All we need to do is sneak onto it, without any Aberrant in the system, and transfer the data! Easy!"`
 			choice
 				`	"Alright, let's go."`
-					accept
 				`	"This is too dangerous for me. I'm out."`
 					decline
+
+			`	Several hours later, a collection of astronomical instruments have been haphazardly installed on the <ship>, and Cerise joins you in preparing for the journey.`
+				accept
 
 	npc evade
 		government "Aberrant"
@@ -1172,6 +1272,38 @@ mission "Avgi: Alonis Retrieval 1"
 	on visit
 		dialog `	You dock to the <planet>, but Cerise doesn't want to proceed from there. "Uncertainty. I can't work with those Aberrant still out there; they could damage the Observatory. See if you can chase them away, or destroy them if you must."`
 
+	on enter "Headwind"
+		unmark "Headwind"
+		dialog `	Cerise is watching her instruments, particularly a miniature gravitational wave antenna, during your jumps. "Expectation. Nothing so far, but that's hardly a surprise. We're still very far from the Twilit Embers, and the Incursion was not that long ago."`
+
+	on enter "Duet"
+		unmark "Duet"
+		dialog `	"Confirmation. Nothing here either. Keep going, Captain."`
+
+	on enter "Trio"
+		unmark "Trio"
+		dialog `	"Resignation. It is possible the Incursion produced no signal, or at least not one my instruments can detect."`
+
+	on enter "Quartet"
+		unmark "Quartet"
+		dialog `	"Disappointment. Nothing here, which rules out the southern Twilit Embers as the origin.."`
+
+	on enter "Quintet"
+		log "According to Cerise, there should be a hyperlane connection between Quintet and Nonet, but it appears to be missing."
+		log "By catching up to the light front of the Incursion, you have managed to narrow down its point of origin to the Septet system."
+		mark "Pinnacle"
+		conversation
+			`The first thing Cerise notices has nothing to do with your mission. "Attentive. Hey, there should have been a hyperlane here, between Quintet and Nonet. I wonder why it's missing?"`
+			choice
+				`	"And if the Incursion's origin is further North, how would the Aberrant have crossed over?"`
+				`	"Maybe the Incursion destroyed it somehow?"`
+
+			`	"Curiosity. Yet another mystery." She turns to set up her instruments, which occupies the better part of an hour.`
+			`	The moment she finishes, Cerise picks up a faint ringing on the gravitational wave antenna, a compound signal whose components fade in such a way that appears to continually rise in pitch.`
+			`	"Excitement! This is not nothing! This signal, it doesn't resemble anything I've seen before, not black hole mergers or neutron star collisions. Consideration. It may be too early to declare victory, but I think this is the Incursion. And if that is the case, the Septet system is the only one close enough for the signal to have reached here in the time since the Incursion."`
+			`	The signal is continuous, and goes on for longer than you are willing to stay. It is not the brief pulse or burst that Cerise was expecting, so it seems likely that you have not caught the exact light front of the Incursion, but you at least now have a signature you can associate with it.`
+			`	"Anticipation. We should now see if we can find a similar signal in the data recorded by the Alonis Observatory."
+
 
 mission "Avgi: Alonis Retrieval 2"
 	landing
@@ -1179,7 +1311,6 @@ mission "Avgi: Alonis Retrieval 2"
 	description "Take the data back to Ergastirio Station so that Cerise can go over it."
 	source "Alonis Observatory"
 	destination "Ergastirio Station"
-	waypoint "Decet"
 	to offer
 		has "Avgi: Alonis Retrieval 1: done"
 	on offer
@@ -1213,6 +1344,8 @@ mission "Avgi: Alonis Retrieval 2"
 				`	"Sure, it shouldn't take more than a few days."`
 				`	"It's too dangerous up there. Let's go back to Ergastirio Station."`
 
+				accept
+
 
 mission "Avgi: Alonis Retrieval 2b"
 	landing
@@ -1223,11 +1356,8 @@ mission "Avgi: Alonis Retrieval 2b"
 	waypoint "Decet"
 	to offer
 		has "Avgi: Alonis Retrieval 2: done"
-	on enter
-		system "Quintet"
-		system "Nonet"
-		log "According to Cerise, there should be a hyperlane connection between Quintet and Nonet, but it appears to be missing."
-		dialog `"Attentive. Hey, there should have been a hyperlane here, between Quintet and Nonet. I wonder why it's missing?"`
+	on enter "Decet"
+	dialogue `Cerise is awed by the magnetar. "Fascination. I never thought I would be able to see this kind of stellar object up close." She spends a long while taking various measurements with her instruments, muttering about how everyone else is going to be so jealous of this data.`
 
 
 mission "Avgi: Astronomical Cross Reference 0"
@@ -1273,12 +1403,20 @@ mission "Avgi: Astronomical Cross Reference 0"
 			`	"Interest. This group sounds fascinating. If they do indeed have observations of the Ember Wastes, please ask them if they would be willing to share them."`
 			action
 				set "avgi: remnant astronomy"
-			
+				accept
+
 
 mission "Avgi: Astronomical Cross Reference: Quarg 1"
 	landing
 	name "Quarg Astronomy"
-	description "See if the Quarg will provide records of their observations of the Ember Waste."
+	description "See if the Quarg will provide records of their observations of the Ember Waste, then return to <destination>."
+	destination "Ergastirio Station"		
+	to offer
+		has "avgi: quarg astronomy"
+
+mission "Avgi: Astronomical Cross Reference: Quarg 2"
+	landing
+	invisible
 	source 
 		attributes "quarg"
 	destination "Ergastirio Station"
@@ -1313,9 +1451,11 @@ mission "Avgi: Astronomical Cross Reference: Quarg 1"
 			`	"There are tragedies we do not tell of, out of sorrowful respect, and because they are not ours to share. You may tell your astronomer that the gaps do not hold what she is looking for, and that she should not waste her small lifespan searching for them."`
 
 			label end
-			`	"Tell her also that we will keep our long watch, and if we see this happen once more, she will be told."`
+			`	"Tell her also that we will keep our long watch, and if we see this happen once more, she will know of it."`
+				accept
 
 	on complete
+		log `According to Quarg astronomical data, the Twilight's nebulas appear to have all formed simultaneously, hinting at some past cataclysm. The Quarg records also heavily censor observations of the Queri and Feraticus systems in the distant past, the former almost entirely and the latter for oddly specific gaps.`
 		conversation
 			`	Cerise literally hits the ceiling of her small office in excitement when you hand over the Quarg data, together with their message to her.`
 			`	"Observation. Our stars are young, <first>, compared to those in your species' space. Much of the Twilight is a new neighborhood. The nebula southeast of Aviskir is an active stellar nursery, this much we have known, but, awe, the Quarg have observed the actual formation of several of these stars directly. Such is the longevity of their civilization."`
@@ -1358,16 +1498,23 @@ mission "Avgi: Astronomical Cross Reference: Quarg 1"
 				`	"Anyway, what about the other missing data?"`
 
 			label gaps
-			`	"Pensive. It is indeed strange, <first>. Some events in Feraticus that the Quarg did not wish to record must have occurred over that timespan, and then possibly repeated themselves? Doubt. Perhaps you can find out more by visiting the system, but with how long ago it was, I would be surprised. For now, I will continue studying this data. I will let you know if I find anything worth investigating further."`
-
+			`	"Pensive. It is indeed strange, <first>. Some events in Feraticus that the Quarg did not wish to record must have occurred over that timespan, and then possibly repeated themselves? Doubt. Perhaps you can find out more by visiting the system, but with how long ago it was, I would be surprised. For now, I will continue studying this data. I will let you know if I find anything worth investigating further, or when I'm done analyzing everything you've brought me."`
 
 
 mission "Avgi: Astronomical Cross Reference: Remnant 1"
 	landing
 	name "Remnant Astronomy"
-	description "See if the Remnant will provide records of their observations of the Ember Waste."
-	source "Ergastirio Station"
-	destination "Vimimal"
+	description "See if the Remnant will provide records of their observations of the Ember Waste, then return to <destination>"
+	destination "Ergastirio Station"
+	to offer
+		has "avgi: remnant astronomy"
+
+
+mission "Avgi: Astronomical Cross Reference: Remnant 1"
+	landing
+	invisible
+	source "Vimimal"
+	destination "Ergastirio Station"
 	to offer
 		has "avgi: remnant astronomy"
 	on offer
@@ -1380,47 +1527,54 @@ mission "Avgi: Astronomical Cross Reference: Remnant 1"
 
 			`	With arrangements made for a mutual exchange of data, Dawn is happy to give you a copy immediately.`
 			`	"Just come back with the data from these Avgi whenever you're in the area." She waves you off and wishes you goodbye.`
+				accept
 
 
 mission "Avgi: Astronomical Cross Reference: Remnant 2"
 	landing
 	name "Remnant Astronomy"
-	description "See if the Remnant will provide records of their observations of the Ember Waste."
+	description "Take a copy of the Avgi's astronomical observations to the Remnant to fulfill your agreement with Dawn."
 	source "Ergastirio Station"
 	destination "Vimimal"
 	to offer
 		has "Avgi: Alonis Retrieval 2: done"
 	on offer
 		conversation
+			`	Cerise is thrilled by the sheer size of the Remnant database, but as she sorts through it, gradually deflates.`
+			`	"Assessment. Five hundred years of superb data on the Ember Wastes, but no unusual activity in the border regions near our space - the 'Twilit Embers' as I'm calling them, where the Incursion began."`
+			choice
+				`	"Nothing at all?"`
+					goto nuthin
+				`	"Well, at least they tried to help."`
 
-Cerise is very interested in how large the Remnant dataset is, but notes that it's all fairly recent (500 years) and doesn't really contain any answers. She gives you a copy of Avgi data to take back to Dawn
+			`	"Oh yes, I would not dispute that. I'm just disappointed that there wasn't an obvious lead, but I suppose that was too much to hope for."`
 
+			label nuthin
+			`	"Consideration. There is an absense of evidence, but that is not itself evidence of absense. Five centuries is still a tiny moment in astronomical terms, so it is possible the clues are just beyond that brief snapshot in time."`
 
-mission "Avgi: Astronomical Cross Reference: Remnant 3"
-	landing
-	name "Remnant Astronomy"
-	description "See if the Remnant will provide records of their observations of the Ember Waste."
-	source "Viminal"
-	destination "Ergastirio Station"
-	to offer
-		has "Avgi: Alonis Retrieval 2: done"
-	on offer
+			`	Cerise gladly gives you a copy of Avgi astronomical records, including the still unsorted data you retrived from the Alonis Observatory, and tells you to pass along her thanks.`
+				accept
+
+	on complete
 		conversation
-
+			`	Dawn is pleased to see that the Avgi have upheld their end of the bargain, and accepts the Avgi records with evident interest.`
+			`	"You have told them that these 'Aberrant' resemble the Ka'het, right?" she signs when you describe them. "And they came from some kind of gate? I will pass that up the chain. Who knows, maybe there are more lurking around the Wastes?"`
+			`	With that she wishes you luck in aiding the Avgi and departs, promising to contact you when she is finished analyzing all of the data you've collected.`
 
 
 mission "Avgi: Astronomical Cross Referencing 3"
 	landing
-	name "Remnant Astronomy"
+	name "A"
 	description ""
-	source "Viminal"
+	source
+		not "Ergastirio Station"
+		attributes "avgi diaspora"
 	destination "Ergastirio Station"
 	to offer
 		has "Avgi: Alonis Retrieval 2: done"
 	on offer
 		conversation
-
-		Concludes chain. 
+			`	You recieve a courier message from Cerise. She's finished analyzing the astronomical data, and `
 
 
 
