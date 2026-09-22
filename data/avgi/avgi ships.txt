@@ -667,7 +667,7 @@ ship "Polari"
 		"heat dissipation" 0.9
 		"solar heat" 2.4
 		"fuel capacity" 1800
-		"cargo space" 42
+		"cargo space" 90
 		"outfit space" 312
 		"weapon capacity" 36
 		"engine capacity" 66
@@ -1194,7 +1194,7 @@ ship "Tremoros"
 		"drag" 0.75
 		"heat dissipation" 0.72
 		"fuel capacity" 900
-		"cargo space" 12
+		"cargo space" 15
 		"outfit space" 216
 		"weapon capacity" 60
 		"engine capacity" 69
@@ -1273,7 +1273,7 @@ ship "Prismaios"
 		"shield multiplier" -1
 		"solar heat" 4.5
 		"fuel capacity" 1200
-		"cargo space" 36
+		"cargo space" 72
 		"outfit space" 360
 		"weapon capacity" 120
 		"engine capacity" 105
@@ -1416,7 +1416,7 @@ ship "Interferos"
 		"heat dissipation" 0.9
 		"solar heat" 2.7
 		"fuel capacity" 600
-		"cargo space" 12
+		"cargo space" 30
 		"outfit space" 303
 		"weapon capacity" 102
 		"engine capacity" 66
@@ -1556,7 +1556,7 @@ ship "Diaspersi"
 		"heat dissipation" 1.2
 		"solar heat" 8.1
 		"fuel capacity" 2400
-		"cargo space" 120
+		"cargo space" 180
 		"outfit space" 432
 		"weapon capacity" 96
 		"engine capacity" 114
@@ -1738,7 +1738,7 @@ ship "Refraktos"
 		"heat dissipation" 1.44
 		"solar heat" 8.1
 		"fuel capacity" 1800
-		"cargo space" 60
+		"cargo space" 120
 		"outfit space" 516
 		"weapon capacity" 150
 		"engine capacity" 180
@@ -1902,7 +1902,7 @@ ship "Difraktos"
 		"heat dissipation" 1.2
 		"solar heat" 1.2
 		"fuel capacity" 1800
-		"cargo space" 60
+		"cargo space" 150
 		"outfit space" 540
 		"weapon capacity" 252
 		"engine capacity" 144
@@ -2156,7 +2156,7 @@ ship "Atenuatia"
 		"heat dissipation" 1.2
 		"solar heat" 2.7
 		"fuel capacity" 2400
-		"cargo space" 120
+		"cargo space" 240
 		"outfit space" 696
 		"weapon capacity" 180
 		"engine capacity" 186
