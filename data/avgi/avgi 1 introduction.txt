@@ -168,7 +168,7 @@ mission "Avgi: Thread Rescue 1"
 			`"Warning. They also seemed to be lingering in Thread itself, possibly hunting for the same signal we detected."`
 			choice
 				`	"We'll need to race them to it, then."`
-				`goto race
+					goto race
 				`	"If it's been days since you detected the singal, won't we be too late? What if the Aberrant already found them?"`
 
 			`	Lait looks a bit uncomfortable with the suggestion. "Worry. It is a possibility, but whoever is there has managed to hide for years. A single lapse should not spell their doom too quickly, I hope."`
@@ -344,8 +344,8 @@ mission "Avgi: Thread Rescue 1"
 			label state
 			`	"Fear. A new government has taken control of the entire moon. The State hold a diamond grip across all of Cyreal. People are put in stocks for days for minor offenses. Any dissenters vanish, and all the Autocrats tell us is that they have gone 'mining.'" Corsa shivers, and Ecru comforts his sister.`
 			choice
-				`	"That sounds awful."`
-					goto next
+				`	"That sounds awful. We came here to rescue you though."`
+					goto rescue
 				`	"This reminds me of this ancient human book, 'Nineteen Eighty-Four.'"`
 					goto jorjorwel
 
@@ -463,7 +463,7 @@ mission "Avgi: Thread Rescue 3"
 		has "Avgi: Thread Rescue 2: done"
 	on offer
 		log "People" "Keppel" `A teal Avgi who met you at Outpost Tekis. He gave no title or position of importance, but those around him seem to defer to him. He appears to hold considerable influence within the Dissonance.`
-		log "Factions" "Avgi Dissonance" `The Dissonance.
+		log "Factions" "Avgi Dissonance" `The Dissonance appears to take issue with both the Consonance's claim to legitimacy and its demands to support what they see as mismanaged attacks on the Aberrant.`
 		conversation
 			`	Outpost Tekis is as rough as you remember it, but the spaceport is more crowded than ever, with Avgi leaping into the air to catch a glimpse of Ecru and Corsa. Being one of the few Avgi to return from the blockaded systems must have some novelty among the Dissonance.`
 			`	A teal Avgi greets you, standing before the rest. "Amity. Keppel, I am." He does not offer a title and wears no uniform or insignia, but the crowd seems deferrent to him nonetheless. "Welcome, friends. Word of your rescue traveled ahead of you."`
@@ -587,7 +587,7 @@ mission "Avgi: Thread Rescue 3"
 mission "Avgi: Amathil Contact 1"
 	landing
 	name "Amathil Diplomacy"
-	description "Bring a sealed communique from First Speaker Prasinos to the governing council of <destination>"
+	description "Bring a sealed communique from First Speaker Prasinos to the governing council of <destination>."
 	source "Peripheria"
 	destination "Amathil"
 	to offer
@@ -634,8 +634,8 @@ mission "Avgi: Amathil Contact 1"
 
 			label request
 			`	Prasinos rests a hand on the bronze cylinder. "Explanation. Amathil is a proud world, one of the later ones to be settled before the hyperdrive, but old nonetheless. Unique among the settled worlds, Amathil has been united under one loose polity for centuries, and they understand the value of cooperation and community more than perhaps any other world."`
-			`	She stands and paces behind her desk. "Reservation. But Amathil does not yet recognize the continuity of the Consonance as the same governing body that existed before the Incursion. They are perhaps the ones most open to collaboration and reintegration, by their nature, but they are hesitant."`
-			`	She hands you the cylinder. It is rather light for its size, and you guess that it is hollow. "This is a message from me, personally, to Amathil's Council of Elders."`
+			`	She stands and paces behind her desk. "Reservation. But Amathil still does not recognize the continuity of the Consonance as the same governing body that existed before the Incursion. They are perhaps the ones most open to collaboration, by their nature, but they are hesitant."`
+			`	She hands you the cylinder. It is light for its size, and you guess that it is hollow. "This is a message from me, personally, to Amathil's Council of Elders."`
 			choice
 				`	"What does it say?"`
 					goto contents
@@ -647,7 +647,7 @@ mission "Avgi: Amathil Contact 1"
 					goto deliver
 
 			label contents
-			`	"Resolve. A promise that we have not forgotten them, and that the Consonance still stands, and that with the aid of friendly aliens the war may yet be won."`
+			`	"Resolve. A promise that we have not forgotten them, and that the Consonance still stands, and that with the aid of friendly aliens the war may yet be won. And, of course, the choice of messenger is half the message."`
 
 			choice
 				`	"Why send me and not a diplomat?"`
@@ -669,8 +669,7 @@ mission "Avgi: Amathil Contact 1"
 					goto deliver
 
 			label now
-			`	"Regret. Because of you, in part. Contact with the outside galaxy has restored flagging confidence, "`
-
+			`	"Regret. This is not our first communication with Amathil, of course, but it is the first where I feel we can make promises that will be kept. Because of you, in part. Contact with the outside galaxy has restored flagging confidence among the Consonance, and I feel that it would be good to spread that among the Avgi trapped under the Aberrant blockade."`
 
 			choice
 				`	"What does it say?"`
@@ -680,36 +679,141 @@ mission "Avgi: Amathil Contact 1"
 				`	"Alright, I'll see it delivered."`
 					goto deliver
 
-
-			accept
+			label deliver
+			`	"Gratitude. Warning. Amathil, like the other worlds under blockade, has orbital defenses used to keep the Aberrant at bay. Ensure that your presence is known to them, so that they do not mistake you for an invading alien."`
+				accept
 
 
 mission "Avgi: Amathil Contact 2"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Report to Prasinos"
+	description "Return to <destination> and report back to Prasinos."
 	source "Amathil"
 	destination "Peripheria"
+	clearance "The spaceport operators confirm that, while you are an alien, you are not an alien invader, and grant you permission to land."
 	to offer
 		has "Avgi: Amathil Contact 1: done"
 	on offer
-		set "avgi: contacted planets"
+		"avgi: contacted planets" ++
 		conversation
-			Talk to the Amathil government people. Share a message from Prasinos promising aid, and apologizing for the long abandonment. 
+			`	Amathil is a cool desert world, with just enough moisture for agriculture in a few select areas.`
+			`	You are met at the spaceport by a mixed crowd consisting of curious onlookers and a few Avgi who appear to have only a slightly more official role. Their introduction to an alien goes about as expected, with varying expressions of shock, fascination, and fear.`
+			`	The hall of local governance is a long building of rich brown wood, the material's scarcity on the planet lending it some grandeur. Amathil's council convenes to meet with you, its members taking hours to arrive. An earthy-brown Avgi seems to take point, speaking for the perhaps forty Avgi present, not including the lingering crowd.`
+			`	The elder, named Umber, is slow in his movements, but receives the bronze cylinder with a steady hand. Unfurling a scroll of thick paper from within, he reads it aloud to the rest of the council.`	
+			`	"The Speaker Prasinos apologizes for the long abandonment of the home worlds, and promises that the Consonance has not forgotten us and is working to sweep the Aberrant from our skies. This alien, Captain <first> <last>, has assisted the Avgi extensively and is to be treated with all courtesy due to an ambassador of the Consonance."`
+			choice
+				`	(Wait for the council to respond.)`
+				`	"First Speaker Prasinos means every word of it."`
 
-			They're pleasant and cordial toward you
-			
-			It is recieved negatively, with some accusations of past corruption (before the Incursion) against Prasinos.
-			Amathil leaders emphasize their shared identity as being community-first, and say Prasinos only cared for herself and not her community.
-			Player can choose to defend her, either saying it never happened or that it should be forgiven because the Aberrant need to be fought. More politics stuff.
+			`	"Weariness. Ah, Prasinos," an Avgi sighs. "Of course."`
+			choice
+				`	"Do you know her?"`
+				`	(Say nothing.)`
+					goto continue
 
+			`	"Amusement," Umber says, "There are few who do not, Captain <last>, which is rather the problem."`
 
+			label continue
+			`	He clarifies for you. "Explanation. For the alien's benefit, since she will not have told you. Before the Incursion, the First Speaker was one Delegate among many. Contempt. Like many others, she sought distinction within the halls of the Assembly, but unlike most, Prasinos was willing to make certain arrangements to receieve it. Arrangements that were not necessarily to the benefit of the rest of us."`
+			`	"Addition," another Avgi chimes in. "She never would have risen so far without hoodwinking Galano. A poor elder statesman, taken in by his protege and used to climb to the top."`
+			`	"Disagreement. No, Galano turned a blind eye to Prasinos' corruption," argues another Avgi, and from there the meeting devolves into various complaints about the Consonance, many of them involving Prasinos.`
+			choice
+				`	"Can we stay on track here? This isn't about Prasinos."`
+				`	(Wait for it to die out.)`
+					goto wait
+
+			`	"Annoyance. The alien is right, the Aberrant are the greater threat," says Umber. "But that does not negate the past, nor does it mean Prasinos has earned our trust."`
+				goto next
+
+			label wait
+			`	Despite it all, it takes the better part of an hour for everyone to be satisfied that their grievances have been aired. Someone brings in a steaming pot of something fragrant, which seems to only embolden the councilors as it goes around the room. A curious Avgi offers you a cup of it.`
+			choice
+				`	(Drink up.)`
+					goto drink
+				`	(Politely refuse it.)`
+
+			`	Not knowing what exactly is in the drink, you decide not to risk it and politely turn the cup away.`
+				goto ambition
+
+			label drink
+			`	The drink seems to be some kind of tea, and its sweet, fragrant scent curiously mixes with a dark and bitter taste. You don't feel any different after drinking it, so either any effects are lost on your alien biology or it is simply being drunk for enjoyment.`
+
+			label ambition
+			`	In this time you learn that as a Delegate, Prasinos organized blocs of polities toward particular votes that favored her own polis in manners charitably described as unfair, before supposedly abandoning them the moment it became convenient. If what you hear is true, her rise to First Speaker in spite of these burned bridges was enabled solely by the mentorship of fellow First Speaker Galano, alternately described as either another victim of her duplicity or a participant in it.`
+			`	Eventually Umber is able to cull the overlapping conversations, reclaiming everyone's attention.`
+			`	"Apology. You see us at our worst, Captain <last>, but know that we are not ones to keep our thoughts hidden."`
+			choice
+				`	"It's alright, I've seen worse from humanity."`
+				`	"As long as we focus on the real issues here."`
+
+			label next
+			`	He continues, picking up the scroll again. "Warmth. Amathil prides itself on trust. We are one family here, our small planet, and we do not turn our fellows away nor abandon our kin in their time of need. Admission. We are also very good at arguing, as you have seen." At that, the crowd of onlookers hums with laughter.`
+			`	"Before the Incursion, much of our young left on the new hyperdrives for bluer skies. They traveled among the stars, to the stations, anywhere with more to offer than sand and sunlight." This seems to be a sensitive topic, judging by the stark silence that fills the room.`
+			`	"And now half the families on this planet have lost a child or grandchild to the Incursion, sorrow. We may only hope that they found refuge on the other worlds, or even with the Consonance as it fled."`
+			`	"I have a nephew in the Twilight Guard, attention!" shouts a councilor. "If he got out, no one has brought me word in twenty years!" Now new murmurs of dissatisfaction emerge; the people of Amathil want to know what became of their family members taken in by the Consonance.`
+			`	"Calm, calm. We must not grow angry at a situation none of us could control" urges Umber.`
+			`	The councilor with the nephew is not satisfied. "Bittnerness. No acknowledgement of our sons and daughters, and now Prasinos is the one to write to us about rememberance and loyalty? Prasinos, of all people?"`
+
+			choice
+				`	"Whatever she did before, the Aberrant are what matters now."`
+					goto enemy
+				`	"I've seen how hard she works for her people. Are you sure she was really corrupt?"`
+					goto trust
+				`	"Prasinos might not be trustworthy, but she's not the only one running the Consonance."`
+					goto consonance
+
+			label enemy
+			`	"Agreement. They do matter, painfully so, if you have seen the results of their visits to Amathil. We fight back with what we have, but Amathil is a poor world, and we never had the defenses against spaceborne attack that the more fractious worlds built to defend against themselves." He laughs mockingly. "Irony. Our long peace a weakness, if you can imagine that."`
+			`	"The Aberrant regularly visit us, and strafe the structures they can spy from orbit. We have wielded our laser launch array as a weapon, but it is a poor one, and we may only defend a small area with it. All others must hide in the desert or flee when an Aberration appears in the sky, which is no easy life to live. Deliverence, then, if this promise is sincere, would be tempting."`
+				goto debate
+
+			label trust
+			`	Several of the council thrum at once, and it takes you a moment to recognize the sound as laughter, though it does not seem to be at your expense.`
+			`	"Endearment. You are loyal, Captain <last>. That speaks well of you, if not of your judgement," Umber says. "Admission. She works hard, I do not doubt it. Even in those brighter days, she worked to advance the interests her polis in concert with her own standing. The question was never of her effort, but rather who the work was for, and at whose expense. Perhaps she has extended her responsibility towards all Avgi in these times of peril, though it would be foolish to believe this simply because you wish it to be true."`
+				goto debate
+
+			label consonance
+			`	"Admission. True enough," says Umber. "But what does this say about the state of the Consonance, if Prasinos stands at the helm in its darkest hour? What does that mean for all who they say must depend on them for deliverance from the Aberrant?" Many of the Avgi now look more doubtful than before.`
+			`	"Skepticism. It brings the character of the Consonance itself in question. They are not the same body that we participated in to settle common disputes and shape a shared policy; they now claim the mantle of governance, which is without precedent, and they ask us to join them."`
+				goto debate
+
+			label debate
+			`	Umber rolls the scroll up and slides it back into the cylinder. "Request. Let us discuss these words, both yours and Prasinos', and we will have an answer for you."`
+			`	You are sent outside the hall while the council debates, anxiously awaiting an answer.`
+			choice
+				`	(Chat with some of the Avgi.)`
+				`	(Wait for the council's decision.)`
+					goto decision
+
+			`	You find yourself chatting with a few of the other Avgi outside, those who could not fit in the packed room of onlookers.`
+			choice
+				`	"What is living on Amathil like?"`
+				`	"What do the Aberrant do to you?"`
+
+			`	"Trepidation," one says. "We are still free, but we must live in fear of the Aberrant whenever they come within the atmosphere. The spaceport shoots at them if they stray over the capital, but otherwise the deserts are exposed to their fire."`
+			`	"I had to hide in a cave for a week" another adds. "But the council has kept everything running well, and they gave up their emergency powers within a few years of the Incursion, so I trust them."`
+
+			label decision
+			`	You are invited back into the hall within a surprisingly short time, where Umber stands ready.`
+			`	"Authority. You may tell the First Speaker that Amathil has heard her words. We do not yet recognize this new Consonance as the same Consonance that gathered before the Incursion, and we will not yet consent to be governed by them. But we will offer alliance against the Aberrant, and both provide and accept whatever support is necessary to defeat them."`
+
+			`	He hesitates, then adds something else. "Request. And tell her that we would appreciate hearing the words of any of Amathil's children who escaped with them."`
+			choice
+				`	"I'll tell her."`
+				`	"You could send a Delegate to participate in the Assembly and hear them yourselves."`
+					goto end
+
+			`	"Wry amusement. You are a far more pleasant messanger than she is." He flicks a hand in dismissal.`
+
+			label end
+			`"We will decide later whether to send a delegate to the Assembly, to participate in this new Consonance as members once more. Until then, we will watch and judge for ourselves its character, and what has remained from the old, good or bad."`
+			`	The council sees you back out to the spaceport with every courtesy, but makes no further promises. With this ambiguous result, you prepare to report back to Prasinos.`
 
 
 mission "Avgi: Aviskir Extraction 1"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Aviskir Extraction"
+	description "Travel to <destination>, the Avgi homeworld, and convince the nuclear scientist Lisera to evacuate to Ergastirio Station to aid a weapons project there."
 	source "Peripheria"
 	destination "Aviskir"
 	to offer
@@ -718,12 +822,20 @@ mission "Avgi: Aviskir Extraction 1"
 		conversation
 
 
+
+			`	Prasinos listens to your report without interruption. She says nothing as you describe the allegations Umber levied against her, but her weary expression tells you enough.`
+			`	"Sorrow. I have earned their mistrust, I fear."`
+
+
+
 			When you get back, report to Prasinos, who seems regretful and admits to selfishness but claims she's trying to atone for it.
 			She says she should have sent Hriso with you, as he is familiar with her and a good negotiator, but he is working on finalizing a formal diplomatic package for humanity
 
 			Prasinos tells you that the Consonance is still short on expertise in certain niche fields, and asks you to visit Aviskir to retrieve (she says evacuate) a VIP nuclear scientist to Ergastirio.
 
 
+
+			`	`
 
 
 
@@ -1302,7 +1414,7 @@ mission "Avgi: Alonis Retrieval 1"
 			`	The moment she finishes, Cerise picks up a faint ringing on the gravitational wave antenna, a compound signal whose components fade in such a way that appears to continually rise in pitch.`
 			`	"Excitement! This is not nothing! This signal, it doesn't resemble anything I've seen before, not black hole mergers or neutron star collisions. Consideration. It may be too early to declare victory, but I think this is the Incursion. And if that is the case, the Septet system is the only one close enough for the signal to have reached here in the time since the Incursion."`
 			`	The signal is continuous, and goes on for longer than you are willing to stay. It is not the brief pulse or burst that Cerise was expecting, so it seems likely that you have not caught the exact light front of the Incursion, but you at least now have a signature you can associate with it.`
-			`	"Anticipation. We should now see if we can find a similar signal in the data recorded by the Alonis Observatory."
+			`	"Anticipation. We should now see if we can find a similar signal in the data recorded by the Alonis Observatory."`
 
 
 mission "Avgi: Alonis Retrieval 2"
@@ -1363,7 +1475,7 @@ mission "Avgi: Alonis Retrieval 2b"
 mission "Avgi: Astronomical Cross Reference 0"
 	landing
 	name "Return to Ergastirio Station"
-	description "Come back to Ergastirio once you've found someone with reference astronomy data on the Ember Waste."
+	description "Come back to <planet> once you've found someone with reference astronomy data on the Ember Waste."
 	source "Ergastirio Station"
 	to offer
 		has "Avgi: Alonis Retrieval 1: done"
@@ -1391,12 +1503,14 @@ mission "Avgi: Astronomical Cross Reference 0"
 			`	"Astonishment. Astronomical surveys older than my species itself. If they will give us anything at all, Captain, it could revolutionize our understanding of the cosmos. Optimism. Old people like being asked about their hobbies; surely they will be similar."`
 			action
 				set "avgi: quarg astronomy"
+				accept
 
 			label remnant
 			`	With some trepidation, you tell Cerise about the Remnant, and how they have lived in the Ember Wastes itself for half a millenium, and prize astronomy and science.`
 			`	"Joy. Captain, hundreds of years of observations from inside the Ember Wastes would be invaluable. Please, ask them if they would be willing to share their findings."`
 			action
 				set "avgi: remnant astronomy"
+				accept
 
 			label secrets
 			`	With some trepidation, you tell Cerise about the Remnant, but avoid mentioning where they live or who exactly they are. Keeping things in vague terms, you imply that they could have information about the Ember Wastes. `
@@ -1428,7 +1542,7 @@ mission "Avgi: Astronomical Cross Reference: Quarg 2"
 			`	"No, human, we will not provide records of that place. You will find nothing there but regrets and sorrow."`
 			choice
 				`	(Try to explain about the Avgi, and why they need the records.)`
-				`	`"Come on, what's the harm?"`
+				`	"Come on, what's the harm?"`
 
 			`	The Quarg sighs. "I will share with you our recordings of human space, as we do for every curious child that asks, and on behalf of the Avgi you may take our observations of their homeland as well. But the Ember Wastes are a matter beyond this..."`
 			`	Somehow, a second, much older Quarg appears behind you. "A child asks conspicuously of matters of inordinate importance beyond it? You are astonishingly bold, young one. But for what is the reason of this strange and wondrous inquisition?"`
@@ -1510,10 +1624,10 @@ mission "Avgi: Astronomical Cross Reference: Remnant 1"
 		has "avgi: remnant astronomy"
 
 
-mission "Avgi: Astronomical Cross Reference: Remnant 1"
+mission "Avgi: Astronomical Cross Reference: Remnant 2"
 	landing
 	invisible
-	source "Vimimal"
+	source "Viminal"
 	destination "Ergastirio Station"
 	to offer
 		has "avgi: remnant astronomy"
@@ -1530,14 +1644,14 @@ mission "Avgi: Astronomical Cross Reference: Remnant 1"
 				accept
 
 
-mission "Avgi: Astronomical Cross Reference: Remnant 2"
+mission "Avgi: Astronomical Cross Reference: Remnant 3"
 	landing
 	name "Remnant Astronomy"
 	description "Take a copy of the Avgi's astronomical observations to the Remnant to fulfill your agreement with Dawn."
 	source "Ergastirio Station"
 	destination "Vimimal"
 	to offer
-		has "Avgi: Alonis Retrieval 2: done"
+		has "Avgi: Astronomical Cross Reference: Remnant 2: done"
 	on offer
 		conversation
 			`	Cerise is thrilled by the sheer size of the Remnant database, but as she sorts through it, gradually deflates.`
@@ -1551,7 +1665,6 @@ mission "Avgi: Astronomical Cross Reference: Remnant 2"
 
 			label nuthin
 			`	"Consideration. There is an absense of evidence, but that is not itself evidence of absense. Five centuries is still a tiny moment in astronomical terms, so it is possible the clues are just beyond that brief snapshot in time."`
-
 			`	Cerise gladly gives you a copy of Avgi astronomical records, including the still unsorted data you retrived from the Alonis Observatory, and tells you to pass along her thanks.`
 				accept
 
@@ -1564,8 +1677,8 @@ mission "Avgi: Astronomical Cross Reference: Remnant 2"
 
 mission "Avgi: Astronomical Cross Referencing 3"
 	landing
-	name "A"
-	description ""
+	name "Answers in the Sky"
+	description "Cerise has finished analyzing the data you've brought her, and has asked you to meet her on <destination> to discuss her theories."
 	source
 		not "Ergastirio Station"
 		attributes "avgi diaspora"
@@ -1574,9 +1687,11 @@ mission "Avgi: Astronomical Cross Referencing 3"
 		has "Avgi: Alonis Retrieval 2: done"
 	on offer
 		conversation
-			`	You recieve a courier message from Cerise. She's finished analyzing the astronomical data, and `
+			`	You recieve a courier message from Cerise. She's finished analyzing the astronomical data, and would like you to meet her on <destination> "as soon as possible, or sooner, if you can manage it."`
 
-
+	on complete
+		conversation
+			`	Cerise has managed to reserve a large auditorium, displaying more results than her cramped office could hold. "Excitement. I will be presenting this to a committee tomorrow, so you get to be my test subject, <first>!"`
 
 
 
