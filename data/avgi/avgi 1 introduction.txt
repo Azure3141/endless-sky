@@ -820,23 +820,86 @@ mission "Avgi: Aviskir Extraction 1"
 		has "Avgi: Amathil Contact 2: done"
 	on offer
 		conversation
-
-
-
-			`	Prasinos listens to your report without interruption. She says nothing as you describe the allegations Umber levied against her, but her weary expression tells you enough.`
+			`	Prasinos listens to your report without interruption. She says nothing as you describe the allegations Umber levied against her, but her weary expression is telling.`
 			`	"Sorrow. I have earned their mistrust, I fear."`
+			choice
+				`	"Is what they said true?"`
+					goto true
+				`	"Does it really matter next to the Aberrant though?"`
+					goto aberrant
+				`	"Are you using me here too, then?"`
 
+			`	"Emphasis. No. Whatever I have done in the past, I have only one interest now. The preservation of our people is paramount above all else, ambitions and past grievences included. I can only ask that you trust me for this greater purpose."`
+				goto next
 
+			label true
+			`	"Uncertainty. I was ambitious, yes, and willing to do much to rise in service of my beliefs. Corrupt? I do not think so." She taps two fists together. "But would anyone? I can only ask that you trust me despite this."`
+				goto next
 
-			When you get back, report to Prasinos, who seems regretful and admits to selfishness but claims she's trying to atone for it.
-			She says she should have sent Hriso with you, as he is familiar with her and a good negotiator, but he is working on finalizing a formal diplomatic package for humanity
+			label aberrant
+			`	"Regret. It should not, but it matters to those who we seek to win over. And thus it must matter to us as well. I can only ask that you trust me despite this."`
+				goto next
 
-			Prasinos tells you that the Consonance is still short on expertise in certain niche fields, and asks you to visit Aviskir to retrieve (she says evacuate) a VIP nuclear scientist to Ergastirio.
+			label next
+			`	She studies the walls. "Sorrow. I do know there are those I have wronged, but chief among them was Galano. He has trusted me as long as he has known me, which I did not cherish in my younger years."`
+			choice
+				`	"Okay, I'll trust you."`
+					goto trust
+				`	"I don't like this, but I still want to help the Avgi."`
 
+			`	"Approval. Then we are in alignment."`
+				goto task
 
+			label trust
+			`	"Warning. It is not earned yet, but I must ask it regardless for the good of all Avgi."`
 
-			`	`
+			label task
+			`	Prasinos flexes her wings and refocuses her attention on a slate before her. "Moving on. I have another task for you, if you are willing. I am afraid it is to a world that likes us even less than Amathil."`
+			choice
+				`	"Alright."`
+				`	"I guess."`
+				`	"I've had enough."`
+					decline
 
+			`	"Concern. The Consonance is short of a great many things, Captain, but the shortage that frightens me most is not hulls or missiles. It is people. Certain narrow fields of expertise were concentrated on the core worlds, and when we evacuated, many of these specialists sought refuge there rather than fleeing with us."`
+			choice
+				`	"I thought you had scientists on Ergastirio Station?"`
+					goto specialists
+				`	"I thought there were limits to how many people the stations here could support."`
+
+			`	"Agreement. There are, which is why we must unfortunately be selective. But a handful of individuals will not add much strain. We have few enough of these particular experts as it is, I fear."`
+				goto retrieve
+
+			label specialists
+			`	"Explanation. We lack enough of them, Captain <last>. Or rather, we lack the kinds of specialists we need to win this war."`
+			`She continues.	"Mild pride. I would contend that the best and brightest minds of the Avgi are here with us, developing the technologies to counter the Aberrant at Ergastirio Station and laboring to build them in the Navigeo Yards." You recall that these are the stations the Consonance uses for research and shipbuilding.`
+
+			label retrieve
+			`	"But the planets, particularly Aviskir, contain far more experts than the population of the entire Consonance. And in the evacuation of the Twilight, many who we would otherwise wish to have with us retreated to the planets instead. It is one of those whom I wish you to retrieve."`
+			`	She brings up an image of a reddish-pink Avgi, posing next to what looks suspiciously like a nuclear weapon. "Request. This is Lisera, one of the best nuclear scientists of our age. Much of this is not known publically, but she was responsible for developing a new concept, the details of which are beyond me, and bringing it to a successful test and deployment within one of your years."`
+			`	Prasinos points to a stack of letters on her desk. "Both the weapons division on Ergastirio and the production lines of Navigeo have asked for her by name on multiple occasions. I would like you to go to Aviskir and retrieve her." She pauses for a moment, choosing her words more carefully. "Correction. Rescue her."`
+			choice
+				`	"Does she want to be evacuated?"`
+				`	"If you already have her designs, what do you need her for?"`
+					goto designs
+				`	"I'll see what I can do"`
+					goto yes
+
+			`	"Discomfort. We do not know. Contact with the planets is sparse, and Anax especially is a system riddled with Aberrant. When we can get a scout into the system, transmissions are exchanged, but it is too irregular and too dangerous for reliable communication."`
+			choice
+				`	"That sounds risky, but alright."`
+					goto yes
+				`	"What if she doesn't want to join you?"`
+
+			`	"Resolve. Then we go on. As much as we need her, we cannot gain her assistance by force."`
+				goto yes
+
+			label designs
+			`	"Emphasis. It is Lisera's speed we need at this present time, more than just another clever mind. To bring an idea to production in such a short time is no mean feat, and new ideas are what we need to employ if we are to have any hope of matching the strength of the Aberrant."`
+
+			label yes
+			`	Prasinos hands you an aluminum cylinder, filled with official papers in seals. Intended for your hands, it is less ornate than the one you took to Amathil, but Prasinos assures you it contains everything you will need to find Lisera and convince her to return with you.`
+				accept
 
 
 mission "Avgi: Aviskir Extraction 2"
@@ -1538,7 +1601,7 @@ mission "Avgi: Astronomical Cross Reference: Quarg 2"
 		has "avgi: quarg astronomy"
 	on offer
 		conversation
-			`	It takes no time at all to find down a Quarg who seems to know everything there is about astronomy, but once you mention the Ember Wastes, it goes still.`
+			`	It takes no time at all to track down a Quarg who seems to know everything there is about astronomy, but once you mention the Ember Wastes, it goes still.`
 			`	"No, human, we will not provide records of that place. You will find nothing there but regrets and sorrow."`
 			choice
 				`	(Try to explain about the Avgi, and why they need the records.)`
@@ -1697,9 +1760,8 @@ mission "Avgi: Astronomical Cross Referencing 3"
 
 
 mission "Avgi: Field Science 1"
-	landing
 	name ""
-	description ""
+	description "Visit <waypoints>"
 	source "Peripheria"
 	destination "Peripheria"
 	to offer
@@ -1722,7 +1784,7 @@ mission "Avgi: Field Science 1"
 
 
 	on enter Fereti
-
+		set "avgi: found graveyard"
 		Lait notes that these ka'het do resemble Aberrant, but larger and with different materials. Notes same engines and similar weapons
 
 		If you told them about the Graveyard he's like "yeah you were right"
@@ -1740,7 +1802,8 @@ mission "Avgi: Field Science 1"
 
 
 
-
+	to complete
+		has "avgi: found graveyard"
 
 
 
