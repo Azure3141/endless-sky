@@ -149,8 +149,8 @@ outfit "Anomalous Shield Restorer"
 	"flotsam sprite" "effect/flotsam anomalous shield restorer"
 	"mass" 37
 	"outfit space" -25
-	"shield generation" 3.4
-	"energy consumption" 6
+	"shield generation" 3.1
+	"energy consumption" 3
 	"flotsam chance" 0.05
 	"unplunderable" 1
 	description "This emitter produces no detectable fields of any kind, but a shield springs into existence whenever any danger comes near."

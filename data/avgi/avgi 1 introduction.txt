@@ -813,7 +813,7 @@ mission "Avgi: Amathil Contact 2"
 mission "Avgi: Aviskir Extraction 1"
 	landing
 	name "Aviskir Extraction"
-	description "Travel to <destination>, the Avgi homeworld, and convince the nuclear scientist Lisera to evacuate to Ergastirio Station to aid a weapons project there."
+	description "Travel to <destination>, the Avgi homeworld, and convince the nuclear scientist Lisera to evacuate to Ergastirio Station to aid weapons projects there."
 	source "Peripheria"
 	destination "Aviskir"
 	to offer
@@ -898,34 +898,129 @@ mission "Avgi: Aviskir Extraction 1"
 			`	"Emphasis. It is Lisera's speed we need at this present time, more than just another clever mind. To bring an idea to production in such a short time is no mean feat, and new ideas are what we need to employ if we are to have any hope of matching the strength of the Aberrant."`
 
 			label yes
-			`	Prasinos hands you an aluminum cylinder, filled with official papers in seals. Intended for your hands, it is less ornate than the one you took to Amathil, but Prasinos assures you it contains everything you will need to find Lisera and convince her to return with you.`
+			`	Prasinos hands you an aluminum cylinder, filled with official papers in seals. Intended for your hands alone, the container is less ornate than the one you took to Amathil, but Prasinos assures you it contains everything you will need to find Lisera and convince her government to let her return with you.`
 				accept
 
 
 mission "Avgi: Aviskir Extraction 2"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Family Reunion"
+	description "Return to <destination> with Tawny and Wren, who hope to reunite with their daughter in the Twilight Guard."
 	source "Aviskir"
 	destination "Peripheria"
+	passengers 2
+	blocked "You'l need <capacity> aboard the <ship> for this mission."
 	to offer
 		has "Avgi: Aviskir Extraction 1: done"
 	on offer
 		conversation
-			You land on Aviskir and do the first contact stuff with one of the governments on the Avgi homeworld. You hear their side of the story, and they are not happy about being abandoned and then asked to send their best people to the Consonance
+			`	Aviskir is a world of windswept mountains and deep blue oceans, and even from orbit you are mesmerized by its beauty. However, the scars of the Incursion are plainly visible. Where orbital infrastructure should be, rings of debris encircle the planet, and sites from below paint the <ship> with enough radar to cook you, if not for your shields.`
+			`	The coordinates provided to you by Prasinos bring you to a spaceport in the Fel Mountains, close to the equator. The twisted remains of a skyhook tether wrap around a mountain beneath you as you come in for a landing.`
+			`	You are met by a delegation from the Fel Compact, a union of three of Aviskir's oldest polities that happens to own this spaceport. Its speaker is a nearly black Avgi named Sable, who takes meeting an alien for the first time in stride, showing the barest hint of surprise only after reading your diplomatic credentials aloud.`
+			`	"Observation. The Consonance certainly trusts you a great deal, Captain <first> <last>."`
+			choice
+				`	"I try to be worthy of it."`
+				`	"I hope I can show you why."`
+				`	"I've earned that trust."`
+
+			`	He says nothing, and goes back to reading in silence.`
+			`	Eventually, he finishes, and looks back up at you. "Displeasure. The Consonance relinquished its claim to represent us when they fled into the night and abandoned us to the mercy of the Aberrant. We are pleased to meet you, but not pleased to be requisitioned as though the Consonance still rules us."`
+			choice
+				`	"They did what they had to to keep the fleet intact"`
+					goto fleet
+				`	"I'm not here to argue for their past actions. I'm here to ask about one person."`
+					goto lisera
+				`	"I've heard something like that on Amathil already."`
+
+			`	"Interest. Then Amathil and the Fel Compact are in agreement, which has not happened in my lifetime." You aren't sure if he's joking. "Perhaps the Consonance has done some good after all."`
+			`	He probably is.`
+				goto lisera
+
+			label fleet
+			`	"Acknowledgement. Perhaps. But that fleet was not just the Twilight Guard, which amounted to little more than a policing force. The fleets of most polities were taken with them, leaving the stations that were the homes of many to be destroyed."`
+
+			label lisera
+			`	You explain as best you can why you've come. The Consonance is still attempting to match the Aberrant, and Lisera's experience in rapidly executing on novel concepts is needed if the Twilight Guard is to stand a chance.`
+			`	Sable excuses himself, and after speaking to the rest of the delegation, returns.`
+			`	"Apology, negation. Lisera is engaged in a project for the defense of this world. She has asked me to tell you that she is sorry, and that if the Consonance wants her input on their own projects, she is willing to give it as best communications allow. But she will not leave Aviskir for the Tangled Shroud and what lies beyond."`
+			choice
+				`	"What project?"`
+				`	"Could I at least speak to her myself?"`
+					goto speak
+				`	"I will pass this along."`
+					goto next
+
+			`	"Refusal. Its nature is not your concern, nor that of the Consonance at this time. Know only that it is for the defense of this world and the protection of its people, a role the Consonance has failed to fulfil."`
+				goto next
+
+			label speak
+			`	Sable at least appears to consider this, before gesturing his refusal. "Concession. Not today, for she is working elsewhere. But if you return, she is willing to speak to you and whatever delegation the Consonance sees fit to send. But she will not leave Aviskir with you."`
+
+			label next
+			`	With that, you are escorted back towards the spaceport along a bridge strung between two ridges, with hot springs steaming in the valley below. As you approach the end, the <ship> in sight, a pair of elderly Avgi push past a crowd at the sight of you. Your escort, for whatever reason, allows them to approach you as they block your path.`
+			choice
+				`	"Can I help you?"`
+					goto plea
+				`	"Get out of my way."`
+					goto plea
+				`	(It's a trap! Run!)`
+
+			`	You try to run, but one of the Avgi catches your arm with a surprisngly strong grip for their size.`
+
+			label plea
+			`	"Plea. Captain. Captain, forgive us. I am Tawny, and this is Wren." The speaker is faded gold, and her partner a dusty rose.`
+			`	"Our daughter, Ashen. She was taken with the fleet when it left. Twenty years, and not a word. We did not know if our child still lived. Then we heard her voice, captaining a scout that visited last month. She is alive, and a Twilight Guardsman..."`
 
 
-			`	"The Consonance relinquished its claim to represent us when they fled into the night and abandoned us to the mercy of the Aberrant"`
+			`	"How do you know it's her?"`
+				goto who
+			`	"The Consonance sent me for a scientist, not extra passengers."`
+				goto plea
+			`	"Will your government let me take you?"`
+				goto allowed
 
-			It turns out the scientist is occupied with another project for the defense of Aviskir, which they refuse to explain to you, and they don't want to send him to the Consonance.
+			label who
+			`	Wren produces a photograph of a young grey Avgi posing in the mock-cockpit of a fighter aircraft, arms splayed out in joy. "Wistfulness. Ashen always wanted to become a pilot. Like you, alien Captain. And we know she fulfilled her dream, when a ship from the Consonance visited Anax to send the polities of Aviskir a message. It was her voice in the news, we both recognized her."`
+				goto choose
 
-			Instead, a family wants you to take them to be reunited with their (adult) child, who is serving in the Twilight Guard. You take them instead.
+			label plea
+			`	"Entreating. Please, Captain. You are our only hope to find her. There is no other way off this planet, no Twilight Guard ship comes for passengers who cannot help them fight."`
+				goto choose
+
+			label allowed
+			`	You look to Sable, who shrugs. "Statement. The Feo Compact does not hold its people in slavery, nor direct them anywhere against their will. That is rather the point."`
+
+			label choose
+			choice
+				`	"Alright, come aboard."`
+					goto board
+				`	"I'm sorry, I can't take you."`
+					goto refuse
+
+			label board
+			action
+				set "avgi: accepted ashen reunion"
+			`	"Gratitude. Gratitude! Thank you, alien Captain, we will not forget this. Not ever."`
+			`	You escort Tawny and Wren aboard the <ship>. Their enthusiasm for finally reuniting with their daughter outshines any excitement they might have for seeing an alien starship.`
+				accept
+
+			label refuse
+			action
+				set "avgi: refused ashen reunion"
+			`	Tawny's wings droop in disappointment, while Wren says nothing at all. You return to the <ship> alone.`
+				decline
 
 
 
-			Summary
-			`	Make contact with the Aviskir government with some Consonance documents and seals. Extract a VIP nuclear weapons scientist from Aviskir. He is already occupied with another project and refuses to leave`
-
+mission "Avgi: Aviskir Extraction 2b"
+	landing
+	name "Return to Peripheria"
+	description "Return to <destination> to report back to Prasinos."
+	source "Aviskir"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Aviskir Extraction 1: done"
+		has "Avgi: Aviskir Extraction 2b: declined"
 
 
 
@@ -970,6 +1065,12 @@ mission "Avgi: Araio Wrangling 2"
 
 			You overfly the mine, but the terrain is far too rugged to land your ship anywhere.
 			You land at the nearest spaceport and head to a nearby ranch, 'Grassy Park' and commandeer some Avgi mounts, which look like velociraptors (feathers and all.) Lait finds you a larger 6 ft dromaeosaur normally used as a draft animal. Choices should be here for dialogue, mostly flavor
+
+
+			`	You note that the 'dinosaurs' are feathered. How realistic.`
+			choice
+				`	"Dinosaurs? This convergent evolution stuff is getting out of hand!"`
+
 
 			You make it to the mine but the contact is nowhere to be seen. After exploring it a bit you end up finding what looks to be the lockbox in question buried under some rock. Add a few choices here that let you uncover the lockbox.
 
