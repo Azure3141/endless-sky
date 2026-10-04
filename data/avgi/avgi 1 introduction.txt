@@ -1202,6 +1202,20 @@ mission "Avgi: Araio Wrangling 3"
 # Ask for Help Mission Chain
 
 
+mission "Avgi: Ask for Help 1"
+	landing
+	name "Asime's Summons"
+	description "Meet with First Speaker Asime on <destination> and hear what she wants from you."
+	source "Peripheria"
+	destination "Peripheria"
+	to offer
+		has "Avgi: Araio Wrangling 3: done"
+		has "main plot completed"
+	on offer
+		conversation
+			`	An Avgi courier hands you a message. It seems First Speaker Asime would like you to meet her on Peripheria at your earliest convenience. No further details are offered, but you remember Asime being a strong believer in the Consonance and its actions.`
+				accept
+
 
 mission "Avgi: Ask for Help: Humanity 1"
 	landing
@@ -1210,12 +1224,90 @@ mission "Avgi: Ask for Help: Humanity 1"
 	source "Peripheria"
 	destination "Valhalla"
 	to offer
-		has "Avgi: Araio Wrangling 3: done"
+		has "Avgi: Ask for Help 1: done"
 	on offer
 		conversation
-			``
+			`	Asime is waiting for you as you step off the <ship>, having seemingly been informed of your arrival the moment you jumped into the system.`
+			`	"Greetings. Captain <first>, it is good that you're here. I'll get right to the point." Asime seems impatient as you both walk towards what she tells you is the chamber of the Assembly. "Inquiry. I called you here to ask you of the human government. Tell me, your Republic and Free Worlds, are they two polities, or two separate clusters of policies like the Consonance, question?"`
+			choice
+				`	"That's a harder question to answer than it sounds."`
+				`	"Each one is made up of dozens of member worlds."`
+					goto multitudes
+				`	"The Free Worlds is more of a subdivision of the Republic, which gained autonomy after a civil war."`
+					to display
+						has "free worlds checkmate"
+					goto autonomy
+				`	"They're two independent governments now. They just fought a war over it."`
+					to display
+						has "free worlds reconciliation"
+					goto independent
 
+			`	"Impatience. Every question about government is hard, but I need an answer anyway."`
+			choice
+				`	"Each one is made up of dozens of member worlds, which took sides in a civil war."`
+					goto multitudes
+				`	"Well, there was a war over it. The Free Worlds won their independence from the Republic in the end."`
+					to display
+						has "free worlds reconciliation"
+					goto independent
+				`	"There was a civil war, and by the end the Free Worlds became an automous zone of the Republic."`
+					to display
+						has "free worlds checkmate"
+					goto autonomy
 
+			label multitudes
+			`	"Understanding. Much like the Consonance, then, which will make it easier for us to understand each other. But I have to admit, I am disappointed that there is not a single higher government, like what I hope the Consonance to become."`
+			choice
+				`	"Well, there was a war over it. The Free Worlds won their independence from the Republic in the end."`
+					to display
+						has "free worlds reconciliation"
+					goto independent
+				`	"There was a civil war, and by the end the Free Worlds became an automous zone of the Republic."`
+					to display
+						has "free worlds checkmate"
+					goto autonomy
+
+			label independent
+			`	"Shock. A human civil war, question? Disappointment. I told the Assembly you were one united species, like what the Consonance should be. But it sounds like we are more similar than I'd hoped, if your species' dream of unity has been shattered as well.`
+				goto why
+
+			label autonomy
+			`	"Shock. A human civil war, question? Disappointment. I told the Assembly you were one united species, like what the Consonance should be. But autonomy, that is familiar. A shame you had to fight a war over it though."`
+
+			label why
+			`	You reach the chamber, and Asime greets a pair of guards, who unlock a door before ushering you in. Fortunately, the Assembly is not in session, or your sudden arrival would be rather awkward. But Asime just wants to show you around, it seems.`
+			`	"This is where each polity sends its delegates to represent them to the Assembly." She waves an arm around the room, an enormous amphitheater. Seats surround a lowered central dais in sweeping arcs, nearly making a full circle, with each outer row higher than the last.`
+			`	"We still have delegates from about half of the Avgi polities, but more than five in six are exiles with no meaningful fraction of their original polities here in the Outer Limits. And to be honest, the people that are out here dissolve and remake new polities at a whim. Not something that helps our legitimacy." Asime seems rather annoyed about this.`
+			`	"Explanation. I ask because I need to know which part of your species to talk to. I want a meeting with your government, whichever one will have us. The Consonance will ask for aid, and for relations that go beyond one Captain's goodwill, no matter how helpful you have been."`
+			`	Asime adds, almost as an afterthought, "Clarification. Not an insult, <first>."`
+			choice
+				`	"I understand."`
+					goto understand
+				`	"Well, I think I've done quite a bit"`	
+
+			`	"Annoyance. Oh, you have. But there's only so much one alien can do to help us."`
+				goto ask
+
+			label understand
+			`	"Approval. Good. It shouldn't be hard to."`
+			choice
+				`	"What are you going to ask them for?"`
+				`	"What do you want me to do?"`
+					goto ask
+
+			`	"Direction. Your technology is far more advanced than ours is. Shields, gravity repulsors, we never had these until Captain Darius arrived and gave his ship to us to study. But, to be frank, ours are poor imitations, and I'd like to try to buy the real thing, along with any other technology you aliens might be willing to share."`
+			`	Asime adds, "And advisors from your military, if they will send them. You humans have some experience fighting aliens than we have, from the sound of it. And, curiosity, I have to admit that I want to see what your kind does when strangers ask for help."`
+
+			label ask
+			`	Asime ponders for a moment, then tells you, "Suggestion. Your Captain Darius knew us long before you. If both of you testify to your government, I think they'd listen."`
+			choice
+				`	"Alright, I'll find him."`
+					accept
+				`	"I'll look for him later."`
+					defer
+
+	on accept
+		log `First Speaker Asime asked you to arrange formal diplomatic relations between the Avgi Consonance and the human government, with Captain Darius helping establish contact.`
 
 Asime asks some questions about the human government. Explain FW vs Republic
 She asks if you can arrange a meeting so the Avgi can ask for help and establish relations. Suggests checking in with Darius to see if he can help
