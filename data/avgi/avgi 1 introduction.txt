@@ -872,7 +872,7 @@ mission "Avgi: Aviskir Extraction 1"
 
 			label specialists
 			`	"Explanation. We lack enough of them, Captain <last>. Or rather, we lack the kinds of specialists we need to win this war."`
-			`She continues.	"Mild pride. I would contend that the best and brightest minds of the Avgi are here with us, developing the technologies to counter the Aberrant at Ergastirio Station and laboring to build them in the Navigeo Yards." You recall that these are the stations the Consonance uses for research and shipbuilding.`
+			`	She continues.	"Mild pride. I would contend that the best and brightest minds of the Avgi are here with us, developing the technologies to counter the Aberrant at Ergastirio Station and laboring to build them in the Navigeo Yards." You recall that these are the stations the Consonance uses for research and shipbuilding.`
 
 			label retrieve
 			`	"But the planets, particularly Aviskir, contain far more experts than the population of the entire Consonance. And in the evacuation of the Twilight, many who we would otherwise wish to have with us retreated to the planets instead. It is one of those whom I wish you to retrieve."`
@@ -970,14 +970,13 @@ mission "Avgi: Aviskir Extraction 2"
 			label plea
 			`	"Plea. Captain. Captain, forgive us. I am Tawny, and this is Wren." The speaker is faded gold, and her partner a dusty rose.`
 			`	"Our daughter, Ashen. She was taken with the fleet when it left. Twenty years, and not a word. We did not know if our child still lived. Then we heard her voice, captaining a scout that visited last month. She is alive, and a Twilight Guardsman..."`
-
-
-			`	"How do you know it's her?"`
-				goto who
-			`	"The Consonance sent me for a scientist, not extra passengers."`
-				goto plea
-			`	"Will your government let me take you?"`
-				goto allowed
+			choice
+				`	"How do you know it's her?"`
+					goto who
+				`	"The Consonance sent me for a scientist, not extra passengers."`
+					goto plea
+				`	"Will your government let me take you?"`
+					goto allowed
 
 			label who
 			`	Wren produces a photograph of a young grey Avgi posing in the mock-cockpit of a fighter aircraft, arms splayed out in joy. "Wistfulness. Ashen always wanted to become a pilot. Like you, alien Captain. And we know she fulfilled her dream, when a ship from the Consonance visited Anax to send the polities of Aviskir a message. It was her voice in the news, we both recognized her."`
@@ -1001,7 +1000,7 @@ mission "Avgi: Aviskir Extraction 2"
 			action
 				set "avgi: accepted ashen reunion"
 			`	"Gratitude. Gratitude! Thank you, alien Captain, we will not forget this. Not ever."`
-			`	You escort Tawny and Wren aboard the <ship>. Their enthusiasm for finally reuniting with their daughter outshines any excitement they might have for seeing an alien starship.`
+			`	You escort Tawny and Wren aboard the <ship>. Their enthusiasm for the chance to finally reunite with their daughter clearly outshines any excitement they might have for seeing an alien starship.`
 				accept
 
 			label refuse
@@ -1009,7 +1008,6 @@ mission "Avgi: Aviskir Extraction 2"
 				set "avgi: refused ashen reunion"
 			`	Tawny's wings droop in disappointment, while Wren says nothing at all. You return to the <ship> alone.`
 				decline
-
 
 
 mission "Avgi: Aviskir Extraction 2b"
@@ -1023,17 +1021,64 @@ mission "Avgi: Aviskir Extraction 2b"
 		has "Avgi: Aviskir Extraction 2b: declined"
 
 
-
 mission "Avgi: Araio Wrangling 1"
 	landing
-	name "Placeholder"
-	description "Placeholder"
+	name "Araio Contact"
+	description "Visit <destination> with Lait and retrieve a critical package from a secretive Consonance agent."
 	source "Peripheria"
 	destination "Araio"
+	passengers 1
+	blocked "You'll need <capacity> to carry Lait on this mission."
 	to offer
 		has "Avgi: Aviskir Extraction 2: done"
 	on offer
 		conversation
+
+			`	Upon docking, you immediately make for Prasinos' office. She is not there, but a secretary tells you to find her in the spaceport, where she is witnessing the formal opening of a new trade terminal to serve the station.`
+
+			branch skipped
+				has "avgi: refused ashen reunion"
+
+			`	You introduce Tawny and Wren to Prasinos, the pair rushing through a brief formal greeting before immediately asking about Ashen. Prasinos is accomodating, and looks faintly pleased to be able to help.`
+			`	"Committment. I will speak with Admiral Lazuli to see if we have anyone in the fleet matching your daughter's description. Revision. In fact, you can find his office here." She scribbles down a note. "Explanation. Tell him I sent you directly."`
+			`	The pair profess their gratitude, to you once more and then to Prasinos, before scurrying away to find their daughter.`
+
+			label skipped
+			`	Prasinos gives you her full attention, and clearly notes the absense of anyone else with you. "Disappointment. I do not see Lisera with you, nor have I heard that she left your ship. I assume she did not want to join the Consonance here?" She sounds a bit bitter, but it doesn't seem directed at you.`
+
+			choice
+				`	"It wasn't her choice. Her government wouldn't allow her to leave."`
+					goto kept
+				`	"It wasn't her choice. Her government said she was working on a secret project for them."`
+					goto project
+				`	"I guess not."`
+
+			`	"Rue. Frustration. There is something we must do to improve our reputation among the planetbound Avgi. It must be truly terrible for one such as Lisera to refuse us."`
+				goto
+
+			label kept
+			`	"Concern. Let us hope the situation on Aviskir does not resemble that of Cyreal."`
+
+			label project
+			`	"Interest. A project? A weapon most likely. Hopefully directed at the Aberrant. It is still a shame, though, for Lisera would have been more of use here. And short of that, I wish the Fel Compact would coordinate their work with us. We tried to fight the Aberrant separately, and that only led to ruin."`
+
+
+
+
+
+
+
+			choice
+				`	"I'm not surprised that they didn't want to give up one of their best scientists."`
+				`	"I was told Lisera was still willing to help indirectly, if I went back."`
+				`	"What will you do now?"`
+				`	"At least I was able to help Tawny and Wren"`
+					to display
+						has "avgi: accepted ashen reunion"
+
+
+
+
 
 			You return, and Prasinos is disappointed but doesn't blame you at all. Overall she comments that diplomacy with the Avgi planets is difficult, as they are both upset with the Consonance for abandoing them and don't believe in their ability to really help against the Aberrant, thinking that they are more concerned with hiding in space and saving themselves at the cost of the planets' resources. Prasinos is convinced that the Consonance will need to really do something to inspire them before they'll accept their leadership again.
 
@@ -1161,14 +1206,17 @@ mission "Avgi: Araio Wrangling 3"
 mission "Avgi: Ask for Help: Humanity 1"
 	landing
 	name "Contact Darius"
-	description ""
+	description "Travel to <destination> and ask Captain Darius to help arrange a meeting between the Avgi and the Republic."
 	source "Peripheria"
 	destination "Valhalla"
 	to offer
-		has
+		has "Avgi: Araio Wrangling 3: done"
 	on offer
 		conversation
 			``
+
+
+
 Asime asks some questions about the human government. Explain FW vs Republic
 She asks if you can arrange a meeting so the Avgi can ask for help and establish relations. Suggests checking in with Darius to see if he can help
 
@@ -1392,10 +1440,13 @@ Need to figure out how to do this in such a way that doesn't trivialize the situ
 
 Quarg should explain their history in the Twilight and how they made an agreement with the Pug for them to take over their watch over the area in exchange for noninterference with the Coalition.
 
+"So that was your ringworld in the Corporeal system?"
+
 Explain that the Quarg see the Pug as neglecting their duty but can't interfere without possibly starting a destructive war in Avgi space.
 
 
 
+#
 
 
 
